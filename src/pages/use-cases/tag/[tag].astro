@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostCard from '../../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { SITE_URL } from '../../../lib/seo/site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('caseStudies', ({ data }) => !data.draft);
+  const tags = Array.from(new Set(posts.flatMap((p) => p.data.tags ?? [])));
+  return tags.map((tag) => ({ params: { tag: encodeURIComponent(tag) }, props: { tag } }));
+}
+
+const { tag } = Astro.props as { tag: string };
+
+const posts = (await getCollection('caseStudies', ({ data }) => !data.draft)).filter((post) =>
+  post.data.tags?.includes(tag)
+);
+
+const title = `Use Cases: ${tag}`;
+const description = `Use cases tagged “${tag}”.`;
+
+const page = {
+  title,
+  description,
+  url: `${SITE_URL}/use-cases/tag/${encodeURIComponent(tag)}/`,
+  breadcrumbs: [
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Use Cases', url: `${SITE_URL}/use-cases/` },
+    { name: tag, url: `${SITE_URL}/use-cases/tag/${encodeURIComponent(tag)}/` }
+  ]
+};
+---
+<BaseLayout title={title} description={description} page={page}>
+  <section class="container-wide py-16">
+    <h1 class="text-4xl font-semibold tracking-tight text-ink">{tag}</h1>
+    <p class="mt-4 max-w-[70ch] text-lg leading-relaxed text-steel">
+      Use cases tagged “{tag}”.
+    </p>
+  </section>
+
+  <section class="container-wide pb-20">
+    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {posts.map((post) => (
+        <PostCard post={post} basePath="/use-cases" />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

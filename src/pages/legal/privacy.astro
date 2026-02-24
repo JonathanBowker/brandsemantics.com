@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL } from '../../lib/seo/site';
+
+const title = 'Privacy Policy';
+const description = 'How Brand Semantics handles data on this website.';
+
+const page = {
+  title,
+  description,
+  url: `${SITE_URL}/legal/privacy`,
+  breadcrumbs: [
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Privacy', url: `${SITE_URL}/legal/privacy` }
+  ]
+};
+---
+<BaseLayout title={title} description={description} page={page}>
+  <section class="container-narrow py-16">
+    <div class="eyebrow">Legal</div>
+    <h1 class="mt-4 text-4xl font-semibold text-ink">Privacy Policy</h1>
+    <div class="prose mt-6">
+      <p>
+        Brand Semantics publishes this site as a static website. We do not run advertising trackers
+        or sell personal data.
+      </p>
+      <h2>Information we collect</h2>
+      <p>
+        If you contact us through your internal procurement channels, your organization may share
+        contact details as part of that process.
+      </p>
+      <h2>Analytics</h2>
+      <p>
+        If analytics are added later, this policy will be updated before deployment.
+      </p>
+      <h2>Updates</h2>
+      <p>
+        This policy may be updated as our governance systems evolve.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

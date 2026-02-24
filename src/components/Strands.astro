@@ -1,0 +1,16 @@
+---
+// Render the strands as an image so we can position/crop it with CSS (no edits to the SVG file itself).
+import strandsUrl from "./Strands.svg?url";
+
+const { class: className = "" } = Astro.props as { class?: string };
+---
+
+<img
+  src={strandsUrl}
+  alt=""
+  aria-hidden="true"
+  class={className}
+  decoding="async"
+  loading="eager"
+  draggable="false"
+/>

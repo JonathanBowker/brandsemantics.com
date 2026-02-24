@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL } from '../../lib/seo/site';
+
+const title = 'MCP Servers';
+const description = 'Policy-aware interfaces for brand governance automation.';
+
+const page = {
+  title,
+  description,
+  url: `${SITE_URL}/developers/mcp-servers`,
+  breadcrumbs: [
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Developers', url: `${SITE_URL}/developers` },
+    { name: 'MCP Servers', url: `${SITE_URL}/developers/mcp-servers` }
+  ]
+};
+---
+<BaseLayout title={title} description={description} page={page}>
+  <section class="container-wide py-16">
+    <div class="eyebrow">Developers</div>
+    <h1 class="mt-4 text-4xl font-semibold text-ink">MCP servers for governance</h1>
+    <p class="mt-4 text-base text-steel">
+      MCP servers act as policy-aware brokers. They apply IBOM™ rules before assets or content ship.
+    </p>
+  </section>
+
+  <section class="container-wide pb-20">
+    <div class="prose">
+      <h2>Primary responsibilities</h2>
+      <ul>
+        <li>Validate brand schema compliance.</li>
+        <li>Enforce policy rules before release.</li>
+        <li>Generate audit trails for governance teams.</li>
+      </ul>
+
+      <h2>Example server interface</h2>
+      <pre><code>{`{
+  "server": "ibom-policy",
+  "capabilities": ["validate", "approve", "audit"],
+  "inputs": ["brandSchema", "contentPayload"]
+}`}</code></pre>
+    </div>
+  </section>
+</BaseLayout>

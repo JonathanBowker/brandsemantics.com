@@ -1,0 +1,20 @@
+---
+const { type = 'note', title } = Astro.props as {
+  type?: 'note' | 'warning' | 'insight';
+  title?: string;
+};
+
+const labelMap = {
+  note: 'Note',
+  warning: 'Warning',
+  insight: 'Insight'
+} as const;
+
+const label = title ?? labelMap[type];
+---
+<div class={`callout callout-${type}`}>
+  <div class="callout-title">{label}</div>
+  <div class="callout-body">
+    <slot />
+  </div>
+</div>

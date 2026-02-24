@@ -1,0 +1,56 @@
+---
+const { post } = Astro.props as {
+  post: {
+    slug: string;
+    data: {
+      title: string;
+      description: string;
+      coverImage?: string;
+      publishedAt: Date;
+      tags: string[];
+      series?: string;
+    };
+  };
+  basePath?: string;
+  tagBasePath?: string;
+};
+
+const basePath = Astro.props.basePath ?? '/blog';
+const tagBasePath = Astro.props.tagBasePath ?? `${basePath}/tag`;
+---
+<article class="group rounded-xl border border-fog bg-surface p-6 shadow-outline">
+  <a href={`${basePath}/${post.slug}`} class="block overflow-hidden rounded-xl bg-[#1f2450] shadow-outline">
+    {post.data.coverImage ? (
+      <img
+        src={post.data.coverImage}
+        alt={post.data.title}
+        loading="lazy"
+        class="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+      />
+    ) : (
+      <div class="aspect-square w-full bg-[radial-gradient(circle_at_top,#2c3569,#101432)]"></div>
+    )}
+  </a>
+
+  {post.data.series ? (
+    <div class="mt-5 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-steel">
+      <span>{post.data.series}</span>
+    </div>
+  ) : null}
+  <h3 class="mt-4 text-xl font-semibold text-ink">
+    <a href={`${basePath}/${post.slug}`} class="hover:text-accent transition-colors">
+      {post.data.title}
+    </a>
+  </h3>
+  <p class="mt-3 text-sm text-steel">{post.data.description}</p>
+  <div class="mt-4 flex flex-wrap gap-2">
+    {post.data.tags.map((tag) => (
+      <a
+        href={`${tagBasePath}/${encodeURIComponent(tag)}`}
+        class="rounded-sm bg-strandGreen px-3 py-1 text-xs font-semibold uppercase text-ink hover:bg-strandGreen/90 transition-colors"
+      >
+        {tag}
+      </a>
+    ))}
+  </div>
+</article>

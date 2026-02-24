@@ -1,0 +1,280 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Strands from '../../components/Strands.astro';
+import { BRANDO_SCHEMA_URL, SITE_URL } from '../../lib/seo/site';
+
+const title = 'About';
+const description = 'Brand Semantics builds operating systems for executable brand governance.';
+
+const page = {
+  title,
+  description,
+  url: `${SITE_URL}/company/about`,
+  breadcrumbs: [
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Company', url: `${SITE_URL}/company/about` },
+    { name: 'About', url: `${SITE_URL}/company/about` }
+  ]
+};
+---
+<BaseLayout title={title} description={description} page={page}>
+  <section class="relative overflow-hidden bg-slate text-paper">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/45" aria-hidden="true"></div>
+
+    <div class="container-wide relative z-10 pt-28 pb-24">
+      <div class="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+        <div>
+          <div class="eyebrow text-paper/70">Company</div>
+          <h1 class="mt-5 font-masthead text-[clamp(2.75rem,5.4vw,5rem)] font-normal tracking-tight text-paper leading-[1.02]">
+            Brand Semantics
+          </h1>
+          <p class="mt-8 max-w-[80ch] text-lg leading-relaxed text-paper/80 md:text-xl">
+            We build the operating layer that turns brand meaning into executable systems—so governance can be applied
+            consistently across AI-assisted workflows.
+          </p>
+          <p class="mt-4 max-w-[80ch] text-base leading-relaxed text-paper/70 md:text-lg">
+            Brand Semantics is the commercial brand for Advanced Analytica.
+          </p>
+
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a
+              href="#get-in-touch"
+              class="rounded-md bg-strandGreen px-8 py-3 text-xs font-semibold tracking-[0.14em] uppercase text-ink shadow-outline hover:bg-strandGreen/90 transition-colors"
+            >
+              Get in touch
+            </a>
+            <a
+              href="/company/security"
+              class="rounded-md border border-paper/25 bg-transparent px-8 py-3 text-xs font-semibold tracking-[0.14em] uppercase text-paper hover:border-paper/50 transition-colors"
+            >
+              Security posture
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-paper/15 bg-black/20 backdrop-blur p-8 shadow-outline">
+          <div class="text-lg font-semibold tracking-[0.2em] uppercase text-paper/70">The four strands</div>
+          <p class="mt-5 text-sm leading-relaxed text-paper/70">
+            IBOM structures brand meaning with four core strands that can be governed and executed consistently.
+          </p>
+          <div class="mt-6 grid gap-5 text-base leading-relaxed text-paper/75">
+            <div>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="rounded-sm bg-strandOrange px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink">Verbal</span>
+                <div class="text-sm font-semibold text-paper">Language and tone</div>
+              </div>
+              <div class="mt-2 text-sm">Messaging, naming, voice, terminology, and style constraints.</div>
+            </div>
+            <div>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="rounded-sm bg-strandPurple px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-paper">Visual</span>
+                <div class="text-sm font-semibold text-paper">Identity and expression</div>
+              </div>
+              <div class="mt-2 text-sm">Design systems, layout, typography, imagery, and motion rules.</div>
+            </div>
+            <div>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="rounded-sm bg-strandBlue px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-paper">Audio</span>
+                <div class="text-sm font-semibold text-paper">Sonic behaviour</div>
+              </div>
+              <div class="mt-2 text-sm">Voice, sonic identity cues, and consistency across outputs.</div>
+            </div>
+            <div>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="rounded-sm bg-strandGreen px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink">Controls</span>
+                <div class="text-sm font-semibold text-paper">Policy, rules and governance</div>
+              </div>
+              <div class="mt-2 text-sm">Approvals, exceptions, constraints, and controlled change.</div>
+            </div>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-2">
+            <a
+              href="/use-cases"
+              class="rounded-sm bg-strandGreen px-3 py-1 text-xs font-semibold uppercase text-ink hover:bg-strandGreen/90 transition-colors"
+            >
+              Use cases
+            </a>
+            <a
+              href="/resources"
+              class="rounded-sm bg-strandGreen px-3 py-1 text-xs font-semibold uppercase text-ink hover:bg-strandGreen/90 transition-colors"
+            >
+              Resources
+            </a>
+            <a
+              href="/blog"
+              class="rounded-sm bg-strandGreen px-3 py-1 text-xs font-semibold uppercase text-ink hover:bg-strandGreen/90 transition-colors"
+            >
+              Opinions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[55%] overflow-hidden" aria-hidden="true">
+      <div class="container-wide h-full">
+        <Strands class="hero-strands h-full w-full opacity-85 object-cover object-left-bottom" />
+      </div>
+    </div>
+  </section>
+
+  <section class="container-wide py-20">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
+        <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">Operating model</div>
+        <div class="mt-4 text-2xl font-semibold tracking-tight text-ink">IBOM™</div>
+        <p class="mt-4 text-base leading-relaxed text-steel">
+          A structured, governed lifecycle for turning brand intent into machine-readable intelligence and
+          running it safely in production.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
+        <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">Foundation</div>
+        <div class="mt-4 text-2xl font-semibold tracking-tight text-ink">Brando Schema</div>
+        <p class="mt-4 text-base leading-relaxed text-steel">
+          An open foundation for expressing brand identity, governance, and policy as data.
+        </p>
+        <a
+          class="mt-6 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-ink hover:text-accent transition-colors"
+          href={BRANDO_SCHEMA_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit Brando Schema <span aria-hidden="true">→</span>
+        </a>
+      </div>
+      <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
+        <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">Execution</div>
+        <div class="mt-4 text-2xl font-semibold tracking-tight text-ink">Policy-aware workflows</div>
+        <p class="mt-4 text-base leading-relaxed text-steel">
+          Controlled access, deterministic checks, and audit trails so brand rules are enforced and provable
+          across AI tooling and delivery pipelines.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper">
+    <div class="container-wide py-20">
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div>
+          <div class="eyebrow">What we deliver</div>
+          <h2 class="mt-4 text-[clamp(2rem,4.2vw,3.5rem)] font-semibold tracking-tight text-ink">
+            Practical governance you can ship
+          </h2>
+          <p class="mt-6 max-w-[80ch] text-lg leading-relaxed text-steel md:text-xl">
+            Most teams have brand documentation. The gap is execution: tooling, controls, and proof that the
+            rules are being followed. We focus on making governance operational across AI-assisted workflows.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          {[
+            { title: 'Brand model', body: 'A structured representation of identity, language, tone, and constraints.' },
+            { title: 'Policy pack', body: 'Executable rules for approvals, exceptions, and usage guardrails.' },
+            { title: 'System boundaries', body: 'Clear scope for what can and cannot be automated safely.' },
+            { title: 'Runtime controls', body: 'Checks that run in pipelines and AI tooling, not just in review docs.' },
+            { title: 'Assurance signals', body: 'Operational measures for drift, violations, and controlled remediation.' },
+            { title: 'Change control', body: 'Versioned updates, owners, and audit trails so governance evolves safely.' }
+          ].map((item) => (
+            <div class="rounded-2xl border border-fog bg-surface p-6 shadow-outline">
+              <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">{item.title}</div>
+              <p class="mt-3 text-sm leading-relaxed text-steel">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-wide py-20">
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+      <div>
+        <div class="eyebrow">Where it fits</div>
+        <h2 class="mt-4 text-[clamp(2rem,4.2vw,3.25rem)] font-semibold tracking-tight text-ink">
+          Integrated, not isolated
+        </h2>
+        <p class="mt-6 max-w-[80ch] text-lg leading-relaxed text-steel md:text-xl">
+          Brand governance is only useful when it meets the work. We design for the surfaces where decisions
+          happen: creation, review, deployment, and automation.
+        </p>
+      </div>
+
+      <div class="grid gap-6">
+        {[
+          { title: 'Design systems & components', body: 'Tokens, patterns, and usage constraints that remain consistent across products.' },
+          { title: 'Content operations', body: 'Briefing, drafting, translation, and localization with controlled approvals.' },
+          { title: 'AI-assisted creation', body: 'Prompting and generation with policy-aware guardrails and traceability.' },
+          { title: 'Delivery pipelines', body: 'Deterministic checks in CI/CD so issues surface before release.' }
+        ].map((item) => (
+          <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
+            <div class="text-sm font-semibold text-ink">{item.title}</div>
+            <p class="mt-3 text-sm leading-relaxed text-steel">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper">
+    <div class="container-wide py-20">
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div>
+          <div class="eyebrow">How we work</div>
+          <h2 class="mt-4 text-[clamp(2rem,4.2vw,3.5rem)] font-semibold tracking-tight text-ink">
+            From intent to operation
+          </h2>
+          <p class="mt-6 text-lg leading-relaxed text-steel md:text-xl">
+            We treat brand like a governed system: defined clearly, codified as data, deployed with control,
+            and assured continuously.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          {[
+            { title: 'Assessment', body: 'Clarify exposure, risk, and priority AI use cases.' },
+            { title: 'Definition', body: 'Turn implicit intent into explicit rules and constraints.' },
+            { title: 'Codification', body: 'Encode intent as structured, machine-actionable intelligence.' },
+            { title: 'Deployment', body: 'Introduce governed artefacts into pipelines and systems.' },
+            { title: 'Operation', body: 'Run policy at runtime with controlled overrides and monitoring.' },
+            { title: 'Assurance', body: 'Measure drift, prove compliance, and update safely.' }
+          ].map((step) => (
+            <div class="rounded-2xl border border-fog bg-surface p-6 shadow-outline">
+              <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">{step.title}</div>
+              <p class="mt-3 text-sm leading-relaxed text-steel">{step.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-wide py-20">
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+      <div>
+        <div class="eyebrow">Principles</div>
+        <h2 class="mt-4 text-[clamp(2rem,4.2vw,3.25rem)] font-semibold tracking-tight text-ink">
+          Governance you can operate
+        </h2>
+        <p class="mt-6 max-w-[80ch] text-lg leading-relaxed text-steel md:text-xl">
+          The value of governance is not documentation. It is controlled behavior at scale, with clear ownership
+          and the ability to evolve safely.
+        </p>
+      </div>
+
+      <div class="grid gap-6">
+        {[
+          { title: 'Policy-first', body: 'Rules should be executable, not advisory.' },
+          { title: 'Versioned change', body: 'Every update is traceable and reversible.' },
+          { title: 'Auditable decisions', body: 'Approvals and exceptions must be provable.' },
+          { title: 'Measured assurance', body: 'Alignment, drift, and violations become operational signals.' }
+        ].map((item) => (
+          <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
+            <div class="text-sm font-semibold text-ink">{item.title}</div>
+            <p class="mt-3 text-sm leading-relaxed text-steel">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

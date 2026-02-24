@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL } from '../../lib/seo/site';
+
+const title = 'Security';
+const description = 'Operational posture for governance and compliance workflows.';
+
+const page = {
+  title,
+  description,
+  url: `${SITE_URL}/company/security`,
+  breadcrumbs: [
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Company', url: `${SITE_URL}/company/about` },
+    { name: 'Security', url: `${SITE_URL}/company/security` }
+  ]
+};
+---
+<BaseLayout title={title} description={description} page={page}>
+  <section class="container-wide py-16">
+    <div class="eyebrow">Company</div>
+    <h1 class="mt-4 text-4xl font-semibold text-ink">Security posture</h1>
+    <p class="mt-4 text-base text-steel">
+      Brand Semantics focuses on governance, auditability, and controlled change management.
+      We design systems that keep brand standards verifiable at every stage.
+    </p>
+  </section>
+  <section class="container-wide pb-20">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <div class="rounded-xl border border-fog bg-surface p-6">
+        <div class="text-sm font-semibold text-ink">Access governance</div>
+        <p class="mt-3 text-sm text-steel">Policy-driven permissions for brand systems.</p>
+      </div>
+      <div class="rounded-xl border border-fog bg-surface p-6">
+        <div class="text-sm font-semibold text-ink">Audit trails</div>
+        <p class="mt-3 text-sm text-steel">Every change is attributable and reviewable.</p>
+      </div>
+      <div class="rounded-xl border border-fog bg-surface p-6">
+        <div class="text-sm font-semibold text-ink">Controlled releases</div>
+        <p class="mt-3 text-sm text-steel">Build-time validation enforces compliance.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

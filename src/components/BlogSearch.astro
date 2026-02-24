@@ -1,0 +1,58 @@
+---
+---
+<div class="rounded-xl border border-fog bg-surface p-6 shadow-outline">
+  <div class="text-sm font-semibold text-ink">Search the blog</div>
+  <p class="mt-2 text-xs text-steel">Search title, description, and tags only.</p>
+  <input
+    id="blog-search"
+    class="mt-4 w-full rounded-md border border-fog px-3 py-2 text-sm"
+    type="search"
+    placeholder="Search posts"
+  />
+  <div id="blog-search-results" class="mt-4 space-y-3"></div>
+</div>
+
+<script>
+  const input = document.getElementById('blog-search');
+  const results = document.getElementById('blog-search-results');
+
+  const render = (items) => {
+    if (!items.length) {
+      results.innerHTML = '<div class="text-xs text-steel">No matches found.</div>';
+      return;
+    }
+    results.innerHTML = items
+      .map(
+        (item) => `
+          <div class="border-b border-fog pb-3">
+            <a class="text-sm font-semibold text-ink hover:text-accent" href="${item.url}">${item.title}</a>
+            <div class="mt-1 text-xs text-steel">${item.description}</div>
+          </div>
+        `
+      )
+      .join('');
+  };
+
+  const load = async () => {
+    const response = await fetch('/blog/search.json');
+    if (!response.ok) return;
+    const data = await response.json();
+
+    const onSearch = () => {
+      const q = input.value.trim().toLowerCase();
+      if (!q) {
+        results.innerHTML = '';
+        return;
+      }
+      const filtered = data.filter((item) => {
+        const haystack = `${item.title} ${item.description} ${(item.tags || []).join(' ')}`.toLowerCase();
+        return haystack.includes(q);
+      });
+      render(filtered);
+    };
+
+    input.addEventListener('input', onSearch);
+  };
+
+  load();
+</script>

@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL } from '../../lib/seo/site';
+
+const title = 'Terms of Use';
+const description = 'Terms for using the Brand Semantics website.';
+const lastUpdated = 'February 8, 2026';
+
+const page = {
+  title,
+  description,
+  url: `${SITE_URL}/legal/terms`,
+  breadcrumbs: [
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Terms', url: `${SITE_URL}/legal/terms` }
+  ]
+};
+---
+<BaseLayout title={title} description={description} page={page}>
+  <section class="container-narrow py-16">
+    <div class="eyebrow">Legal</div>
+    <h1 class="mt-4 text-4xl font-semibold text-ink">Terms of Use</h1>
+    <div class="prose mt-6">
+      <p><strong>Last updated:</strong> {lastUpdated}</p>
+      <p>
+        These Terms of Use (the “Terms”) apply to your access to and use of the Brand Semantics website (the “Site”),
+        including pages under Services, Use Cases, Opinions, Resources, and Company (together, the “Content”).
+        By accessing or using the Site, you agree to these Terms.
+      </p>
+
+      <h2>Who We Are</h2>
+      <p>
+        “Brand Semantics”, “we”, “us”, and “our” refer to the operator of this Site. If you need our legal entity name,
+        registered address, or company number for contracting purposes, please contact us via the
+        <a href="/company/contact">Contact</a> page.
+      </p>
+
+      <h2>Scope and Intended Audience</h2>
+      <p>
+        The Site is provided for informational purposes and is intended primarily for business and professional users.
+        The Content does not constitute legal, financial, or professional advice. You are responsible for how you use it.
+      </p>
+
+      <h2>Permitted Use</h2>
+      <p>
+        We grant you a limited, non-exclusive, non-transferable, revocable licence to access and use the Site for your
+        internal evaluation and business purposes, in accordance with these Terms.
+      </p>
+      <p>You may:</p>
+      <ul>
+        <li>Browse and share links to pages on the Site.</li>
+        <li>Quote short excerpts for commentary or internal review, with attribution to Brand Semantics.</li>
+      </ul>
+      <p>You may not:</p>
+      <ul>
+        <li>Copy, reproduce, republish, sell, license, or commercially exploit the Content without written permission.</li>
+        <li>Scrape, crawl, or harvest the Site at scale (including by automated means) except where permitted by law.</li>
+        <li>Reverse engineer or attempt to bypass any access controls, rate limits, or security measures.</li>
+        <li>Use the Site in a way that interferes with its availability, integrity, or performance.</li>
+        <li>Misrepresent your affiliation with Brand Semantics or use the Site to transmit unlawful, harmful, or deceptive content.</li>
+      </ul>
+
+      <h2>Intellectual Property</h2>
+      <p>
+        The Site and Content are protected by intellectual property laws. Brand Semantics, IBOM™, and any associated logos
+        are trademarks or trade names of Brand Semantics and/or its licensors. All rights not expressly granted are reserved.
+      </p>
+
+      <h2>User Submissions</h2>
+      <p>
+        If you submit information through a form or otherwise provide feedback (a “Submission”), you confirm that:
+      </p>
+      <ul>
+        <li>You have the rights needed to provide the Submission.</li>
+        <li>Your Submission does not infringe third-party rights or contain unlawful material.</li>
+        <li>You do not include sensitive personal data unless we expressly request it.</li>
+      </ul>
+      <p>
+        You grant us a non-exclusive, worldwide, royalty-free licence to use your Submission for the purpose of responding,
+        improving the Site, and operating our services. We will handle personal data in accordance with our
+        <a href="/legal/privacy">Privacy Policy</a>.
+      </p>
+
+      <h2>Third-Party Links and Services</h2>
+      <p>
+        The Site may reference third-party websites, tools, or services. We do not control and are not responsible for them.
+        Your use of third-party services is governed by their terms and policies.
+      </p>
+
+      <h2>Availability, Changes, and Termination</h2>
+      <p>
+        We may modify, suspend, or discontinue any part of the Site at any time. We may also update these Terms by posting a
+        revised version on this page. Continued use of the Site after an update means you accept the updated Terms.
+      </p>
+
+      <h2>Disclaimers</h2>
+      <p>
+        The Site and Content are provided “as is” and “as available”. To the maximum extent permitted by law, we disclaim all
+        warranties, express or implied, including implied warranties of merchantability, fitness for a particular purpose, and
+        non-infringement. We do not warrant that the Site will be uninterrupted, secure, or error-free.
+      </p>
+
+      <h2>Limitation of Liability</h2>
+      <p>
+        To the maximum extent permitted by law, Brand Semantics will not be liable for any indirect, incidental, special,
+        consequential, or punitive damages, or for any loss of profits, revenue, data, goodwill, or business opportunity,
+        arising out of or related to your use of (or inability to use) the Site.
+      </p>
+      <p>
+        Where liability cannot be excluded, our total liability for all claims relating to the Site will be limited to the
+        amount you paid to access the Site in the 12 months before the event giving rise to the claim (if any).
+      </p>
+
+      <h2>Indemnity</h2>
+      <p>
+        You agree to indemnify and hold harmless Brand Semantics from any claims, damages, liabilities, and expenses arising
+        from your misuse of the Site, your Submissions, or your breach of these Terms.
+      </p>
+
+      <h2>Governing Law</h2>
+      <p>
+        These Terms are governed by the laws of England and Wales, and the courts of England and Wales will have exclusive
+        jurisdiction, except where applicable law provides otherwise.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about these Terms? Contact us via <a href="/company/contact">Get in touch</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

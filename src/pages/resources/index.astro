@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ResourceCard from '../../components/ResourceCard.astro';
+import { getCollection } from 'astro:content';
+import { SITE_URL } from '../../lib/seo/site';
+
+const title = 'Resources';
+const description = 'Guides, checklists, and templates for policy-aware brand systems.';
+
+const resources = (await getCollection('resources', ({ data }) => !data.draft)).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
+
+const INITIAL_COUNT = 6;
+const BATCH_SIZE = 6;
+
+const page = {
+  title,
+  description,
+  url: `${SITE_URL}/resources/`,
+  breadcrumbs: [
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Resources', url: `${SITE_URL}/resources/` }
+  ]
+};
+---
+<BaseLayout title={title} description={description} page={page}>
+  <section class="container-wide py-16">
+    <div class="mx-auto max-w-[980px]">
+      <h1 class="text-[clamp(2.25rem,5vw,4rem)] font-semibold tracking-tight text-ink">
+        Resources
+      </h1>
+      <p class="mt-6 text-lg leading-relaxed text-steel md:text-xl">
+        Practical resources for teams building policy-aware brand systems: patterns, checklists, and reference guides.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-wide pb-20">
+    <style is:inline>
+      .resource-card {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 520ms ease, transform 520ms ease;
+        will-change: opacity, transform;
+      }
+      .resource-card.resource-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
+    <div id="resources-grid" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {resources.map((res, idx) => (
+        <div
+          data-resource={String(idx)}
+          class={`resource-card ${idx >= INITIAL_COUNT ? "hidden" : "resource-in"}`.trim()}
+        >
+          <ResourceCard resource={res} />
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 flex items-center justify-center">
+      <button
+        id="resources-load-more"
+        type="button"
+        class="rounded-md bg-strandGreen px-12 py-4 text-sm font-semibold tracking-[0.18em] uppercase text-ink shadow-outline hover:bg-strandGreen/90 transition-colors"
+        data-initial-count={String(INITIAL_COUNT)}
+        data-batch-size={String(BATCH_SIZE)}
+        aria-controls="resources-grid"
+        aria-label="Load more resources"
+        style={resources.length > INITIAL_COUNT ? "" : "display:none;"}
+      >
+        LOAD MORE
+      </button>
+    </div>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const button = document.getElementById("resources-load-more");
+      const grid = document.getElementById("resources-grid");
+      if (!(button instanceof HTMLButtonElement)) return;
+      if (!grid) return;
+
+      const cards = Array.from(grid.querySelectorAll("[data-resource]"));
+      const initialCount = Number(button.getAttribute("data-initial-count") || "0");
+      const batchSize = Number(button.getAttribute("data-batch-size") || "0");
+      if (!Number.isFinite(initialCount) || !Number.isFinite(batchSize)) return;
+
+      const getVisibleCount = () =>
+        cards.reduce((count, el) => (el.classList.contains("hidden") ? count : count + 1), 0);
+
+      const updateButton = () => {
+        const visible = getVisibleCount();
+        if (visible >= cards.length) button.style.display = "none";
+      };
+
+      button.addEventListener("click", () => {
+        const visible = getVisibleCount();
+        const next = Math.min(cards.length, visible + batchSize);
+        for (let i = visible; i < next; i++) {
+          const el = cards[i];
+          if (!el) continue;
+          el.classList.remove("hidden");
+          window.requestAnimationFrame(() => {
+            window.setTimeout(() => el.classList.add("resource-in"), (i - visible) * 55);
+          });
+        }
+        updateButton();
+      });
+
+      updateButton();
+    })();
+  </script>
+</BaseLayout>

@@ -1,0 +1,29 @@
+---
+import { theme } from '../theme';
+
+const css = `:root {
+  --color-ink: ${theme.colors.ink};
+  --color-paper: ${theme.colors.paper};
+  --color-background: ${theme.colors.background};
+  --color-surface: ${theme.colors.surface};
+  --color-slate: ${theme.colors.slate};
+  --color-steel: ${theme.colors.steel};
+  --color-fog: ${theme.colors.fog};
+  --color-accent: ${theme.colors.accent};
+  --color-accent-deep: ${theme.colors.accentDeep ?? theme.colors.accent};
+  --color-strand-purple: ${theme.colors.strandPurple};
+  --color-strand-orange: ${theme.colors.strandOrange};
+  --color-strand-blue: ${theme.colors.strandBlue};
+  --color-strand-green: ${theme.colors.strandGreen};
+  --color-signal: ${theme.colors.info};
+  --color-warning: ${theme.colors.warning};
+  --color-success: ${theme.colors.success};
+  --font-body: ${theme.typography.fontSans};
+  --font-display: ${theme.typography.fontDisplay};
+  --font-masthead: ${theme.typography.fontMasthead};
+  --font-mono: ${theme.typography.fontMono};
+  --shadow-outline: ${theme.shadows.card};
+  --shadow-soft: ${theme.shadows.soft};
+}`;
+---
+<style is:inline set:html={css} />

@@ -1,0 +1,31 @@
+---
+title: Governance Guardrails for AI Agents
+description: Designing agent workflows that respect brand policy and prove compliance.
+coverImage: /images/case-studies/governance-guardrails-ai-agents.svg
+publishedAt: 2026-01-10
+author: Brand Semantics
+tags: [Governance, Systems, MCP]
+draft: false
+---
+
+# Agents need guardrails, not just prompts.
+
+As teams adopt agentic workflows, the governance challenge shifts: the system is no longer generating single outputs, it is executing multi-step work across tools.
+
+## Where brand risk appears
+- Tool selection (which systems are allowed for which tasks).
+- Data access (what brand assets can be fetched and used).
+- Output validation (what must be checked before publish).
+- Auditability (what happened, when, and why).
+
+## A policy-aware agent pattern
+1. **Plan**: agent proposes steps and required assets.
+2. **Authorize**: policy checks what is permitted.
+3. **Execute**: actions happen with logging.
+4. **Validate**: outputs are checked against brand policy.
+5. **Escalate**: uncertain cases go to a human owner.
+
+<Note>
+Policy-aware tooling can be expressed as an MCP layer that enforces governance before tools are called.
+</Note>
+

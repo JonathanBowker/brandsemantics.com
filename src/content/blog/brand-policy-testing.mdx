@@ -1,0 +1,35 @@
+---
+title: Brand Policy Testing in CI/CD
+description: "Treat brand rules like code: test, version, and deploy them safely."
+coverImage: /images/case-studies/brand-policy-testing.svg
+publishedAt: 2026-01-28
+author: Brand Semantics
+tags: [Policy, Execution, Systems]
+draft: false
+---
+
+# If brand rules are executable, they need tests.
+
+Traditional brand governance assumes humans read documents. In AI-mediated workflows, policies are executed continuously and at scale. That demands a testing discipline.
+
+## What to test
+- **Hard constraints:** e.g. forbidden terms, legal disclaimers, mandatory elements.
+- **Context rules:** “only in X region / channel / persona”.
+- **Exception handling:** what happens when inputs are incomplete.
+- **Regression:** previous issues should not reappear after edits.
+
+## The minimum viable test suite
+1. Golden examples (known-good outputs).
+2. Known-bad examples (must fail).
+3. Edge-case prompts (adversarial / ambiguous).
+4. Localisation variants (market-specific rules).
+
+<Warning>
+Without regression tests, policy changes become a new source of risk.
+</Warning>
+
+## Deployment pattern
+- Policies are versioned artefacts.
+- Every change runs tests.
+- Only passing versions are promoted.
+- Rollback is a first-class capability.

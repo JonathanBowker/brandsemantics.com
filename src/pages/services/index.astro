@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { SITE_URL } from '../../lib/seo/site';
+
+const title = 'Services';
+const description = 'Systems and frameworks that operationalize brand meaning.';
+
+const products = (await getCollection('products', ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const page = {
+  title,
+  description,
+  url: `${SITE_URL}/services/`,
+  breadcrumbs: [
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Services', url: `${SITE_URL}/services/` }
+  ]
+};
+---
+<BaseLayout title={title} description={description} page={page}>
+  <section class="container-wide py-16">
+    <div class="eyebrow">Services</div>
+    <h1 class="mt-4 text-4xl font-semibold text-ink">Operational brand systems</h1>
+    <p class="mt-4 text-base text-steel">
+      Brand Semantics delivers infrastructure for executable standards, governance, and alignment.
+    </p>
+  </section>
+  <section class="container-wide pb-20">
+    <div class="grid gap-6 lg:grid-cols-2">
+      {products.map((product) => (
+        <article class="rounded-xl border border-fog bg-surface p-6">
+          <div class="text-xs uppercase tracking-[0.2em] text-steel">{product.data.category}</div>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">
+            {product.data.title === 'IBOM™' ? (
+              <a href="/services/ibom" class="hover:text-accent">{product.data.title}</a>
+            ) : (
+              product.data.title
+            )}
+          </h2>
+          <p class="mt-3 text-sm text-steel">{product.data.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

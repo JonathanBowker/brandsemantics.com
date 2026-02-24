@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_URL } from '../lib/seo/site';
+
+const title = 'Search';
+const description = 'Search Brand Semantics content.';
+
+const page = {
+  title,
+  description,
+  url: `${SITE_URL}/search/`,
+  breadcrumbs: [
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Search', url: `${SITE_URL}/search/` }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} page={page}>
+  <section class="container-wide py-16">
+    <div class="eyebrow">Search</div>
+    <h1 class="mt-4 text-4xl font-semibold text-ink">Find what you need</h1>
+    <p class="mt-3 text-base text-steel">
+      Search across blog posts and key pages.
+    </p>
+
+    <form id="search-form" class="mt-8 flex flex-col gap-4 sm:flex-row">
+      <label class="sr-only" for="search-input">Search</label>
+      <input
+        id="search-input"
+        name="q"
+        type="search"
+        placeholder="Search..."
+        class="w-full rounded-md border border-fog bg-surface px-4 py-3 text-base text-ink placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-strandOrange/60 sm:max-w-lg"
+      />
+      <button
+        type="submit"
+        class="rounded-md bg-ink px-6 py-3 text-sm font-semibold text-paper"
+      >
+        Search
+      </button>
+    </form>
+
+    <div class="mt-10 flex items-center justify-between text-sm text-steel">
+      <span id="search-status">Enter a query to see results.</span>
+      <span id="search-count"></span>
+    </div>
+
+    <div class="mt-8">
+      <ul id="search-results" class="grid gap-6"></ul>
+    </div>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const form = document.getElementById("search-form");
+      const input = document.getElementById("search-input");
+      const status = document.getElementById("search-status");
+      const count = document.getElementById("search-count");
+      const results = document.getElementById("search-results");
+
+      if (!form || !input || !status || !count || !results) return;
+
+      const normalize = (value) =>
+        (value || "")
+          .toString()
+          .trim()
+          .toLowerCase();
+
+      const fetchIndex = async () => {
+        const res = await fetch("/search.json");
+        if (!res.ok) return [];
+        return await res.json();
+      };
+
+      const render = (items, query) => {
+        results.innerHTML = "";
+        if (!query) {
+          status.textContent = "Enter a query to see results.";
+          count.textContent = "";
+          return;
+        }
+
+        if (!items.length) {
+          status.textContent = `No results for "${query}".`;
+          count.textContent = "0 results";
+          return;
+        }
+
+        status.textContent = `Results for "${query}".`;
+        count.textContent = `${items.length} result${items.length === 1 ? "" : "s"}`;
+
+        items.forEach((item) => {
+          const li = document.createElement("li");
+          li.className = "rounded-xl border border-fog bg-surface p-6 shadow-outline";
+
+          const title = document.createElement("a");
+          title.href = item.url;
+          title.className = "text-xl font-semibold text-ink hover:text-accent";
+          title.textContent = item.title;
+
+          const meta = document.createElement("div");
+          meta.className = "mt-2 text-xs uppercase tracking-[0.2em] text-steel";
+          meta.textContent = item.type || "Result";
+
+          const desc = document.createElement("p");
+          desc.className = "mt-3 text-sm text-steel";
+          desc.textContent = item.description || "";
+
+          li.appendChild(meta);
+          li.appendChild(title);
+          li.appendChild(desc);
+
+          if (item.tags && item.tags.length) {
+            const tags = document.createElement("div");
+            tags.className = "mt-4 flex flex-wrap gap-2";
+            item.tags.forEach((tag) => {
+              const pill = document.createElement("span");
+              pill.className =
+                "rounded-full border border-fog bg-paper px-3 py-1 text-xs font-semibold text-ink";
+              pill.textContent = tag;
+              tags.appendChild(pill);
+            });
+            li.appendChild(tags);
+          }
+
+          results.appendChild(li);
+        });
+      };
+
+      let index = [];
+
+      const runSearch = async (query) => {
+        const q = normalize(query);
+        if (!index.length) index = await fetchIndex();
+
+        if (!q) {
+          render([], "");
+          return;
+        }
+
+        const filtered = index.filter((item) => {
+          const haystack = [
+            item.title,
+            item.description,
+            Array.isArray(item.tags) ? item.tags.join(" ") : ""
+          ]
+            .join(" ")
+            .toLowerCase();
+          return haystack.includes(q);
+        });
+
+        render(filtered, query.trim());
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const initial = params.get("q") || "";
+      input.value = initial;
+
+      runSearch(initial);
+
+      const updateUrl = (query) => {
+        const next = new URL(window.location.href);
+        if (query.trim()) next.searchParams.set("q", query.trim());
+        else next.searchParams.delete("q");
+        window.history.replaceState({}, "", next.toString());
+      };
+
+      let debounceTimer = null;
+      input.addEventListener("input", () => {
+        if (debounceTimer) window.clearTimeout(debounceTimer);
+        debounceTimer = window.setTimeout(() => {
+          const query = input.value || "";
+          updateUrl(query);
+          runSearch(query);
+        }, 150);
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const query = input.value || "";
+        updateUrl(query);
+        runSearch(query);
+      });
+    })();
+  </script>
+</BaseLayout>

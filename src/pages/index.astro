@@ -1,0 +1,956 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE_URL } from "../lib/seo/site";
+import Strands from "../components/Strands.astro";
+import usesAssessmentImg from "../components/uses/assessment.svg?url";
+import usesDefinitionImg from "../components/uses/definition.svg?url";
+import usesCodificationImg from "../components/uses/codification.svg?url";
+import usesEvaluationImg from "../components/uses/evaluation.svg?url";
+import usesOperationImg from "../components/uses/operation.svg?url";
+import usesOptimisationImg from "../components/uses/optimisation.svg?url";
+
+const title = "Brand Governance Infrastructure";
+const description = "Brand meaning to executable systems, governed by IBOM™.";
+const mastheadWords = ["intelligent", "accessible", "extraordinary"] as const;
+const mastheadHighlight = "extraordinary" as const;
+const mastheadStartIndex = Math.max(
+  0,
+  mastheadWords.indexOf(mastheadHighlight),
+);
+const usesTabs = [
+  {
+    key: "use_case_understanding",
+    label: "1. Use Case Understanding",
+    lead: "Phase 1",
+    heading: "USE CASE UNDERSTANDING",
+    subheading: "Establish why the system is being built.",
+    body: "This is the strategic foundation of the entire engagement. Its purpose is to ensure that all subsequent work is anchored to real business objectives rather than technical enthusiasm. By the end of this phase, you and the consulting team share a documented, agreed understanding of what the IBOM must deliver, how success will be measured, what constraints apply, and what the implementation roadmap looks like.",
+    href: "#get-in-touch",
+    cta: "Get in touch",
+    image: usesAssessmentImg,
+  },
+  {
+    key: "context_understanding",
+    label: "2. Context Understanding",
+    lead: "Phase 2",
+    heading: "CONTEXT UNDERSTANDING",
+    subheading: "Identify, describe, and validate the data sources.",
+    body: "In this phase we establish what data the model has to work with. MCP tools are only as reliable as the data they access — a tool that is authoritative-sounding but delivers untrustworthy data is more dangerous than no tool at all. This phase systematically identifies all candidate data sources, describes their structure and provenance, assesses their coverage against the use cases defined in Phase 1, and validates their quality and authority. The outputs directly feed the Knowledge Preparation work of Phase 3.",
+    href: "#get-in-touch",
+    cta: "Get in touch",
+    image: usesDefinitionImg,
+  },
+  {
+    key: "knowledge_preparation",
+    label: "3. Knowledge Preparation",
+    lead: "Phase 3",
+    heading: "KNOWLEDGE PREPARATION",
+    subheading: "Build the tools the model will read from and write to.",
+    body: "This is where your brand becomes 'AI-Ready.' We translate your written rules into a digital language (using Brando®) that AI systems can instantly understand. By turning your brand identity into a network of structured datasets, we ensure your values are a core part of the code that drives your AI operations.",
+    href: "#get-in-touch",
+    cta: "Get in touch",
+    image: usesCodificationImg,
+  },
+  {
+    key: "prompt_engineering",
+    label: "4. Prompt Engineering",
+    lead: "Phase 4",
+    heading: "PROMPT ENGINEERING",
+    subheading: "Run tests and fine tune tools, workflows and guardrails.",
+    body: "Before going live, we put your brand through its paces in a controlled 'lab workspace' setting. We test how multiple Large Language Models (LLMs) interpret your rules and check for any off-brand behavior. This gives you measurable proof that your brand is protected and performing exactly as intended before it ever reaches a customer.",
+    href: "#get-in-touch",
+    cta: "Get in touch",
+    image: usesEvaluationImg,
+  },
+  {
+    key: "system_evaluation",
+    label: "5. System Evaluation",
+    lead: "Phase 5",
+    heading: "SYSTEM EVALUATION",
+    subheading: "Validate that the mdoel is correct, safe, and compliant.",
+    body: "Your brand is now active in the real world. Using the Model Context Protocol (MCP) standard, we embed your brand policies directly into your AI infrastructure. MCP acts as the universal bridge, ensuring your brand rules are 'sticky' and enforced in real-time across every tool and channel without needing manual oversight.",
+    href: "#get-in-touch",
+    cta: "Get in touch",
+    image: usesOperationImg,
+  },
+  {
+    key: "system_deployment",
+    label: "6. System Deployment",
+    lead: "Phase 6",
+    heading: "SYSTEM DEPLOYMENT",
+    subheading: "Deploy the model into production to start work.",
+    body: "AI moves fast, and your brand should too. We constantly monitor how your policies are performing and look for ways to improve them. This continuous feedback loop ensures your brand doesn't just stay consistent, but gets smarter and more efficient over time, keeping your digital execution perfectly aligned with your vision.",
+    href: "#get-in-touch",
+    cta: "Get in touch",
+    image: usesOptimisationImg,
+  },
+] as const;
+const defaultUsesKey = usesTabs[0].key;
+const page = {
+  title,
+  description,
+  url: `${SITE_URL}/`,
+  breadcrumbs: [{ name: "Home", url: `${SITE_URL}/` }],
+};
+---
+
+<BaseLayout title={title} description={description} page={page}>
+  <!-- 1. HERO -->
+  <section
+    class="relative overflow-hidden bg-slate text-paper min-h-[calc(100vh-5rem)]"
+  >
+    <div
+      class="container-wide relative z-10 pt-[9.5rem] pb-[8.5rem] lg:pt-[10.5rem] lg:pb-[9.5rem]"
+    >
+      <div class="grid gap-12 lg:items-center">
+        <div>
+          <div class="eyebrow mb-12 text-base text-paper/80">
+            Intelligent Brand Operations
+          </div>
+          <h1
+            class="font-masthead text-[clamp(2.95rem,5.6vw,5.15rem)] font-semibold tracking-tight text-paper leading-[1] max-w-[52rem] md:max-w-[56rem] lg:max-w-none lg:whitespace-nowrap"
+            aria-label="Intelligent Brand Operating Model - IBOM"
+          >
+            <span
+              class="inline-flex flex-wrap lg:flex-nowrap items-baseline gap-x-3"
+            >
+              <span>Make your brand</span>
+              <span
+                id="brand-rotate"
+                class="relative inline-flex h-[1.35em] min-w-[13ch] align-baseline items-baseline text-strandOrange overflow-hidden leading-[1] text-left"
+                aria-hidden="true"
+                data-words={JSON.stringify(mastheadWords)}
+                data-highlight={mastheadHighlight}
+                data-index={String(mastheadStartIndex)}
+              >
+                <span
+                  data-rotate-current
+                  class="inline-block h-full w-full transform-gpu will-change-transform"
+                >
+                  {mastheadHighlight}
+                </span>
+                <span
+                  data-rotate-next
+                  class="absolute left-0 top-0 inline-block h-full w-full transform-gpu will-change-transform"
+                ></span>
+              </span>
+            </span>
+          </h1>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="#get-in-touch"
+              class="inline-flex items-center justify-center rounded-md bg-strandGreen px-6 py-3 text-xs font-semibold leading-none tracking-[0.14em] uppercase text-ink shadow-outline transition-colors hover:bg-strandGreen/90"
+            >
+              Get in touch
+            </a>
+            <a
+              href="#why"
+              class="inline-flex items-center justify-center gap-3 rounded-md border border-strandOrange/80 px-6 py-3 text-xs font-semibold tracking-[0.14em] uppercase text-strandOrange transition-colors hover:bg-strandOrange hover:text-slate"
+            >
+              <span>Keep Exploring</span>
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M10 3a1 1 0 0 1 1 1v10.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4.007 4.007a1 1 0 0 1-1.414 0L6.279 13.707a1 1 0 1 1 1.414-1.414L10 14.586V4a1 1 0 0 1 1-1z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative "strands" -->
+    <div
+      class="pointer-events-none absolute inset-x-0 bottom-[-2.5rem] z-0 h-[55%] overflow-hidden lg:bottom-[-3rem]"
+    >
+      <div class="container-wide h-full">
+        <Strands
+          class="hero-strands h-full w-full opacity-90 object-cover object-left-bottom"
+        />
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const el = document.getElementById("brand-rotate");
+      if (!el) return;
+
+      let words;
+      try {
+        words = JSON.parse(el.getAttribute("data-words") || "[]");
+      } catch {
+        words = [];
+      }
+      if (!Array.isArray(words) || words.length === 0) return;
+
+      const reducedMotion = !!window.matchMedia?.(
+        "(prefers-reduced-motion: reduce)",
+      )?.matches;
+      const defaultHoldMs = 1800;
+      const highlightHoldMs = 3600;
+
+      const highlight =
+        (el.getAttribute("data-highlight") || "").trim() || words[0];
+      const delayFor = (word) =>
+        word === highlight ? highlightHoldMs : defaultHoldMs;
+
+      const currentEl = el.querySelector("[data-rotate-current]");
+      const nextEl = el.querySelector("[data-rotate-next]");
+      if (!(currentEl instanceof HTMLElement)) return;
+      if (!(nextEl instanceof HTMLElement)) return;
+
+      const rollMs = 900;
+      const rollEase = "cubic-bezier(0.33, 1, 0.68, 1)";
+      const resetTransforms = () => {
+        currentEl.style.transform = "translate3d(0, 0, 0)";
+        nextEl.style.transform = "translate3d(0, 100%, 0)";
+      };
+
+      let currentAnim = null;
+      let nextAnim = null;
+      if (!reducedMotion) {
+        currentEl.style.backfaceVisibility = "hidden";
+        nextEl.style.backfaceVisibility = "hidden";
+        currentEl.style.transformStyle = "preserve-3d";
+        nextEl.style.transformStyle = "preserve-3d";
+        resetTransforms();
+      }
+
+      const swapTo = (next) => {
+        if (next === highlight) {
+          el.classList.remove("text-strandGreen");
+          el.classList.add("text-strandOrange");
+        } else {
+          el.classList.remove("text-strandOrange");
+          el.classList.add("text-strandGreen");
+        }
+
+        if (reducedMotion) {
+          currentEl.textContent = next;
+          nextEl.textContent = "";
+          return;
+        }
+
+        nextEl.textContent = next;
+
+        currentAnim?.cancel?.();
+        nextAnim?.cancel?.();
+        currentAnim = null;
+        nextAnim = null;
+
+        resetTransforms();
+
+        if (
+          typeof currentEl.animate === "function" &&
+          typeof nextEl.animate === "function"
+        ) {
+          const thisCurrentAnim = currentEl.animate(
+            [
+              { transform: "translate3d(0, 0, 0)" },
+              { transform: "translate3d(0, -100%, 0)" },
+            ],
+            { duration: rollMs, easing: rollEase, fill: "forwards" },
+          );
+          const thisNextAnim = nextEl.animate(
+            [
+              { transform: "translate3d(0, 100%, 0)" },
+              { transform: "translate3d(0, 0, 0)" },
+            ],
+            { duration: rollMs, easing: rollEase, fill: "forwards" },
+          );
+          currentAnim = thisCurrentAnim;
+          nextAnim = thisNextAnim;
+
+          Promise.all([thisCurrentAnim.finished, thisNextAnim.finished])
+            .then(() => {
+              if (
+                currentAnim !== thisCurrentAnim ||
+                nextAnim !== thisNextAnim
+              ) {
+                return;
+              }
+              currentEl.textContent = next;
+              thisCurrentAnim.cancel();
+              thisNextAnim.cancel();
+              resetTransforms();
+              nextEl.textContent = "";
+              currentAnim = null;
+              nextAnim = null;
+            })
+            .catch(() => {});
+          return;
+        }
+
+        // Fallback (no WAAPI)
+        currentEl.style.transition = `transform ${rollMs}ms ${rollEase}`;
+        nextEl.style.transition = `transform ${rollMs}ms ${rollEase}`;
+        void currentEl.offsetHeight;
+        currentEl.style.transform = "translate3d(0, -100%, 0)";
+        nextEl.style.transform = "translate3d(0, 0, 0)";
+        window.setTimeout(() => {
+          currentEl.style.transition = "none";
+          nextEl.style.transition = "none";
+          currentEl.textContent = next;
+          resetTransforms();
+          nextEl.textContent = "";
+          void currentEl.offsetHeight;
+          currentEl.style.transition = `transform ${rollMs}ms ${rollEase}`;
+          nextEl.style.transition = `transform ${rollMs}ms ${rollEase}`;
+        }, rollMs);
+      };
+
+      let index = Math.max(
+        0,
+        Number.parseInt(el.getAttribute("data-index") || "", 10) || 0,
+      );
+      if (!Number.isFinite(index) || index < 0 || index >= words.length) {
+        index = Math.max(
+          0,
+          words.indexOf((currentEl.textContent || "").trim()),
+        );
+      }
+      let timer = null;
+
+      const step = () => {
+        index = (index + 1) % words.length;
+        const next = words[index];
+        swapTo(next);
+        timer = window.setTimeout(step, delayFor(next));
+      };
+
+      timer = window.setTimeout(step, delayFor(words[index]));
+
+      window.addEventListener(
+        "pagehide",
+        () => {
+          if (timer) window.clearTimeout(timer);
+          currentAnim?.cancel?.();
+          nextAnim?.cancel?.();
+        },
+        { once: true },
+      );
+    })();
+  </script>
+
+  <!-- 2. WHY IBOM -->
+  <section id="why" class="bg-paper">
+    <div class="container-wide py-20">
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div>
+          <h2
+            class="text-[clamp(2.5rem,5vw,4.75rem)] font-semibold tracking-tight text-ink"
+          >
+            We create semantic data that will drive your brand
+          </h2>
+        </div>
+
+        <div class="max-w-prose text-lg leading-relaxed text-steel md:text-xl">
+          <p>
+            We see many organisations are investing in their brands and AI tools, but they often struggle to connect the two. Without a well planned operating model, brand standards and messaging rulesets are inoperable by LLMs and AI systems.
+          </p>
+          <p class="mt-6">
+            <b>The Intelligent Brand Operating Model (IBOM™)</b> enables brands to capture intent in a functional control layer. By codifying brand meaning in machine-readable semantic frameworks, IBOM translates brand integrity into an AI-ready protocol, elevating it to a first-class citizen in enterprise data operations.
+          </p>
+        </div>
+      </div>
+      <div class="mt-12 flex items-center justify-center">
+        <a
+          href="#concerns"
+          class="inline-flex items-center justify-center gap-3 rounded-md bg-strandOrange px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-ink shadow-outline hover:bg-strandOrange/90 transition-colors"
+          aria-label="Explore the next section"
+        >
+          <span>Keep Exploring</span>
+          <svg
+            class="h-6 w-6 text-ink"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 3a1 1 0 0 1 1 1v10.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4.007 4.007a1 1 0 0 1-1.414 0L6.279 13.707a1 1 0 1 1 1.414-1.414L10 14.586V4a1 1 0 0 1 1-1z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="concerns" class="bg-slate text-paper">
+    <div class="container-wide py-20">
+      <h2
+        class="text-center text-[clamp(2.5rem,5vw,4.75rem)] font-semibold tracking-tight text-paper"
+      >
+        Separation of Concerns
+      </h2>
+      <p
+        class="mx-auto mt-10 max-w-[90ch] text-lg leading-relaxed text-paper/80 md:text-xl"
+      >
+        To scale your brand in the age of AI, you must separate <b
+          >what your brand is</b
+        > from <b>how it acts</b>. Our managed services ensure your identity is
+        clearly defined so that your AI operations can execute it flawlessly.
+      </p>
+
+      <div class="mt-12 grid gap-10 lg:grid-cols-2">
+        <div
+          class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
+        >
+          <div
+            class="text-lg font-semibold tracking-[0.2em] uppercase text-strandOrange"
+          >
+            Brand definition layer
+          </div>
+          <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
+            <a
+              href="https://brandoschema.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-accent transition-colors"
+            >
+              Brando<sup>®</sup>
+            </a>
+          </div>
+          <div
+            class="mt-4 text-base font-medium leading-relaxed text-paper/80 md:text-lg"
+          >
+            <p>
+              Brando® is the "Source of Truth" for your brand. It translates
+              your brand guidelines, values, terminology, and visual rules into
+              a digital language that AI systems can actually understand and
+              follow. <br /><br />
+
+              By turning subjective ideas into structured data, Brando ensures
+              that every department and every AI tool is working from the same
+              master playbook, keeping your brand identity perfectly aligned.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
+        >
+          <div
+            class="text-lg font-semibold tracking-[0.2em] uppercase text-strandOrange"
+          >
+            Brand operating layer
+          </div>
+          <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
+            <a
+              href="/services/ibom"
+              class="hover:text-accent transition-colors"
+            >
+              IBOM<sup>™</sup>
+            </a>
+            <div
+              class="mt-4 text-base font-medium leading-relaxed text-paper/80 md:text-lg"
+            >
+              <p>
+                IBOM™ is the engine that puts your brand rules to work. It acts
+                as an automated "governor" that sits inside your AI workflows,
+                enforcing your policies in real-time as data and messages flow
+                through your system.
+                <br /><br />
+                With IBOM, brand compliance is built-in. It ensures your AI stays
+                on-brand and compliant at scale, providing a clear audit trail of
+                every interaction without slowing down your operations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p
+        class="mx-auto mt-12 max-w-[90ch] text-lg leading-relaxed text-center text-paper/80 md:text-xl"
+      >
+        Brando is your brand schema. IBOM is your enforcement engine.Together,
+        they make your brand autonomous.
+      </p>
+
+      <div class="mt-12 flex items-center justify-center">
+        <a
+          href="#uses"
+          class="inline-flex items-center justify-center gap-3 rounded-md bg-strandOrange px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-ink shadow-outline hover:bg-strandOrange/90 transition-colors"
+          aria-label="Explore the next section"
+        >
+          <span>Keep Exploring</span>
+          <svg
+            class="h-6 w-6 text-ink"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 3a1 1 0 0 1 1 1v10.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4.007 4.007a1 1 0 0 1-1.414 0L6.279 13.707a1 1 0 1 1 1.414-1.414L10 14.586V4a1 1 0 0 1 1-1z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. IBOM Framework (tabs) -->
+  <section id="uses" class="bg-paper">
+    <div class="container-wide py-20">
+      <h2
+        class="text-center text-[clamp(2.5rem,5vw,4.75rem)] font-semibold tracking-tight text-ink"
+      >
+        IBOM Framework
+      </h2>
+
+      <div class="mt-10">
+        <div
+          id="uses-tabs"
+          role="tablist"
+          aria-label="Brand Semantics IBOM Uses"
+          class="flex w-full flex-wrap items-center justify-between gap-1 rounded-md bg-fog p-2"
+        >
+          {
+            usesTabs.map((t) => (
+              <button
+                type="button"
+                role="tab"
+                aria-selected={t.key === defaultUsesKey ? "true" : "false"}
+                aria-controls={`uses-panel-${t.key}`}
+                id={`uses-tab-${t.key}`}
+                data-tab={t.key}
+                class="flex-1 rounded-md px-5 py-3 text-base font-medium text-ink/80 transition-colors hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-strandPurple/70 aria-selected:bg-strandPurple aria-selected:text-paper aria-selected:shadow-sm"
+              >
+                {t.label}
+              </button>
+            ))
+          }
+        </div>
+      </div>
+
+      <div
+        class="mt-14 grid gap-12 lg:gap-24 lg:grid-cols-[420px_1fr] lg:items-start"
+      >
+        <div
+          class="relative overflow-hidden rounded-2xl bg-slate shadow-outline"
+        >
+          <div class="aspect-square">
+            {
+              usesTabs.map((t) => (
+                <img
+                  src={t.image}
+                  alt=""
+                  aria-hidden="true"
+                  data-visual={t.key}
+                  hidden={t.key === defaultUsesKey ? undefined : true}
+                  class="h-full w-full object-cover"
+                  decoding="async"
+                  loading="lazy"
+                />
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="max-w-prose pt-2">
+          {
+            usesTabs.map((t) => (
+              <div
+                role="tabpanel"
+                id={`uses-panel-${t.key}`}
+                aria-labelledby={`uses-tab-${t.key}`}
+                data-panel={t.key}
+                hidden={t.key === defaultUsesKey ? undefined : true}
+              >
+                <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">
+                  {t.lead}
+                </div>
+                <div class="mt-4 text-2xl md:text-3xl font-semibold tracking-[0.08em] uppercase text-strandOrange">
+                  {t.heading}
+                </div>
+                <div class="mt-6 text-lg md:text-xl font-medium leading-snug text-ink">
+                  {t.subheading}
+                </div>
+                <p class="mt-5 text-base leading-relaxed text-ink/80">
+                  {t.body}
+                </p>
+
+                <a
+                  href={t.href}
+                  target={t.external ? "_blank" : undefined}
+                  rel={t.external ? "noopener noreferrer" : undefined}
+                  class="mt-12 inline-flex items-center gap-2 text-base font-semibold tracking-[0.14em] uppercase text-ink hover:text-accent transition-colors"
+                >
+                  {t.cta} <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="mt-12 flex items-center justify-center">
+        <a
+          href="#for"
+          class="inline-flex items-center justify-center gap-3 rounded-md bg-strandOrange px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-ink shadow-outline hover:bg-strandOrange/90 transition-colors"
+          aria-label="Explore the next section"
+        >
+          <span>Keep Exploring</span>
+          <svg
+            class="h-6 w-6 text-ink"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 3a1 1 0 0 1 1 1v10.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4.007 4.007a1 1 0 0 1-1.414 0L6.279 13.707a1 1 0 1 1 1.414-1.414L10 14.586V4a1 1 0 0 1 1-1z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <script is:inline define:vars={{ defaultUsesKey }}>
+      (() => {
+        const tablist = document.getElementById("uses-tabs");
+        if (!tablist) return;
+
+        const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+        const panels = new Map(
+          Array.from(document.querySelectorAll("[data-panel]")).map((el) => [
+            el.getAttribute("data-panel"),
+            el,
+          ]),
+        );
+        const visuals = new Map(
+          Array.from(document.querySelectorAll("[data-visual]")).map((el) => [
+            el.getAttribute("data-visual"),
+            el,
+          ]),
+        );
+
+        const activate = (key, focus = false) => {
+          tabs.forEach((t) => {
+            const selected = t.getAttribute("data-tab") === key;
+            t.setAttribute("aria-selected", selected ? "true" : "false");
+            t.tabIndex = selected ? 0 : -1;
+          });
+          panels.forEach((panel, panelKey) => {
+            panel.hidden = panelKey !== key;
+          });
+          visuals.forEach((visual, visualKey) => {
+            visual.hidden = visualKey !== key;
+          });
+          if (focus)
+            tabs.find((t) => t.getAttribute("data-tab") === key)?.focus();
+        };
+
+        const selected =
+          tabs.find((t) => t.getAttribute("aria-selected") === "true") ||
+          tabs[0];
+        activate(selected?.getAttribute("data-tab") || defaultUsesKey);
+
+        tabs.forEach((t) => {
+          t.addEventListener("click", () =>
+            activate(t.getAttribute("data-tab"), true),
+          );
+          t.addEventListener("keydown", (e) => {
+            if (
+              e.key !== "ArrowLeft" &&
+              e.key !== "ArrowRight" &&
+              e.key !== "Home" &&
+              e.key !== "End"
+            )
+              return;
+            e.preventDefault();
+            const currentIndex = tabs.indexOf(t);
+            const nextIndex =
+              e.key === "Home"
+                ? 0
+                : e.key === "End"
+                  ? tabs.length - 1
+                  : e.key === "ArrowRight"
+                    ? (currentIndex + 1) % tabs.length
+                    : (currentIndex - 1 + tabs.length) % tabs.length;
+            const next = tabs[nextIndex];
+            activate(next.getAttribute("data-tab"), true);
+          });
+        });
+      })();
+    </script>
+  </section>
+
+  <!-- 5. WHO IBOM IS FOR -->
+  <section id="for" class="bg-slate text-paper">
+    <div class="container-wide py-20">
+      <h2
+        class="text-center text-[clamp(2.5rem,5vw,4.75rem)] font-semibold tracking-tight text-paper"
+      >
+        The IBOM Advantage
+      </h2>
+      <p
+        class="mx-auto mt-10 max-w-[80ch] text-center text-lg leading-relaxed text-paper/80 md:text-xl"
+      >
+        Strategic outcomes for brands that need to be consistent, protected, and
+        controllable across the entire AI landscape.
+      </p>
+
+      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
+        >
+          <div
+            class="text-xs font-semibold tracking-[0.2em] uppercase text-strandOrange"
+          >
+            Risk & Safety
+          </div>
+          <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
+            Automated Guardrails
+          </div>
+          <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
+            Protect your reputation. IBOM acts as a real-time safety net,
+            catching off-brand or non-compliant AI content before it ever
+            reaches a customer.
+          </p>
+        </div>
+
+        <div
+          class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
+        >
+          <div
+            class="text-xs font-semibold tracking-[0.2em] uppercase text-strandOrange"
+          >
+            Brand Integrity
+          </div>
+          <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
+            Zero "Brand Drift"
+          </div>
+          <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
+            Maintain your exact voice and style across every channel. Whether
+            it's internal teams or external partners, everyone stays on the same
+            page.
+          </p>
+        </div>
+
+        <div
+          class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
+        >
+          <div
+            class="text-xs font-semibold tracking-[0.2em] uppercase text-strandOrange"
+          >
+            Governance
+          </div>
+          <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
+            One Shared Playbook
+          </div>
+          <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
+            Unite Marketing, Legal, and Tech. Transform vague brand ideas into a
+            single, governed source of truth that your entire organization can
+            rely on.
+          </p>
+        </div>
+
+        <div
+          class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
+        >
+          <div
+            class="text-xs font-semibold tracking-[0.2em] uppercase text-strandOrange"
+          >
+            Operational Speed
+          </div>
+          <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
+            Move Fast, Stay Safe
+          </div>
+          <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
+            Launch new AI features with confidence. Automated checks ensure that
+            scaling your operations doesn't mean compromising your brand
+            quality.
+          </p>
+        </div>
+
+        <div
+          class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
+        >
+          <div
+            class="text-xs font-semibold tracking-[0.2em] uppercase text-strandOrange"
+          >
+            Transparency
+          </div>
+          <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
+            Traceable Decisions
+          </div>
+          <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
+            Every action the AI takes is auditable. You’ll have a clear,
+            evidence-based record of how your policies were applied and why.
+          </p>
+        </div>
+
+        <div
+          class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
+        >
+          <div
+            class="text-xs font-semibold tracking-[0.2em] uppercase text-strandOrange"
+          >
+            Integration
+          </div>
+          <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
+            AI That "Gets" You
+          </div>
+          <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
+            Stop re-teaching your brand to every new tool. Your identity is
+            baked into your infrastructure, making it instantly readable by any
+            AI system.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 flex items-center justify-center">
+        <a
+          href="#leaders"
+          class="inline-flex items-center justify-center gap-3 rounded-md bg-strandOrange px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-ink shadow-outline hover:bg-strandOrange/90 transition-colors"
+          aria-label="Explore the next section"
+        >
+          <span>Keep Exploring</span>
+          <svg
+            class="h-6 w-6 text-ink"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 3a1 1 0 0 1 1 1v10.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4.007 4.007a1 1 0 0 1-1.414 0L6.279 13.707a1 1 0 1 1 1.414-1.414L10 14.586V4a1 1 0 0 1 1-1z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CUSTOMERS 
+  <section id="customers" class="bg-paper">
+    <div class="container-wide py-20">
+      <h2
+        class="text-center text-[clamp(2.2rem,4.5vw,4rem)] font-semibold tracking-tight text-ink"
+      >
+        Customers
+      </h2>
+
+      <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        {[
+          "Universal Music Group",
+          "Warner Music Group",
+          "WM",
+          "Disney Music Group",
+          "Downtown",
+          "BET",
+          "Algoriddim",
+          "Gabb",
+          "WB Post Production",
+          "AONA",
+          "Peer Music",
+          "Deluxe"
+        ].map((name) => (
+          <div class="flex items-center justify-center">
+            <div class="flex h-36 w-36 items-center justify-center rounded-full bg-fog/60 text-center text-xs font-semibold tracking-wide text-ink/70">
+              {name}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 flex items-center justify-center">
+        <a
+          href="#leaders"
+          class="inline-flex items-center justify-center gap-3 text-lg font-semibold text-ink/80 hover:text-ink transition-colors"
+          aria-label="Explore the next section"
+        >
+          <span>Keep Exploring</span>
+          <svg
+            class="h-7 w-7 text-strandOrange"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 3a1 1 0 0 1 1 1v10.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4.007 4.007a1 1 0 0 1-1.414 0L6.279 13.707a1 1 0 1 1 1.414-1.414L10 14.586V4a1 1 0 0 1 1-1z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- 7. WHY INDUSTRY LEADERS -->
+  <section id="leaders" class="bg-paper text-ink">
+    <div class="container-wide py-20">
+      <h2
+        class="text-center text-[clamp(2.4rem,5vw,4.5rem)] font-semibold tracking-tight text-ink"
+      >
+        Why Industry Leaders Use IBOM
+      </h2>
+      <p class="text-center mt-4 text-lg text-ink/70 md:text-xl">
+        Evidence from teams scaling governed AI systems across enterprise
+        workflows.
+      </p>
+
+      <div class="mt-12 grid gap-8 lg:grid-cols-3">
+        {
+          [
+            {
+              quote:
+                "IBOM gave us a clear operating layer that turned brand rules into executable policy. It closed the gap between guidelines and runtime behavior without slowing delivery.",
+              name: "Ayesha Khan",
+              title: "VP Brand Governance, Global Media Group",
+            },
+            {
+              quote:
+                "The evaluation and monitoring discipline is what changed the game. We can prove compliance, measure drift, and update safely as models evolve.",
+              name: "Tomás Herrera",
+              title: "Chief Risk Officer, Consumer Platforms",
+            },
+            {
+              quote:
+                "We finally have a single source of truth that engineers and brand teams both trust. IBOM made governance operational, not just theoretical.",
+              name: "Lena Park",
+              title: "Head of Product, AI Experiences",
+            },
+          ].map((item) => (
+            <article class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
+              <p class="text-base leading-relaxed text-ink/80 md:text-lg">
+                “{item.quote}”
+              </p>
+              <div class="mt-8 flex items-center gap-4">
+                <div class="h-12 w-12 rounded-full bg-fog" />
+                <div>
+                  <div class="text-sm font-semibold text-ink">{item.name}</div>
+                  <div class="text-xs text-ink/60">{item.title}</div>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="mt-12 flex items-center justify-center">
+        <a
+          href="#get-in-touch"
+          class="inline-flex items-center justify-center gap-3 rounded-md bg-strandOrange px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-ink shadow-outline hover:bg-strandOrange/90 transition-colors"
+          aria-label="Explore the next section"
+        >
+          <span>Keep Exploring</span>
+          <svg
+            class="h-6 w-6 text-ink"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 3a1 1 0 0 1 1 1v10.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4.007 4.007a1 1 0 0 1-1.414 0L6.279 13.707a1 1 0 1 1 1.414-1.414L10 14.586V4a1 1 0 0 1 1-1z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

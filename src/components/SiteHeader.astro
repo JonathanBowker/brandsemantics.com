@@ -1,0 +1,94 @@
+---
+const nav = [
+  {
+    label: 'Services',
+    href: '/services',
+    children: [
+      { label: 'IBOM™', href: '/services/ibom' },
+      { label: 'Services Overview', href: '/services' },
+      { label: 'Enterprise', href: '/enterprise' },
+      { label: 'Developers', href: '/developers' },
+      { label: 'MCP Servers', href: '/developers/mcp-servers' },
+      { label: 'Quickstart', href: '/developers/quickstart' }
+    ]
+  },
+  { label: 'Use Cases', href: '/use-cases' },
+  { label: 'Opinions', href: '/blog' },
+  { label: 'Resources', href: '/resources' },
+  {
+    label: 'Company',
+    href: '/company/about',
+    children: [
+      { label: 'About', href: '/company/about' },
+      { label: 'Security', href: '/company/security' },
+      { label: 'Contact', href: '/company/contact' },
+      { label: 'Privacy', href: '/legal/privacy' },
+      { label: 'Terms', href: '/legal/terms' }
+    ]
+  }
+];
+---
+<header class="fixed top-0 z-50 w-full border-b border-paper/10 bg-ink/95 backdrop-blur">
+  <div class="container-nav flex items-center justify-between py-5 md:py-7">
+    <a href="/" class="flex items-center gap-3 text-paper justify-self-start">
+      <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-accent text-ink font-bold md:h-11 md:w-11 md:text-lg">B</span>
+      <span class="text-lg font-semibold tracking-tight md:text-xl">Brand Semantics</span>
+    </a>
+    <a
+      href="#get-in-touch"
+      class="md:hidden rounded-md bg-strandGreen px-4 py-2 text-sm font-semibold text-ink shadow-outline hover:bg-strandGreen/90 transition-colors"
+    >
+      Get in touch
+    </a>
+    <div class="hidden md:flex md:items-center md:gap-6">
+      <nav class="flex items-center gap-8 text-base text-paper/80">
+        {nav.map((item) =>
+          item.children ? (
+            <div class="relative group after:absolute after:inset-x-0 after:top-full after:h-4 after:content-[''] after:bg-transparent">
+              <a
+                href={item.href}
+                class="inline-flex items-center gap-2 hover:text-paper transition-colors"
+                aria-haspopup="true"
+              >
+                {item.label}
+                <svg
+                  class="h-4 w-4 opacity-60 transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M5.75 7.75L10 12l4.25-4.25" />
+                </svg>
+              </a>
+
+              <div class="absolute left-1/2 top-full z-50 mt-2 w-[320px] -translate-x-1/2 translate-y-2 scale-[0.98] opacity-0 pointer-events-none transition-all duration-200 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:scale-100 group-focus-within:opacity-100 group-focus-within:pointer-events-auto">
+                <div class="rounded-xl bg-[#d8f6ff] p-3 shadow-outline">
+                  <div class="grid">
+                    {item.children.map((child) => (
+                      <a
+                        href={child.href}
+                        class="rounded-lg px-5 py-4 text-sm font-semibold text-ink/90 hover:bg-white/50 hover:text-ink transition-colors"
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a href={item.href} class="inline-flex items-center hover:text-paper transition-colors">
+              {item.label}
+            </a>
+          )
+        )}
+      </nav>
+      <a
+        href="#get-in-touch"
+        class="rounded-md bg-strandGreen px-5 py-2.5 text-sm font-semibold text-ink shadow-outline hover:bg-strandGreen/90 transition-colors"
+      >
+        Get in touch
+      </a>
+    </div>
+  </div>
+</header>

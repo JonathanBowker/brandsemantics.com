@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap");
+@config "../../tailwind.config.js";
+@import "tailwindcss";
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background-color: var(--color-paper);
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Anchor targets should clear the fixed header */
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  body {
+    font-family: var(--font-body);
+    margin: 0;
+    min-height: 100vh;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: var(--color-background, var(--color-paper));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  h1 {
+    line-height: 1.1;
+  }
+
+  h2,
+  h3 {
+    line-height: 1.2;
+  }
+
+  h4,
+  h5,
+  h6 {
+    line-height: 1.4;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::selection {
+    background: var(--color-fog);
+  }
+}
+
+@layer components {
+  /* Case study pages use a full-bleed header; remove the global header divider. */
+  .font-masthead {
+    font-family: var(--font-masthead);
+  }
+
+  .hero-strands {
+    display: block;
+    max-width: none;
+  }
+
+  .container-wide {
+    width: min(1080px, 92vw);
+    margin-inline: auto;
+  }
+
+  /* Keep the nav/header at the original width. */
+  .container-nav {
+    width: min(1200px, 92vw);
+    margin-inline: auto;
+  }
+
+  .container-narrow {
+    width: min(684px, 92vw);
+    margin-inline: auto;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--color-steel);
+  }
+
+  .prose {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-slate);
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .prose h1 {
+    font-size: clamp(2.5rem, 3vw + 1.5rem, 3.5rem);
+  }
+
+  /* Use cases render their own page title; keep in-content H1s subtitle-sized. */
+  .prose.prose-case-study h1 {
+    font-size: clamp(1.75rem, 1.6vw + 1.1rem, 2.25rem);
+    margin-top: 0.5rem;
+  }
+
+  /* Ensure ## remains smaller than # within case study content. */
+  .prose.prose-case-study h2 {
+    font-size: clamp(1.5rem, 1.2vw + 0.95rem, 2rem);
+    margin-top: 1.5rem;
+  }
+
+  /* Prevent collapsed margins from creating a background "stripe" above the first heading. */
+  .prose.prose-case-study > :first-child {
+    margin-top: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+
+  .prose h2 {
+    font-size: clamp(2rem, 2.2vw + 1.25rem, 2.75rem);
+  }
+
+  .prose h3 {
+    font-size: clamp(1.5rem, 1.5vw + 1rem, 2rem);
+  }
+
+  .prose p {
+    margin: 1rem 0;
+  }
+
+  .prose ul,
+  .prose ol {
+    padding-left: 1.5rem;
+  }
+
+  .prose li {
+    margin: 0.5rem 0;
+  }
+
+  .prose code {
+    font-family: var(--font-mono);
+    font-size: 0.95em;
+    background: var(--color-fog);
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.35rem;
+  }
+
+  .prose pre {
+    background: var(--color-slate);
+    color: #f5f5f5;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+  }
+
+  /* Prevent inline-code styling from affecting fenced code blocks. */
+  .prose pre code {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+    display: block;
+  }
+
+  .prose blockquote {
+    border-left: 3px solid var(--color-accent);
+    padding-left: 1rem;
+    color: var(--color-steel);
+    margin: 1.5rem 0;
+  }
+
+  .callout {
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    border: 1px solid var(--color-fog);
+    background: white;
+    box-shadow: var(--shadow-outline);
+  }
+
+  .callout-title {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout-note {
+    border-left: 4px solid var(--color-signal);
+  }
+
+  .callout-warning {
+    border-left: 4px solid var(--color-warning);
+  }
+
+  .callout-insight {
+    border-left: 4px solid var(--color-accent);
+  }
+}
+
+@layer utilities {
+  .case-study header {
+    border-bottom-width: 0 !important;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
