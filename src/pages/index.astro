@@ -31,10 +31,10 @@ const usesTabs = [
     image: usesAssessmentImg,
   },
   {
-    key: "context_understanding",
-    label: "2. Context Understanding",
+    key: "context_definition",
+    label: "2. Context Definition",
     lead: "Phase 2",
-    heading: "CONTEXT UNDERSTANDING",
+    heading: "CONTEXT DEFINITION",
     subheading: "Identify, describe, and validate the data sources.",
     body: "We establish what data the model has to work with. MCP tools are only as reliable as the data they access—a tool that is authoritative-sounding but delivers untrustworthy data is more dangerous than no tool at all. This phase systematically identifies all candidate data sources, describes their structure and provenance, assesses their coverage against the use cases defined in Phase 1, and validates their quality and authority.",
     href: "#get-in-touch",
@@ -54,10 +54,10 @@ const usesTabs = [
     image: usesOperationImg,
   },
   {
-    key: "prompt_engineering",
-    label: "4. System Tooling",
+    key: "system_engineering",
+    label: "4. System Engineering",
     lead: "Phase 4",
-    heading: "SYSTEM TOOLING",
+    heading: "SYSTEM ENGINEERING",
     subheading: "Design, test, and refine tools, workflows, and guardrails.",
     body: "Before deployment, we validate your policies in a controlled environment. We test how multiple Large Language Models interpret your rules and identify edge cases or policy conflicts. This phase provides measurable proof that your logic is correctly understood and enforced by AI systems before reaching production.",
     href: "#get-in-touch",
@@ -73,7 +73,7 @@ const usesTabs = [
     body: "We conduct comprehensive system validation to ensure accuracy, safety, and regulatory compliance. This includes adversarial testing, edge case analysis, bias detection, and policy adherence verification. The outputs provide documented evidence that your system meets operational, legal, and ethical standards before production deployment.",
     href: "#get-in-touch",
     cta: "Get in touch",
-    image: usesEvaluationImg,
+    image: usesOptimisationImg,
   },
   {
     key: "system_deployment",
@@ -84,7 +84,7 @@ const usesTabs = [
     body: "Your logic is now operational. Using the Model Context Protocol (MCP), we embed your policies directly into AI infrastructure as callable, auditable functions. MCP ensures your business rules are enforced in real-time across distributed systems. We establish continuous monitoring to track policy adherence, detect semantic drift, and maintain operational integrity at scale.",
     href: "#get-in-touch",
     cta: "Get in touch",
-    image: usesOptimisationImg,
+    image: usesEvaluationImg,
   },
 ] as const;
 const defaultUsesKey = usesTabs[0].key;
@@ -358,7 +358,7 @@ const page = {
             Many organisations invest in operations and AI tools, but struggle
             to make them interoperate. Business logic, brand standards,
             compliance policies, and operational procedures live in documents
-            and tribal knowledge, invisible to AI systems.
+            and tribal knowledge, making them inaccessible to AI systems.
           </p>
           <p class="mt-6">
             <b>The Intelligent Business Operating Model (IBOM™)</b> transforms business
