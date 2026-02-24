@@ -142,9 +142,22 @@ const page = {
           <div class="mt-8 flex flex-wrap gap-4">
             <a
               href="#get-in-touch"
-              class="inline-flex items-center justify-center rounded-md bg-strandGreen px-6 py-3 text-xs font-semibold leading-none tracking-[0.14em] uppercase text-ink shadow-outline transition-colors hover:bg-strandGreen/90"
+              class="inline-flex items-center justify-center gap-2 rounded-md bg-strandGreen px-6 py-3 text-xs font-semibold leading-none tracking-[0.14em] uppercase text-ink shadow-outline transition-colors hover:bg-strandGreen/90"
             >
               Get in touch
+              <svg
+                class="h-4 w-4"
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 10h12" />
+                <path d="M12 6l4 4-4 4" />
+              </svg>
             </a>
             <a
               href="#why"
@@ -594,7 +607,20 @@ const page = {
                   rel={t.external ? "noopener noreferrer" : undefined}
                   class="mt-12 inline-flex items-center gap-2 text-base font-semibold tracking-[0.14em] uppercase text-ink hover:text-accent transition-colors"
                 >
-                  {t.cta} <span aria-hidden="true">→</span>
+                  {t.cta}
+                  <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 10h12" />
+                    <path d="M12 6l4 4-4 4" />
+                  </svg>
                 </a>
               </div>
             ))
