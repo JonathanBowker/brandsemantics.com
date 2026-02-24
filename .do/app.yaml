@@ -1,0 +1,9 @@
+name: brandsemantics-com
+region: lon
+static_sites:
+  - name: web
+    git:
+      branch: main
+      repo_clone_url: https://github.com/JonathanBowker/brandsemantics.com.git
+    build_command: pnpm build
+    output_dir: dist
