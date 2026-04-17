@@ -14,7 +14,7 @@
 
   <rect class="bg" x="0" y="0" width="1200" height="360" rx="24" />
 
-  <text x="60" y="70" class="title ink">IBOM™ Lifecycle</text>
+  <text x="60" y="70" class="title ink">IBOM<sup>®</sup> Lifecycle</text>
   <text x="60" y="98" class="small steel">A repeatable operating model from assessment to assurance.</text>
 
   <!-- Timeline rail -->

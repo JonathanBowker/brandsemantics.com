@@ -1,8 +1,8 @@
-# BrandSemantics.com
+# Advanced Analytica
 
-**BrandSemantics.com is a Centre of Excellence for brand data management, helping businesses implement and optimise AI management through structured brand data, governance, and standards.**
+**Advanced Analytica is a Centre of Excellence for brand data management, helping businesses implement and optimise AI management through structured brand data, governance, and standards.**
 
-This repository powers [BrandSemantics.com](https://brandsemantics.com), providing tools, frameworks, and resources to help organisations make their brand meaning and identity machine-readable, discoverable, and actionable in AI systems.
+This repository powers [advancedanalytica.co.uk](https://advancedanalytica.co.uk), providing tools, frameworks, and resources to help organisations make their brand meaning and identity machine-readable, discoverable, and actionable in AI systems.
 
 ## 🚀 What’s Inside?
 
@@ -11,7 +11,7 @@ This repository powers [BrandSemantics.com](https://brandsemantics.com), providi
 - **Reference Implementations**: Sample data sets, templates, and code for building brand knowledge graphs and deploying brand-linked data.
 - **Tools & Utilities**: Scripts for mapping, validating, and operationalising brand semantics.
 
-## 🌐 Why BrandSemantics.com?
+## 🌐 Why Advanced Analytica?
 
 As AI becomes central to business, structured brand data is essential for:
 - Consistent brand governance and compliance (ISO 42001-ready)
@@ -32,4 +32,4 @@ pnpm build
 - Build command: `pnpm build`
 - Output directory: `dist/`
 
-**Learn more or join the community at [BrandSemantics.com](https://brandsemantics.com).**
+**Learn more or join the community at [advancedanalytica.co.uk](https://advancedanalytica.co.uk).**

@@ -12,7 +12,7 @@ export async function GET() {
   const feedUrl = `${SITE_URL}/feeds/opinions.jsonld`;
   const payload = buildDataFeed({
     feedUrl,
-    name: 'Brand Semantics Opinions',
+    name: 'Advanced Analytica Opinions',
     description: 'Opinionated perspectives on operating brand as policy-aware systems.',
     items: posts.map((post) => ({
       url: `${SITE_URL}/blog/${encodeURIComponent(post.slug)}/`,

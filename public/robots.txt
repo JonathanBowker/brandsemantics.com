@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brandsemantics.com/sitemap-index.xml
+Sitemap: https://advancedanalytica.co.uk/sitemap-index.xml

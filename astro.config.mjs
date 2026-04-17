@@ -9,7 +9,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  site: 'https://brandsemantics.com',
+  site: 'https://advancedanalytica.co.uk',
   vite: {
     plugins: [tailwindcss()]
   },

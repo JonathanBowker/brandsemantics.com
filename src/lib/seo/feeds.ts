@@ -1,4 +1,4 @@
-import { IBOM, ORGANIZATION, SITE_NAME, SITE_URL } from './site';
+import { IBOM, ORGANisaTION, SITE_NAME, SITE_URL } from './site';
 
 type FeedItem = {
   url: string;
@@ -32,7 +32,7 @@ export const buildDataFeed = ({ feedUrl, name, description, items }: DataFeedOpt
     ensureUrl(item.url, `items[${index}].url`);
   });
 
-  const organizationId = `${SITE_URL}#organization`;
+  const organisationId = `${SITE_URL}#organisation`;
   const websiteId = `${SITE_URL}#website`;
   const serviceId = `${IBOM.url}#service`;
   const feedId = `${feedUrl}#datafeed`;
@@ -44,11 +44,11 @@ export const buildDataFeed = ({ feedUrl, name, description, items }: DataFeedOpt
 
   const graph: Record<string, unknown>[] = [
     {
-      '@type': 'Organization',
-      '@id': organizationId,
-      name: ORGANIZATION.name,
-      url: ORGANIZATION.url,
-      description: ORGANIZATION.description,
+      '@type': 'Organisation',
+      '@id': organisationId,
+      name: ORGANisaTION.name,
+      url: ORGANisaTION.url,
+      description: ORGANisaTION.description,
       knowsAbout: [serviceId]
     },
     {
@@ -56,7 +56,7 @@ export const buildDataFeed = ({ feedUrl, name, description, items }: DataFeedOpt
       '@id': websiteId,
       name: SITE_NAME,
       url: SITE_URL,
-      publisher: { '@id': organizationId }
+      publisher: { '@id': organisationId }
     },
     {
       '@type': 'DataFeed',
@@ -65,7 +65,7 @@ export const buildDataFeed = ({ feedUrl, name, description, items }: DataFeedOpt
       name,
       description,
       isPartOf: { '@id': websiteId },
-      publisher: { '@id': organizationId },
+      publisher: { '@id': organisationId },
       dateModified,
       dataFeedElement: items.map((item) => ({
         '@type': 'DataFeedItem',
@@ -78,9 +78,9 @@ export const buildDataFeed = ({ feedUrl, name, description, items }: DataFeedOpt
           description: item.description,
           author: item.author
             ? {
-                '@type': 'Organization',
+                '@type': 'Organisation',
                 name: item.author,
-                url: ORGANIZATION.url
+                url: ORGANisaTION.url
               }
             : undefined,
           keywords: item.tags?.join(', '),

@@ -12,7 +12,7 @@ export async function GET() {
   const feedUrl = `${SITE_URL}/feeds/resources.jsonld`;
   const payload = buildDataFeed({
     feedUrl,
-    name: 'Brand Semantics Resources',
+    name: 'Advanced Analytica Resources',
     description: 'Guides, checklists, and templates for policy-aware brand systems.',
     items: resources.map((item) => ({
       url: `${SITE_URL}/resources/${encodeURIComponent(item.slug)}/`,

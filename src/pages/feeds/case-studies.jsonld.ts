@@ -12,8 +12,8 @@ export async function GET() {
   const feedUrl = `${SITE_URL}/feeds/case-studies.jsonld`;
   const payload = buildDataFeed({
     feedUrl,
-    name: 'Brand Semantics Use Cases',
-    description: 'Real-world examples of IBOM™ in action: policy, execution, and assurance.',
+    name: 'Advanced Analytica Use Cases',
+    description: 'Real-world examples of IBOM<sup>®</sup> in action: policy, execution, and assurance.',
     items: posts.map((post) => ({
       url: `${SITE_URL}/use-cases/${encodeURIComponent(post.slug)}/`,
       title: post.data.title,

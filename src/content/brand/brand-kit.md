@@ -2,7 +2,7 @@
 title: Brand Kit
 ---
 
-# Brand Semantics
+# Advanced Analytica
 
 **Tagline:** Make Brand Operable
 

@@ -8,25 +8,25 @@ export async function GET() {
 
   const payload = buildDataFeed({
     feedUrl,
-    name: 'Brand Semantics Feeds',
+    name: 'Advanced Analytica Feeds',
     description: 'Schema.org DataFeeds for Use Cases, Opinions, and Resources.',
     items: [
       {
         url: `${SITE_URL}/feeds/use-cases.jsonld`,
         title: 'Use Cases Feed',
-        description: 'Latest use cases from Brand Semantics.',
+        description: 'Latest use cases from Advanced Analytica.',
         itemType: 'DataFeed'
       },
       {
         url: `${SITE_URL}/feeds/opinions.jsonld`,
         title: 'Opinions Feed',
-        description: 'Latest opinions from Brand Semantics.',
+        description: 'Latest opinions from Advanced Analytica.',
         itemType: 'DataFeed'
       },
       {
         url: `${SITE_URL}/feeds/resources.jsonld`,
         title: 'Resources Feed',
-        description: 'Latest resources from Brand Semantics.',
+        description: 'Latest resources from Advanced Analytica.',
         itemType: 'DataFeed'
       }
     ]

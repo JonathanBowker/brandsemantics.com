@@ -6,7 +6,7 @@ export async function GET() {
   const staticPages = [
     {
       title: 'Home',
-      description: 'Brand Semantics overview and IBOM introduction.',
+      description: 'Advanced Analytica overview and IBOM introduction.',
       url: '/',
       type: 'Page'
     },
@@ -17,7 +17,7 @@ export async function GET() {
       type: 'Page'
     },
     {
-      title: 'IBOM™',
+      title: 'IBOM<sup>®</sup>',
       description: 'Intelligent Brand Operating Model overview.',
       url: '/services/ibom',
       type: 'Page'
@@ -48,7 +48,7 @@ export async function GET() {
     },
     {
       title: 'Use Cases',
-      description: 'Real-world examples of IBOM™ in action.',
+      description: 'Real-world examples of IBOM<sup>®</sup> in action.',
       url: '/use-cases',
       type: 'Page'
     },
@@ -66,13 +66,13 @@ export async function GET() {
     },
     {
       title: 'Company',
-      description: 'About Brand Semantics.',
+      description: 'About Advanced Analytica.',
       url: '/company/about',
       type: 'Page'
     },
     {
       title: 'Contact',
-      description: 'Get in touch with Brand Semantics.',
+      description: 'Get in touch with Advanced Analytica.',
       url: '/company/contact',
       type: 'Page'
     },

@@ -11,7 +11,7 @@
     <path d="M220 390c64-30 136-30 200 0" />
   </g>
 
-  <!-- Localization pins -->
+  <!-- Localisation pins -->
   <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
     <path d="M468 460c0 44-56 94-56 94s-56-50-56-94a56 56 0 1 1 112 0z" stroke="#ddf952" opacity=".85" />
     <circle cx="412" cy="460" r="16" stroke="#ddf952" opacity=".85" />

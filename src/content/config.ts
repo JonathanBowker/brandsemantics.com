@@ -7,7 +7,7 @@ const blog = defineCollection({
     description: z.string(),
     coverImage: z.string().optional(),
     publishedAt: z.date(),
-    author: z.string().default('Brand Semantics'),
+    author: z.string().default('Advanced Analytica'),
     tags: z.array(z.string()),
     series: z.string().optional(),
     draft: z.boolean().default(false)
@@ -21,7 +21,7 @@ const caseStudies = defineCollection({
     description: z.string(),
     coverImage: z.string().optional(),
     publishedAt: z.date(),
-    author: z.string().default('Brand Semantics'),
+    author: z.string().default('Advanced Analytica'),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false)
   })

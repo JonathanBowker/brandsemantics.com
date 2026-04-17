@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_URL } from '../../lib/seo/site';
 
-const title = 'IBOM™';
+const title = 'IBOM<sup>®</sup>';
 const description = 'This page has moved.';
 
 const targetPath = '/services/ibom/';
@@ -15,7 +15,7 @@ const page = {
   breadcrumbs: [
     { name: 'Home', url: `${SITE_URL}/` },
     { name: 'Services', url: `${SITE_URL}/services/` },
-    { name: 'IBOM™', url: targetUrl }
+    { name: 'IBOM<sup>®</sup>', url: targetUrl }
   ]
 };
 ---
@@ -27,7 +27,7 @@ const page = {
   <section class="container-wide py-16">
     <h1 class="text-3xl font-semibold tracking-tight text-ink">Redirecting…</h1>
     <p class="mt-4 text-steel">
-      This page has moved to <a class="underline hover:text-ink" href={targetPath}>IBOM™</a>.
+      This page has moved to <a class="underline hover:text-ink" href={targetPath}>IBOM<sup>®</sup></a>.
     </p>
   </section>
 

@@ -1,4 +1,4 @@
-import { BRANDO_SCHEMA_URL, IBOM, ORGANIZATION, SITE_NAME, SITE_URL } from './site';
+import { BRANDO_SCHEMA_URL, IBOM, ORGANisaTION, SITE_NAME, SITE_URL } from './site';
 
 type Breadcrumb = {
   name: string;
@@ -53,7 +53,7 @@ export const buildGraph = (page: PageMeta) => {
     ensureUrl(crumb.url, `breadcrumb[${index}].url`);
   });
 
-  const organizationId = `${SITE_URL}#organization`;
+  const organisationId = `${SITE_URL}#organisation`;
   const websiteId = `${SITE_URL}#website`;
   const serviceId = `${IBOM.url}#service`;
   const brandoId = `${BRANDO_SCHEMA_URL}#project`;
@@ -61,11 +61,11 @@ export const buildGraph = (page: PageMeta) => {
 
   const graph: Record<string, unknown>[] = [
     {
-      '@type': 'Organization',
-      '@id': organizationId,
-      name: ORGANIZATION.name,
-      url: ORGANIZATION.url,
-      description: ORGANIZATION.description,
+      '@type': 'Organisation',
+      '@id': organisationId,
+      name: ORGANisaTION.name,
+      url: ORGANisaTION.url,
+      description: ORGANisaTION.description,
       knowsAbout: [serviceId, brandoId]
     },
     {
@@ -73,7 +73,7 @@ export const buildGraph = (page: PageMeta) => {
       '@id': websiteId,
       name: SITE_NAME,
       url: SITE_URL,
-      publisher: { '@id': organizationId }
+      publisher: { '@id': organisationId }
     },
     {
       '@type': 'WebPage',
@@ -91,7 +91,7 @@ export const buildGraph = (page: PageMeta) => {
       name: IBOM.name,
       description: IBOM.description,
       url: IBOM.url,
-      provider: { '@id': organizationId },
+      provider: { '@id': organisationId },
       isBasedOn: { '@id': brandoId }
     },
     {
@@ -99,7 +99,7 @@ export const buildGraph = (page: PageMeta) => {
       '@id': brandoId,
       name: 'Brando Schema',
       url: BRANDO_SCHEMA_URL,
-      creator: { '@id': organizationId }
+      creator: { '@id': organisationId }
     },
     {
       '@type': 'BreadcrumbList',
@@ -123,11 +123,11 @@ export const buildGraph = (page: PageMeta) => {
       datePublished: page.article.publishedAt.toISOString(),
       dateModified: (page.article.modifiedAt ?? page.article.publishedAt).toISOString(),
       author: {
-        '@type': 'Organization',
-        name: page.article.author ?? ORGANIZATION.name,
-        url: ORGANIZATION.url
+        '@type': 'Organisation',
+        name: page.article.author ?? ORGANisaTION.name,
+        url: ORGANisaTION.url
       },
-      publisher: { '@id': organizationId },
+      publisher: { '@id': organisationId },
       mainEntityOfPage: { '@id': pageId },
       keywords: page.article.tags?.join(', '),
       articleSection: page.article.section,

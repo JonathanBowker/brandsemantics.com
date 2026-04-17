@@ -9,7 +9,7 @@ import usesEvaluationImg from "../components/uses/evaluation.svg?url";
 import usesOperationImg from "../components/uses/operation.svg?url";
 import usesOptimisationImg from "../components/uses/optimisation.svg?url";
 
-const title = "Intelligent Business Operating Model (IBOM™)";
+const title = "Intelligent Business Operating Model (IBOM<sup>®</sup>)";
 const description =
   "Turn business logic into governed, executable infrastructure for AI systems — starting with brand governance.";
 const mastheadWords = ["governed", "auditable", "executable"] as const;
@@ -20,71 +20,70 @@ const mastheadStartIndex = Math.max(
 );
 const usesTabs = [
   {
-    key: "domain_understanding",
-    label: "1. Domain Understanding",
+    key: "business_alignment",
+    label: "1. Business Alignment",
     lead: "Phase 1",
-    heading: "DOMAIN UNDERSTANDING",
-    subheading: "Establish the business objectives of the system.",
-    body: "This is the strategic foundation of the entire engagement. We ensure all subsequent work is anchored to real business objectives rather than technical enthusiasm. By the end of this phase, you and our team share a documented, agreed understanding of what IBOM must deliver, how success will be measured, what constraints apply, and what the implementation roadmap looks like.",
+    heading: "BUSINESS ALIGNMENT",
+    subheading: "Establish strategic objectives and success criteria.",
+    body: "Establish the strategic objectives and success criteria for AI systems. We ensure all subsequent work anchors to real business outcomes rather than technical enthusiasm. By the end of this phase, stakeholders share a documented understanding of what the system must deliver, how success will be measured, what constraints apply, and what the roadmap looks like.",
     href: "#get-in-touch",
     cta: "Get in touch",
     image: usesAssessmentImg,
   },
   {
-    key: "context_definition",
-    label: "2. Context Definition",
+    key: "source_validation",
+    label: "2. Source Validation",
     lead: "Phase 2",
-    heading: "CONTEXT DEFINITION",
-    subheading: "Identify, describe, and validate the data sources.",
-    body: "We establish what data the model has to work with. MCP tools are only as reliable as the data they access—a tool that is authoritative-sounding but delivers untrustworthy data is more dangerous than no tool at all. This phase systematically identifies all candidate data sources, describes their structure and provenance, assesses their coverage against the use cases defined in Phase 1, and validates their quality and authority.",
+    heading: "SOURCE VALIDATION",
+    subheading: "Identify and verify data authority and tool access.",
+    body: "Identify, describe, and validate the data sources and tools that will power AI systems. We systematically discover all candidate data sources, assess their coverage, validate their quality and authority, and establish their provenance. This phase maps available APIs, databases, and integration points while ensuring AI systems work with trustworthy, reliable foundations.",
     href: "#get-in-touch",
     cta: "Get in touch",
     image: usesDefinitionImg,
   },
   {
-    key: "data_preparation",
-    label: "3. Data Preparation",
+    key: "logic_codification",
+    label: "3. Logic Codification",
     lead: "Phase 3",
-    heading: "DATA PREPARATION",
-    subheading:
-      "Codify business logic into machine-readable format.",
-    body: "This is where your logic becomes machine-executable. We translate your business rules, policies, and standards into structured semantic schemas using Brando®. By codifying your operational logic into queryable datasets, we ensure your business intent becomes enforceable protocol that AI systems can read, validate, and execute.",
-    href: "#get-in-touch",
-    cta: "Get in touch",
-    image: usesOperationImg,
-  },
-  {
-    key: "system_engineering",
-    label: "4. System Engineering",
-    lead: "Phase 4",
-    heading: "SYSTEM ENGINEERING",
-    subheading: "Design, test, and refine tools, workflows, and guardrails.",
-    body: "Before deployment, we validate your policies in a controlled environment. We test how multiple Large Language Models interpret your rules and identify edge cases or policy conflicts. This phase provides measurable proof that your logic is correctly understood and enforced by AI systems before reaching production.",
+    heading: "LOGIC CODIFICATION",
+    subheading: "Translate policy into executable infrastructure.",
+    body: "Translate business rules, brand standards, and operational policies into machine-executable infrastructure. Using Brando<sup>®</sup>, we codify your governance logic into structured semantic schemas that AI systems can query, validate, and enforce. Your business intent becomes operational protocol that guides every AI decision and action.",
     href: "#get-in-touch",
     cta: "Get in touch",
     image: usesCodificationImg,
   },
   {
-    key: "system_evaluation",
-    label: "5. System Evaluation",
-    lead: "Phase 5",
-    heading: "SYSTEM EVALUATION",
-    subheading: "Validate that the model is correct, safe, and compliant.",
-    body: "We conduct comprehensive system validation to ensure accuracy, safety, and regulatory compliance. This includes adversarial testing, edge case analysis, bias detection, and policy adherence verification. The outputs provide documented evidence that your system meets operational, legal, and ethical standards before production deployment.",
+    key: "solution_engineering",
+    label: "4. Solution Engineering",
+    lead: "Phase 4",
+    heading: "SOLUTION ENGINEERING",
+    subheading: "Design and build governed AI systems.",
+    body: "Design, build, and refine AI systems within a governed framework. We develop workflows, decision architectures, and guardrails that operationalise your codified logic. Whether deploying assistants, autonomous agents, or integrated tools, solutions are tested in controlled environments to validate that policies are correctly understood before reaching production.",
     href: "#get-in-touch",
     cta: "Get in touch",
-    image: usesOptimisationImg,
+    image: usesOperationImg,
   },
   {
-    key: "system_deployment",
-    label: "6. System Deployment",
-    lead: "Phase 6",
-    heading: "SYSTEM DEPLOYMENT",
-    subheading: "Deploy the model into production and establish monitoring.",
-    body: "Your logic is now operational. Using the Model Context Protocol (MCP), we embed your policies directly into AI infrastructure as callable, auditable functions. MCP ensures your business rules are enforced in real-time across distributed systems. We establish continuous monitoring to track policy adherence, detect semantic drift, and maintain operational integrity at scale.",
+    key: "assurance_compliance",
+    label: "5. Assurance & Compliance",
+    lead: "Phase 5",
+    heading: "ASSURANCE & COMPLIANCE",
+    subheading: "Validate safety, accuracy, and regulatory adherence.",
+    body: "Validate that AI systems meet accuracy, safety, and regulatory standards. We conduct comprehensive testing including adversarial scenarios, edge case analysis, bias detection, and policy adherence verification. This phase provides documented evidence of operational, legal, and ethical compliance before production deployment.",
     href: "#get-in-touch",
     cta: "Get in touch",
     image: usesEvaluationImg,
+  },
+  {
+    key: "controlled_deployment",
+    label: "6. Controlled Deployment",
+    lead: "Phase 6",
+    heading: "CONTROLLED DEPLOYMENT",
+    subheading: "Deploy with monitoring and continuous governance.",
+    body: "Launch AI systems into production with continuous governance and monitoring. Using Model Context Protocol (MCP), we embed your policies as auditable, enforceable functions within AI infrastructure. We establish real-time monitoring to track policy adherence, detect semantic drift, and maintain operational integrity at scale.",
+    href: "#get-in-touch",
+    cta: "Get in touch",
+    image: usesOptimisationImg,
   },
 ] as const;
 const defaultUsesKey = usesTabs[0].key;
@@ -107,7 +106,7 @@ const page = {
       <div class="grid gap-12 lg:items-center">
         <div>
           <div class="eyebrow mb-12 text-base text-paper/80">
-            Brand-first governance for enterprise AI
+            Knowledge-first. Expert-led. AI-assisted.
           </div>
           <h1
             class="font-masthead text-[clamp(2.95rem,5.6vw,5.15rem)] font-semibold tracking-tight text-paper leading-[1] max-w-[52rem] md:max-w-[56rem] lg:max-w-none lg:whitespace-nowrap"
@@ -116,7 +115,7 @@ const page = {
             <span
               class="inline-flex flex-wrap lg:flex-nowrap items-baseline gap-x-3"
             >
-              <span>Making logic</span>
+              <span>Making knowledge</span>
               <span
                 id="brand-rotate"
                 class="relative inline-flex h-[1.35em] min-w-[13ch] align-baseline items-baseline text-strandOrange overflow-hidden leading-[1] text-left"
@@ -155,8 +154,8 @@ const page = {
                 stroke-linejoin="round"
                 aria-hidden="true"
               >
-                <path d="M4 10h12" />
-                <path d="M12 6l4 4-4 4" />
+                <path d="M4 10h12"></path>
+                <path d="M12 6l4 4-4 4"></path>
               </svg>
             </a>
             <a
@@ -362,7 +361,7 @@ const page = {
           <h2
             class="text-[clamp(2.5rem,5vw,4.75rem)] font-semibold tracking-tight text-ink"
           >
-            We turn your business logic into AI-ready infrastructure
+            We transform your business into AI-ready infrastructure
           </h2>
         </div>
 
@@ -374,10 +373,10 @@ const page = {
             and tribal knowledge, making them inaccessible to AI systems.
           </p>
           <p class="mt-6">
-            <b>The Intelligent Business Operating Model (IBOM™)</b> transforms business
-            logic into executable infrastructure. Starting with brand governance
-            and expanding into compliance, operations, and beyond, we codify
-            policies to make governance enforceable across AI workflows.
+            <b>The Intelligent Business Operating Model (IBOM<sup>®</sup>)</b> transforms business
+            logic into executable infrastructure. Starting with brand governance and
+            expanding into compliance, operations, and beyond, we codify policies
+            to make governance enforceable across AI workflows.
           </p>
         </div>
       </div>
@@ -408,7 +407,7 @@ const page = {
       <h2
         class="text-center text-[clamp(2.5rem,5vw,4.75rem)] font-semibold tracking-tight text-paper"
       >
-        Separation of Concerns
+        Definition vs. Execution
       </h2>
       <p
         class="mx-auto mt-10 max-w-[90ch] text-lg leading-relaxed text-paper/80 md:text-xl"
@@ -427,7 +426,7 @@ const page = {
           <div
             class="text-lg font-semibold tracking-[0.2em] uppercase text-strandOrange"
           >
-            Schema Layer
+            Schema Definition
           </div>
           <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
             <a
@@ -436,14 +435,14 @@ const page = {
               rel="noopener noreferrer"
               class="hover:text-accent transition-colors"
             >
-              Brando<sup>®</sup>
+              Brando<sup><sup>®</sup></sup>
             </a>
           </div>
           <div
             class="mt-4 text-base font-medium leading-relaxed text-paper/80 md:text-lg"
           >
             <p>
-              Brando<sup>®</sup> is an open-source semantic schema language that codifies
+              Brando<sup><sup>®</sup></sup> is an open-source semantic schema language that codifies
               business logic – brand standards, operational policies, compliance rules
               into machine-readable format. It provides standardised vocabulary, taxonomies,
               and data structures that AI systems query to understand organisational
@@ -463,7 +462,7 @@ const page = {
           <div
             class="text-lg font-semibold tracking-[0.2em] uppercase text-strandOrange"
           >
-            Operations Layer
+            Operations Execution
           </div>
           <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
             <a
@@ -477,7 +476,7 @@ const page = {
             class="mt-4 text-base font-medium leading-relaxed text-paper/80 md:text-lg"
           >
             <p>
-              IBOM™ is a policy-driven execution framework built on Model
+              IBOM<sup>®</sup> is a policy-driven execution framework built on Model
               Context Protocol (MCP) architecture. It operationalises Brando
               schemas by embedding structured governance policies directly into
               AI workflows and data pipelines.
@@ -533,7 +532,7 @@ const page = {
         <div
           id="uses-tabs"
           role="tablist"
-          aria-label="Brand Semantics IBOM Uses"
+          aria-label="Advanced Analytica IBOM Uses"
           class="flex w-full flex-wrap items-center justify-between gap-1 rounded-md bg-fog p-2"
         >
           {
@@ -730,7 +729,7 @@ const page = {
       <p
         class="mx-auto mt-10 max-w-[80ch] text-center text-lg leading-relaxed text-paper/80 md:text-xl"
       >
-        Strategic outcomes for organizations that need consistent, auditable,
+        Strategic outcomes for organisations that need consistent, auditable,
         and controllable AI operations at enterprise scale.
       </p>
 
@@ -747,7 +746,7 @@ const page = {
             Automated Guardrails
           </div>
           <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
-            Protect your organization. IBOM acts as a real-time safety net,
+            Protect your organisation. IBOM acts as a real-time safety net,
             catching policy violations or non-compliant AI outputs before they
             reach production systems or customers.
           </p>
@@ -785,7 +784,7 @@ const page = {
           <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
             Unite Operations, Legal, and Engineering. Transform abstract
             business rules into structured, versioned policies that your entire
-            organization can query and enforce.
+            organisation can query and enforce.
           </p>
         </div>
 

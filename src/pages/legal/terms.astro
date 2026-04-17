@@ -1,131 +1,660 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { SITE_URL } from '../../lib/seo/site';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE_URL } from "../../lib/seo/site";
 
-const title = 'Terms of Use';
-const description = 'Terms for using the Brand Semantics website.';
-const lastUpdated = 'February 8, 2026';
+const title = "Terms of Use";
+const description =
+  "Terms for using the Advanced Analytica website and IBOM framework.";
+const lastUpdated = "March 19, 2026";
 
 const page = {
   title,
   description,
   url: `${SITE_URL}/legal/terms`,
   breadcrumbs: [
-    { name: 'Home', url: `${SITE_URL}/` },
-    { name: 'Terms', url: `${SITE_URL}/legal/terms` }
-  ]
+    { name: "Home", url: `${SITE_URL}/` },
+    { name: "Terms", url: `${SITE_URL}/legal/terms` },
+  ],
 };
 ---
+
 <BaseLayout title={title} description={description} page={page}>
   <section class="container-narrow py-16">
     <div class="eyebrow">Legal</div>
     <h1 class="mt-4 text-4xl font-semibold text-ink">Terms of Use</h1>
     <div class="prose mt-6">
-      <p><strong>Last updated:</strong> {lastUpdated}</p>
+      <p><strong>Effective Date:</strong> {lastUpdated}</p>
+      <p><strong>Last Updated:</strong> {lastUpdated}</p>
+
       <p>
-        These Terms of Use (the “Terms”) apply to your access to and use of the Brand Semantics website (the “Site”),
-        including pages under Services, Use Cases, Opinions, Resources, and Company (together, the “Content”).
-        By accessing or using the Site, you agree to these Terms.
+        These Terms of Use (the "Terms") apply to your access to and use of this
+        website at brandsemantics-com-p7sfd.ondigitalocean.app (the "Site"),
+        including all content, documentation, methodologies, frameworks, and
+        materials related to IBOM<sup>®</sup> (Intelligent Business Operating Model),
+        Brando<sup>®</sup> (Brand Oracle), and associated technologies (collectively,
+        the "Content"). By accessing or using the Site, you agree to be bound by these
+        Terms.
       </p>
 
-      <h2>Who We Are</h2>
-      <p>
-        “Brand Semantics”, “we”, “us”, and “our” refer to the operator of this Site. If you need our legal entity name,
-        registered address, or company number for contracting purposes, please contact us via the
-        <a href="/company/contact">Contact</a> page.
+      <p class="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-6">
+        <strong>Important:</strong> These Terms establish intellectual property ownership
+        and usage rights for Advanced Analytica's proprietary methodologies and technologies.
+        If you are engaging Advanced Analytica for consulting services, these Terms
+        form part of the foundation of that relationship.
       </p>
 
-      <h2>Scope and Intended Audience</h2>
+      <h2>1. Who We Are</h2>
       <p>
-        The Site is provided for informational purposes and is intended primarily for business and professional users.
-        The Content does not constitute legal, financial, or professional advice. You are responsible for how you use it.
+        "Advanced Analytica", "we", "us", and "our" refer to Advanced Analytica
+        Ltd, a company incorporated under the laws of England and Wales,
+        operating this Site. For our registered address, company number, or
+        other legal entity information for contracting purposes, please contact
+        us via the <a href="/company/contact">Contact</a> page.
       </p>
 
-      <h2>Permitted Use</h2>
+      <h2>2. Intellectual Property Ownership</h2>
+
+      <h3>2.1 IBOM<sup>®</sup> Framework</h3>
       <p>
-        We grant you a limited, non-exclusive, non-transferable, revocable licence to access and use the Site for your
-        internal evaluation and business purposes, in accordance with these Terms.
+        The Intelligent Business Operating Model (IBOM<sup>®</sup>), including
+        all six phases (Business Alignment, Source Validation, Logic
+        Codification, Solution Engineering, Assurance & Compliance, and
+        Controlled Deployment), methodologies, processes, documentation, visual
+        representations, diagrams, and related materials published on this Site,
+        is the <strong
+          >exclusive proprietary property of Advanced Analytica Ltd</strong
+        >.
       </p>
+      <p>
+        IBOM<sup>®</sup> and Intelligent Business Operating Model are trademarks of
+        Advanced Analytica Ltd [trademark application filed March 2026, UK Intellectual
+        Property Office].
+      </p>
+
+      <h3>2.2 Brando<sup>®</sup> Schema Language</h3>
+      <p>
+        Brando<sup>®</sup> and all related technology, compiler implementations, documentation,
+        semantic schemas, and codification methodologies are proprietary to Advanced
+        Analytica Ltd.
+      </p>
+
+      <h3>2.3 All Site Content</h3>
+      <p>
+        All content on this Site, including but not limited to text, graphics,
+        logos, images, software, code examples, documentation, visual designs,
+        framework diagrams, the distinctive IBOM visual identity (including the
+        curved flow design in orange/purple), and methodological approaches, is
+        protected by copyright © 2026 Advanced Analytica Ltd and other
+        intellectual property laws.
+      </p>
+      <p>
+        <strong>First Published:</strong> March 2026 (archived at web.archive.org)
+      </p>
+
+      <h2>3. Scope and Intended Audience</h2>
+      <p>
+        The Site is provided for informational purposes and is intended
+        primarily for business and professional users evaluating Advanced
+        Analytica's methodologies and services. The Content does not constitute
+        legal, financial, or professional advice. You are responsible for how
+        you use it.
+      </p>
+
+      <h2>4. License to View and Reference</h2>
+
+      <h3>4.1 Limited License</h3>
+      <p>
+        Advanced Analytica grants visitors a limited, non-exclusive,
+        non-transferable, revocable license to:
+      </p>
+      <ul>
+        <li>View and read the Content on this Site</li>
+        <li>
+          Reference IBOM<sup>®</sup> publicly with appropriate attribution to Advanced
+          Analytica
+        </li>
+        <li>Share links to this Site</li>
+      </ul>
+
+      <h3>4.2 Prohibited Uses</h3>
+      <p>You may NOT:</p>
+      <ul>
+        <li>
+          Copy, reproduce, modify, or create derivative works of IBOM<sup>®</sup
+          >, Brando<sup>®</sup>, or Site content without written permission
+        </li>
+        <li>
+          Use IBOM<sup>®</sup> or Brando<sup>®</sup> commercially without a written
+          engagement agreement with Advanced Analytica
+        </li>
+        <li>
+          Remove copyright, trademark, or attribution notices from any materials
+        </li>
+        <li>
+          Reverse engineer or attempt to recreate IBOM<sup>®</sup> methodologies,
+          Brando<sup>®</sup> technology, or framework architectures
+        </li>
+        <li>
+          Claim ownership, co-ownership, or create works that suggest joint
+          authorship of IBOM<sup>®</sup> or derivatives
+        </li>
+        <li>
+          Register domain names, social media handles, or trademarks containing
+          "IBOM", "Brando", or confusingly similar marks
+        </li>
+        <li>
+          Scrape, crawl, or harvest the Site at scale (including by automated
+          means) except where permitted by law
+        </li>
+        <li>
+          Use the Site in a way that interferes with its availability,
+          integrity, or performance
+        </li>
+        <li>
+          Misrepresent your affiliation with Advanced Analytica or use the Site
+          to transmit unlawful, harmful, or deceptive content
+        </li>
+      </ul>
+
+      <h2>5. Consulting Engagements and Custom Implementations</h2>
+
+      <h3>5.1 Retention of IP Rights</h3>
+      <p>
+        When Advanced Analytica provides consulting services applying IBOM<sup
+          >®</sup
+        > or Brando<sup>®</sup> to client-specific situations:
+      </p>
+      <ul>
+        <li>
+          <strong>Advanced Analytica retains ALL ownership rights</strong> to IBOM<sup
+            >®</sup
+          >, Brando<sup>®</sup>, and all underlying methodologies, frameworks,
+          processes, tools, and technologies
+        </li>
+        <li>
+          Clients receive specific deliverables created during the engagement
+          (e.g., governance policies, analysis reports, implementation
+          artifacts)
+        </li>
+        <li>
+          Clients receive a non-exclusive license to use IBOM<sup>®</sup
+          >/Brando<sup>®</sup> solely as embedded in those deliverables for their
+          internal business purposes
+        </li>
+      </ul>
+
+      <h3>5.2 Improvements and Derivatives</h3>
+      <p>
+        <strong
+          >ALL improvements, enhancements, modifications, customisations,
+          variations, derivatives, and applications of IBOM<sup>®</sup> or Brando<sup
+            >®</sup
+          > remain the exclusive property of Advanced Analytica</strong
+        >, regardless of:
+      </p>
+      <ul>
+        <li>Whether developed independently or during client engagements</li>
+        <li>
+          Whether developed solely by Advanced Analytica or collaboratively with
+          clients
+        </li>
+        <li>
+          Whether applied to specific client use cases or general applications
+        </li>
+        <li>Who funded the development work</li>
+        <li>
+          Whether client input, feedback, or requirements informed the
+          development
+        </li>
+      </ul>
+      <p>
+        Advanced Analytica may incorporate learnings, improvements, and
+        enhancements from any engagement into future versions of IBOM<sup>®</sup
+        > and Brando<sup>®</sup> without restriction.
+      </p>
+
+      <h3>5.3 Client-Specific Deliverables</h3>
+      <p>
+        Clients own the specific deliverables created for them (e.g., "Client
+        Brand Governance Policy v1.0" codified in Brando<sup>®</sup>, custom
+        analysis, implementation documentation) but NOT the underlying IBOM<sup
+          >®</sup
+        > framework, Brando<sup>®</sup> technology, or methodologies used to create
+        them.
+      </p>
+      <p><strong>Example:</strong></p>
+      <ul>
+        <li>
+          Client OWNS: "Client-Specific Governance Policy v1.0" (the
+          output/deliverable)
+        </li>
+        <li>
+          Advanced Analytica OWNS: IBOM<sup>®</sup> framework and Brando<sup
+            >®</sup
+          > compiler (the tools and methodology)
+        </li>
+      </ul>
+
+      <h3>5.4 MCP Implementations and Technical Solutions</h3>
+      <p>
+        For Model Context Protocol (MCP) servers, tools, and implementations
+        created during client engagements:
+      </p>
+      <ul>
+        <li>
+          Client-specific configurations, data, and policies remain client
+          property
+        </li>
+        <li>
+          The MCP architecture, code templates, validation logic, implementation
+          patterns, and development methodology remain Advanced Analytica
+          property
+        </li>
+        <li>
+          Advanced Analytica may reuse MCP patterns, architectures, system
+          designs, and implementation approaches across all clients without
+          restriction
+        </li>
+      </ul>
+
+      <h3>5.5 Data Sets and Analytics</h3>
+      <p>
+        When Advanced Analytica creates data sets, analyses, or models for
+        clients:
+      </p>
+      <ul>
+        <li>
+          The final compiled data set or analysis output belongs to the client
+          (the deliverable)
+        </li>
+        <li>
+          The data collection methodologies, ETL pipelines, validation
+          algorithms, data models, schemas, and analytical frameworks remain
+          Advanced Analytica property
+        </li>
+        <li>
+          Advanced Analytica may use the same or similar methodologies to create
+          data sets for other clients, including competitors
+        </li>
+      </ul>
+
+      <h2>6. No Joint Ownership or Co-Development</h2>
+
+      <h3>6.1 Explicit Declaration</h3>
+      <p>
+        By accessing this Site or engaging Advanced Analytica for services, you
+        acknowledge and agree that:
+      </p>
+      <ul>
+        <li>
+          IBOM<sup>®</sup> and Brando<sup>®</sup> are pre-existing proprietary methodologies
+          and technologies owned by Advanced Analytica
+        </li>
+        <li>
+          No client engagement, consulting relationship, or collaboration
+          creates joint ownership, co-development rights, or co-authorship of
+          IBOM<sup>®</sup>, Brando<sup>®</sup>, or any derivatives
+        </li>
+        <li>
+          All customisations, improvements, and applications remain Advanced
+          Analytica property
+        </li>
+        <li>
+          Client input, feedback, requirements, or funding do NOT create
+          intellectual property ownership rights
+        </li>
+        <li>
+          IBOM<sup>®</sup> was developed independently by Advanced Analytica and predates
+          any client engagement
+        </li>
+      </ul>
+
+      <h3>6.2 Waiver of Claims</h3>
+      <p>You expressly waive any right to claim:</p>
+      <ul>
+        <li>
+          Joint authorship, co-ownership, or co-development of IBOM<sup>®</sup>,
+          Brando<sup>®</sup>, or any derivatives
+        </li>
+        <li>
+          Intellectual property rights in methodologies, processes, frameworks,
+          or approaches learned, developed, or applied during engagements
+        </li>
+        <li>
+          Restrictions on Advanced Analytica's use of IBOM<sup>®</sup> or Brando<sup
+            >®</sup
+          > with other clients, including your competitors
+        </li>
+        <li>
+          Ownership of improvements, enhancements, or customisations to IBOM<sup
+            >®</sup
+          > or Brando<sup>®</sup>, even if developed during or for your
+          engagement
+        </li>
+        <li>
+          That funding development work creates ownership rights in the
+          resulting intellectual property
+        </li>
+      </ul>
+
+      <h2>7. Trademarks</h2>
+
+      <h3>7.1 Protected Marks</h3>
+      <p>
+        The following are trademarks or pending trademarks of Advanced Analytica
+        Ltd:
+      </p>
+      <ul>
+        <li>
+          <strong>IBOM<sup>®</sup></strong> and <strong
+            >Intelligent Business Operating Model™</strong>
+        </li>
+        <li>
+          <strong>Brando®</strong> (semantic schema language for codifying business
+          logic)
+        </li>
+        <li>Advanced Analytica® and associated logos and brand elements</li>
+      </ul>
+
+      <h3>7.2 Unauthorised Use</h3>
+      <p>
+        You may not use these trademarks without Advanced Analytica's prior
+        written permission, including:
+      </p>
+      <ul>
+        <li>
+          Creating derivative frameworks, methodologies, or products with
+          similar names
+        </li>
+        <li>
+          Using marks in a way that suggests endorsement, affiliation, or
+          partnership with Advanced Analytica
+        </li>
+        <li>
+          Registering domain names, social media handles, or business names
+          containing these marks
+        </li>
+        <li>
+          Filing trademark applications for identical or confusingly similar
+          marks
+        </li>
+        <li>
+          Removing or obscuring trademark symbols (™ or <sup>®</sup>) from
+          documentation
+        </li>
+      </ul>
+
+      <h2>8. Alignment with UK AI Policy</h2>
+
+      <h3>8.1 Independent Development for Policy Implementation</h3>
+      <p>
+        IBOM<sup>®</sup> has been independently developed by Advanced Analytica to provide
+        a structured implementation framework for enterprise AI governance. The
+        methodology aligns with principles outlined in the UK Government's AI
+        Opportunities Action Plan (January 2025), particularly:
+      </p>
+      <ul>
+        <li>
+          Structured approaches to AI adoption (the "Scan > Pilot > Scale"
+          methodology described in Recommendations 31-46)
+        </li>
+        <li>
+          Data governance and codification practices (referenced in
+          Recommendations 7-13)
+        </li>
+        <li>
+          AI safety, validation, and compliance frameworks (referenced in
+          Recommendations 23-30)
+        </li>
+        <li>Mission-focused implementation approaches (Recommendation 31)</li>
+      </ul>
+      <p>
+        <em
+          >Note: This alignment reflects Advanced Analytica's independent
+          analysis of the Action Plan and does not constitute government
+          endorsement, approval, or recognition of IBOM<sup>®</sup>.</em
+        >
+      </p>
+
+      <h3>8.2 Preservation of Independent Methodology</h3>
+      <p>
+        IBOM<sup>®</sup> has been developed as an independent, reusable framework
+        applicable across multiple organisations and sectors. To maintain its
+        effectiveness and availability for diverse applications, Advanced
+        Analytica retains full ownership to ensure IBOM<sup>®</sup>:
+      </p>
+      <ul>
+        <li>
+          Remains available for application across public and private sector
+          organisations
+        </li>
+        <li>
+          Can evolve in response to emerging AI governance requirements and best
+          practices
+        </li>
+        <li>
+          Maintains independence from any single client's proprietary interests
+        </li>
+        <li>
+          Continues to support best-practice AI implementation across the UK
+          economy
+        </li>
+      </ul>
+      <p>
+        No client engagement or commercial arrangement shall transfer ownership
+        of IBOM<sup>®</sup> in a manner that would limit its availability as a
+        general-purpose implementation framework.
+      </p>
+
+      <h2>9. User Submissions and Feedback</h2>
+      <p>
+        If you submit information through a form or otherwise provide feedback
+        (a "Submission"), you confirm that:
+      </p>
+      <ul>
+        <li>You have the rights needed to provide the Submission</li>
+        <li>
+          Your Submission does not infringe third-party rights or contain
+          unlawful material
+        </li>
+        <li>
+          You do not include sensitive personal data unless we expressly request
+          it
+        </li>
+      </ul>
+      <p>
+        You grant us a non-exclusive, worldwide, royalty-free license to use
+        your Submission for the purpose of responding, improving the Site,
+        developing IBOM<sup>®</sup> and Brando<sup>®</sup>, and operating our
+        services. We will handle personal data in accordance with our <a
+          href="/legal/privacy">Privacy Policy</a
+        >.
+      </p>
+
+      <h2>10. Confidentiality and Public Disclosure</h2>
+
+      <h3>10.1 IBOM<sup>®</sup> is Publicly Available</h3>
+      <p>
+        IBOM<sup>®</sup> and Brando<sup>®</sup> are intentionally published publicly
+        on this Site. They are NOT confidential or proprietary in the sense that they
+        require secrecy. Public availability does not diminish Advanced Analytica's
+        intellectual property rights.
+      </p>
+
+      <h3>10.2 Implementation Details May Be Confidential</h3>
+      <p>
+        Specific client implementations, custom configurations, proprietary
+        data, and business-sensitive information remain confidential per
+        engagement agreements.
+      </p>
+
+      <h3>10.3 Advanced Analytica May Publish</h3>
+      <p>Advanced Analytica reserves the right to:</p>
+      <ul>
+        <li>
+          Publish case studies and anonymized examples from client engagements
+        </li>
+        <li>
+          Present IBOM<sup>®</sup> applications at conferences and in thought leadership
+          content
+        </li>
+        <li>
+          Evolve IBOM<sup>®</sup> and Brando<sup>®</sup> based on learnings from any
+          source
+        </li>
+        <li>
+          Reference client engagements in general terms (e.g., "Implemented IBOM
+          for a global professional services firm") without disclosing
+          confidential information
+        </li>
+      </ul>
+
+      <h2>11. Third-Party Links and Services</h2>
+      <p>
+        The Site may reference third-party websites, tools, or services
+        (including open-source projects, Model Context Protocol implementations,
+        or partner technologies). We do not control and are not responsible for
+        them. Your use of third-party services is governed by their terms and
+        policies.
+      </p>
+
+      <h2>12. Permitted Use Examples</h2>
       <p>You may:</p>
       <ul>
-        <li>Browse and share links to pages on the Site.</li>
-        <li>Quote short excerpts for commentary or internal review, with attribution to Brand Semantics.</li>
+        <li>Browse and share links to pages on the Site</li>
+        <li>
+          Reference IBOM<sup>®</sup> in presentations with attribution: "Methodology:
+          IBOM<sup>®</sup> (Advanced Analytica)"
+        </li>
+        <li>Quote short excerpts (under 100 words) with proper citation</li>
+        <li>
+          Engage Advanced Analytica for consulting services to apply IBOM<sup
+            >®</sup
+          > to your business
+        </li>
       </ul>
-      <p>You may not:</p>
+
+      <h2>13. Availability, Changes, and Termination</h2>
+      <p>
+        We may modify, suspend, or discontinue any part of the Site at any time
+        without notice. We may also update these Terms by posting a revised
+        version on this page with a new "Last Updated" date. Your continued use
+        of the Site after an update constitutes acceptance of the updated Terms.
+      </p>
+      <p>
+        We reserve the right to terminate or restrict your access to the Site if
+        you violate these Terms.
+      </p>
+
+      <h2>14. Disclaimers</h2>
+      <p>
+        The Site and Content are provided "as is" and "as available". To the
+        maximum extent permitted by law, we disclaim all warranties, express or
+        implied, including implied warranties of merchantability, fitness for a
+        particular purpose, and non-infringement. We do not warrant that the
+        Site will be uninterrupted, secure, or error-free, or that IBOM<sup
+          >®</sup
+        > will achieve specific results for your organisation.
+      </p>
+      <p>
+        Information on this Site may contain technical inaccuracies or
+        typographical errors. Advanced Analytica reserves the right to make
+        changes and improvements at any time without notice.
+      </p>
+
+      <h2>15. Limitation of Liability</h2>
+      <p>
+        To the maximum extent permitted by law, Advanced Analytica will not be
+        liable for any indirect, incidental, special, consequential, or punitive
+        damages, or for any loss of profits, revenue, data, goodwill, or
+        business opportunity, arising out of or related to your use of (or
+        inability to use) the Site.
+      </p>
+      <p>
+        Where liability cannot be excluded, our total liability for all claims
+        relating to the Site will be limited to £100 (one hundred pounds
+        sterling).
+      </p>
+      <p>
+        Nothing in these Terms excludes or limits liability for death or
+        personal injury caused by negligence, fraud or fraudulent
+        misrepresentation, or any other liability that cannot be excluded or
+        limited under applicable law.
+      </p>
+
+      <h2>16. Indemnity</h2>
+      <p>
+        You agree to indemnify and hold harmless Advanced Analytica Ltd, its
+        officers, directors, employees, and agents from any claims, damages,
+        liabilities, costs, and expenses (including reasonable legal fees)
+        arising from:
+      </p>
       <ul>
-        <li>Copy, reproduce, republish, sell, license, or commercially exploit the Content without written permission.</li>
-        <li>Scrape, crawl, or harvest the Site at scale (including by automated means) except where permitted by law.</li>
-        <li>Reverse engineer or attempt to bypass any access controls, rate limits, or security measures.</li>
-        <li>Use the Site in a way that interferes with its availability, integrity, or performance.</li>
-        <li>Misrepresent your affiliation with Brand Semantics or use the Site to transmit unlawful, harmful, or deceptive content.</li>
+        <li>Your misuse of the Site or violation of these Terms</li>
+        <li>Your Submissions or any content you provide</li>
+        <li>
+          Your infringement of any intellectual property or other rights of any
+          third party
+        </li>
+        <li>Your violation of any applicable laws or regulations</li>
       </ul>
 
-      <h2>Intellectual Property</h2>
+      <h2>17. Severability</h2>
       <p>
-        The Site and Content are protected by intellectual property laws. Brand Semantics, IBOM™, and any associated logos
-        are trademarks or trade names of Brand Semantics and/or its licensors. All rights not expressly granted are reserved.
+        If any provision of these Terms is found to be invalid, illegal, or
+        unenforceable, the remaining provisions will continue in full force and
+        effect. The invalid provision will be modified to the minimum extent
+        necessary to make it valid and enforceable.
       </p>
 
-      <h2>User Submissions</h2>
+      <h2>18. Entire Agreement</h2>
       <p>
-        If you submit information through a form or otherwise provide feedback (a “Submission”), you confirm that:
+        These Terms, together with our <a href="/legal/privacy"
+          >Privacy Policy</a
+        > and any written engagement agreement you enter into with Advanced Analytica,
+        constitute the entire agreement between you and Advanced Analytica regarding
+        the Site.
       </p>
-      <ul>
-        <li>You have the rights needed to provide the Submission.</li>
-        <li>Your Submission does not infringe third-party rights or contain unlawful material.</li>
-        <li>You do not include sensitive personal data unless we expressly request it.</li>
-      </ul>
       <p>
-        You grant us a non-exclusive, worldwide, royalty-free licence to use your Submission for the purpose of responding,
-        improving the Site, and operating our services. We will handle personal data in accordance with our
-        <a href="/legal/privacy">Privacy Policy</a>.
-      </p>
-
-      <h2>Third-Party Links and Services</h2>
-      <p>
-        The Site may reference third-party websites, tools, or services. We do not control and are not responsible for them.
-        Your use of third-party services is governed by their terms and policies.
+        In the event of conflict between these Terms and a signed engagement
+        agreement regarding IBOM<sup>®</sup>
+        intellectual property, these Terms shall prevail unless the engagement agreement
+        explicitly states otherwise in writing signed by an authorized officer of
+        Advanced Analytica.
       </p>
 
-      <h2>Availability, Changes, and Termination</h2>
+      <h2>19. Assignment</h2>
       <p>
-        We may modify, suspend, or discontinue any part of the Site at any time. We may also update these Terms by posting a
-        revised version on this page. Continued use of the Site after an update means you accept the updated Terms.
+        You may not assign or transfer these Terms or any rights granted under
+        them without Advanced Analytica's prior written consent. Advanced
+        Analytica may assign these Terms without restriction.
       </p>
 
-      <h2>Disclaimers</h2>
+      <h2>20. Governing Law and Jurisdiction</h2>
       <p>
-        The Site and Content are provided “as is” and “as available”. To the maximum extent permitted by law, we disclaim all
-        warranties, express or implied, including implied warranties of merchantability, fitness for a particular purpose, and
-        non-infringement. We do not warrant that the Site will be uninterrupted, secure, or error-free.
+        These Terms are governed by and construed in accordance with the laws of
+        England and Wales, without regard to conflict of law principles. The
+        courts of England and Wales shall have exclusive jurisdiction to settle
+        any dispute arising out of or in connection with these Terms, except
+        where applicable law provides otherwise.
       </p>
 
-      <h2>Limitation of Liability</h2>
+      <h2>21. Contact</h2>
       <p>
-        To the maximum extent permitted by law, Brand Semantics will not be liable for any indirect, incidental, special,
-        consequential, or punitive damages, or for any loss of profits, revenue, data, goodwill, or business opportunity,
-        arising out of or related to your use of (or inability to use) the Site.
-      </p>
-      <p>
-        Where liability cannot be excluded, our total liability for all claims relating to the Site will be limited to the
-        amount you paid to access the Site in the 12 months before the event giving rise to the claim (if any).
+        Questions about these Terms? Contact us via <a href="/company/contact"
+          >Get in touch</a
+        >.
       </p>
 
-      <h2>Indemnity</h2>
-      <p>
-        You agree to indemnify and hold harmless Brand Semantics from any claims, damages, liabilities, and expenses arising
-        from your misuse of the Site, your Submissions, or your breach of these Terms.
-      </p>
+      <hr class="my-8" />
 
-      <h2>Governing Law</h2>
-      <p>
-        These Terms are governed by the laws of England and Wales, and the courts of England and Wales will have exclusive
-        jurisdiction, except where applicable law provides otherwise.
-      </p>
-
-      <h2>Contact</h2>
-      <p>
-        Questions about these Terms? Contact us via <a href="/company/contact">Get in touch</a>.
+      <p class="text-sm text-ink-muted mt-8">
+        © 2026 Advanced Analytica Ltd. All rights reserved.<br />
+        IBOM<sup>®</sup> and Intelligent Business Operating Model are trademarks of
+        Advanced Analytica Ltd.<br />
+        Brando<sup>®</sup> is a registered trademark of Advanced Analytica Ltd.<br
+        />
+        First published: March 2026 | Archived: web.archive.org
       </p>
     </div>
   </section>

@@ -3,7 +3,7 @@
 
 export const theme = {
   brand: {
-    name: "Brand Semantics",
+    name: "Advanced Analytica",
     tagline: "Make Brand Operable",
   },
 
