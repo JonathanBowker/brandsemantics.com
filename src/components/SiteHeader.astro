@@ -1,31 +1,10 @@
 ---
 const nav = [
-  {
-    label: 'Services',
-    href: '/services',
-    children: [
-      { label: 'IBOM<sup>®</sup>', href: '/services/ibom' },
-      { label: 'Services Overview', href: '/services' },
-      { label: 'Enterprise', href: '/enterprise' },
-      { label: 'Developers', href: '/developers' },
-      { label: 'MCP Servers', href: '/developers/mcp-servers' },
-      { label: 'Quickstart', href: '/developers/quickstart' }
-    ]
-  },
+  { label: 'Home', href: '/' },
   { label: 'Use Cases', href: '/use-cases' },
   { label: 'Opinions', href: '/blog' },
   { label: 'Resources', href: '/resources' },
-  {
-    label: 'Company',
-    href: '/company/about',
-    children: [
-      { label: 'About', href: '/company/about' },
-      { label: 'Security', href: '/company/security' },
-      { label: 'Contact', href: '/company/contact' },
-      { label: 'Privacy', href: '/legal/privacy' },
-      { label: 'Terms', href: '/legal/terms' }
-    ]
-  }
+  { label: 'About', href: '/company/about' }
 ];
 ---
  <header class="fixed top-0 z-50 w-full border-b border-paper/10 bg-ink/95 backdrop-blur">
@@ -41,7 +20,7 @@ const nav = [
     </a>
     <a
       href="#get-in-touch"
-      class="md:hidden inline-flex items-center gap-2 rounded-md bg-strandGreen px-4 py-2 text-sm font-semibold text-ink shadow-outline hover:bg-strandGreen/90 transition-colors"
+      class="md:hidden inline-flex items-center gap-2 rounded-md bg-[#ef27f4] px-4 py-2 text-sm font-semibold text-paper shadow-outline hover:bg-[#d823dd] transition-colors"
     >
       Get in touch
       <svg
@@ -103,7 +82,7 @@ const nav = [
       </nav>
       <a
         href="#get-in-touch"
-        class="inline-flex items-center gap-2 rounded-md bg-strandGreen px-5 py-2.5 text-sm font-semibold text-ink shadow-outline hover:bg-strandGreen/90 transition-colors"
+        class="inline-flex items-center gap-2 rounded-md bg-[#ef27f4] px-5 py-2.5 text-sm font-semibold text-paper shadow-outline hover:bg-[#d823dd] transition-colors"
       >
         Get in touch
         <svg

@@ -1,0 +1,200 @@
+@layer base {
+  :root {
+    --jb-black: #111;
+    --jb-white: #fff;
+    --jb-vivid-cyan-blue: #0693e3;
+    --jb-vivid-purple: #ff8c69;
+    --jb-soft-pink: #fcf3f8;
+    --jb-soft-grey: #f7f7f7;
+    --jb-accent: var(--jb-vivid-cyan-blue);
+
+    --theme-primary: #59b3e4;
+    --theme-work: #f8d210;
+    --theme-news: #ff5148;
+    --theme-business: #59b3e4;
+    --theme-legal: #ceced0;
+    --theme-bear: #fa26a0;
+    --theme-bear-dark: #d900b8;
+
+    --theme: var(--theme-primary);
+    --theme-bg: var(--theme-primary);
+    --theme-text: var(--theme-primary);
+    --theme-ink: #222;
+    --theme-border: color-mix(in oklab, var(--theme) 80%, black);
+  }
+
+  body {
+    font-family: "Archivo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .theme-work {
+    --theme: var(--theme-work);
+    --theme-bg: var(--theme-work);
+    --theme-text: var(--theme-work);
+    --theme-ink: #111;
+    --theme-border: #f8d210;
+  }
+
+  .theme-business {
+    --theme: var(--theme-business);
+    --theme-bg: var(--theme-business);
+    --theme-text: var(--theme-business);
+    --theme-ink: #001018;
+    --theme-border: #3a9bd0;
+  }
+
+  .theme-news {
+    --theme: var(--theme-news);
+    --theme-bg: var(--theme-news);
+    --theme-text: var(--theme-news);
+    --theme-ink: #1a0b0b;
+    --theme-border: #cc2b22;
+  }
+
+  .theme-legal {
+    --theme: var(--theme-legal);
+    --theme-bg: var(--theme-legal);
+    --theme-text: var(--theme-legal);
+    --theme-ink: #171717;
+    --theme-border: #a7a7aa;
+  }
+
+  .theme-bear {
+    --theme: var(--theme-bear);
+    --theme-bg: var(--theme-bear);
+    --theme-text: var(--theme-bear);
+    --theme-ink: #12000f;
+    --theme-border: #cb167f;
+  }
+
+  .theme-bear-dark {
+    --theme: var(--theme-bear-dark);
+    --theme-bg: var(--theme-bear-dark);
+    --theme-text: var(--theme-bear-dark);
+    --theme-ink: #0e0410;
+    --theme-border: #a2008e;
+  }
+
+  body.theme-work,
+  body.theme-business,
+  body.theme-news,
+  body.theme-legal,
+  body.theme-bear,
+  body.theme-bear-dark,
+  .theme-work,
+  .theme-business,
+  .theme-news,
+  .theme-legal,
+  .theme-bear,
+  .theme-bear-dark {
+    background-color: var(--theme-bg);
+    color: var(--theme-ink);
+  }
+
+  .section-transparent {
+    background: transparent !important;
+  }
+
+  .jb-hero-gradient {
+    background: radial-gradient(
+      90% 106.38% at 122.89% 49.97%,
+      var(--jb-vivid-purple) 0%,
+      #5a00ad 25%,
+      #360067 56%,
+      #220041 100%
+    );
+  }
+
+  .jb-soft-pink {
+    background: var(--jb-soft-pink);
+  }
+
+  .jb-soft-grey {
+    background: var(--jb-soft-grey);
+  }
+
+  .jb-kicker {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .jb-section-card {
+    height: 100%;
+    border: 1px solid #111;
+    border-radius: 1rem;
+    background: transparent;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.06);
+  }
+
+  .jb-number {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .jb-highlight-box {
+    border-left: 4px solid var(--jb-accent);
+    padding-left: 1.25rem;
+  }
+
+  .jb-statement {
+    border: 1px solid #111;
+    border-radius: 1rem;
+    padding: 2rem;
+    background: #fff;
+  }
+
+  .jb-pull-quote {
+    margin: 2rem 0;
+    border-left: 4px solid var(--jb-accent);
+    padding-left: 2rem;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  .bg-theme {
+    background-color: var(--theme-bg) !important;
+    color: var(--theme-ink) !important;
+  }
+
+  .text-theme {
+    color: var(--theme) !important;
+  }
+
+  .border-theme {
+    border-color: var(--theme-border, var(--theme)) !important;
+  }
+
+  .fill-theme {
+    fill: var(--theme) !important;
+  }
+
+  .stroke-theme {
+    stroke: var(--theme) !important;
+  }
+
+  .section-theme-soft {
+    background: color-mix(in oklab, var(--theme) 8%, white);
+    color: var(--theme-ink);
+  }
+
+  .section-theme-strong {
+    background: color-mix(in oklab, var(--theme) 18%, white);
+    color: var(--theme-ink);
+  }
+
+  .surface {
+    background: #fff;
+    color: #111;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+}

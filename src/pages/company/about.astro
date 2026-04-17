@@ -1,10 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Strands from '../../components/Strands.astro';
 import { BRANDO_SCHEMA_URL, SITE_URL } from '../../lib/seo/site';
 
 const title = 'About';
-const description = 'Advanced Analytica builds operating systems for executable brand governance.';
+const description = 'Advanced Analytica helps organisations turn knowledge, policy, and process into governed AI-ready systems.';
 
 const page = {
   title,
@@ -29,17 +28,20 @@ const page = {
             Advanced Analytica
           </h1>
           <p class="mt-8 max-w-[80ch] text-lg leading-relaxed text-paper/80 md:text-xl">
-            We build the operating layer that turns brand meaning into executable systems—so governance can be applied
-            consistently across AI-assisted workflows.
+            We help organisations turn knowledge, policy, and operational logic
+            into governed systems that AI can use safely, consistently, and at
+            scale.
           </p>
           <p class="mt-4 max-w-[80ch] text-base leading-relaxed text-paper/70 md:text-lg">
-            Advanced Analytica is the commercial brand for Advanced Analytica.
+            Our work sits between strategy and execution: defining what matters,
+            structuring it clearly, and building the delivery layer that makes
+            it usable in live AI-assisted operations.
           </p>
 
           <div class="mt-10 flex flex-wrap gap-4">
             <a
               href="#get-in-touch"
-              class="inline-flex items-center gap-2 rounded-md bg-strandGreen px-8 py-3 text-xs font-semibold tracking-[0.14em] uppercase text-ink shadow-outline hover:bg-strandGreen/90 transition-colors"
+              class="inline-flex items-center gap-2 rounded-md bg-[#ef27f4] px-8 py-3 text-xs font-semibold tracking-[0.14em] uppercase text-paper shadow-outline hover:bg-[#d823dd] transition-colors"
             >
               Get in touch
               <svg
@@ -58,7 +60,7 @@ const page = {
             </a>
             <a
               href="/company/security"
-              class="rounded-md border border-paper/25 bg-transparent px-8 py-3 text-xs font-semibold tracking-[0.14em] uppercase text-paper hover:border-paper/50 transition-colors"
+              class="rounded-md border border-[#ff8c69] bg-transparent px-8 py-3 text-xs font-semibold tracking-[0.14em] uppercase text-[#ff8c69] hover:bg-[#ff8c69] hover:text-ink transition-colors"
             >
               Security posture
             </a>
@@ -66,56 +68,57 @@ const page = {
         </div>
 
         <div class="rounded-2xl border border-paper/15 bg-black/20 backdrop-blur p-8 shadow-outline">
-          <div class="text-lg font-semibold tracking-[0.2em] uppercase text-paper/70">The four strands</div>
+          <div class="text-lg font-semibold tracking-[0.2em] uppercase text-paper/70">What we focus on</div>
           <p class="mt-5 text-sm leading-relaxed text-paper/70">
-            IBOM structures brand meaning with four core strands that can be governed and executed consistently.
+            We work where organisations need expert knowledge, business rules,
+            and governance controls to become operational inputs for AI systems.
           </p>
           <div class="mt-6 grid gap-5 text-base leading-relaxed text-paper/75">
             <div>
               <div class="flex flex-wrap items-center gap-2">
-                <span class="rounded-sm bg-strandOrange px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink">Verbal</span>
-                <div class="text-sm font-semibold text-paper">Language and tone</div>
+                <span class="rounded-sm bg-[#ff8c69] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink">Knowledge</span>
+                <div class="text-sm font-semibold text-paper">What the organisation knows</div>
               </div>
-              <div class="mt-2 text-sm">Messaging, naming, voice, terminology, and style constraints.</div>
+              <div class="mt-2 text-sm">Policies, processes, standards, documents, and specialist expertise.</div>
             </div>
             <div>
               <div class="flex flex-wrap items-center gap-2">
-                <span class="rounded-sm bg-strandPurple px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-paper">Visual</span>
-                <div class="text-sm font-semibold text-paper">Identity and expression</div>
+                <span class="rounded-sm bg-[#ef27f4] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-paper">Structure</span>
+                <div class="text-sm font-semibold text-paper">How it is defined clearly</div>
               </div>
-              <div class="mt-2 text-sm">Design systems, layout, typography, imagery, and motion rules.</div>
+              <div class="mt-2 text-sm">Specifications, schemas, datasets, linked records, and machine-readable logic.</div>
             </div>
             <div>
               <div class="flex flex-wrap items-center gap-2">
-                <span class="rounded-sm bg-strandBlue px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-paper">Audio</span>
-                <div class="text-sm font-semibold text-paper">Sonic behaviour</div>
+                <span class="rounded-sm bg-[#ff8c69] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink">Delivery</span>
+                <div class="text-sm font-semibold text-paper">How systems can use it</div>
               </div>
-              <div class="mt-2 text-sm">Voice, sonic identity cues, and consistency across outputs.</div>
+              <div class="mt-2 text-sm">APIs, MCP servers, internal tools, and governed runtime workflows.</div>
             </div>
             <div>
               <div class="flex flex-wrap items-center gap-2">
-                <span class="rounded-sm bg-strandGreen px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink">Controls</span>
-                <div class="text-sm font-semibold text-paper">Policy, rules and governance</div>
+                <span class="rounded-sm bg-[#ef27f4] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-paper">Control</span>
+                <div class="text-sm font-semibold text-paper">How it is governed in use</div>
               </div>
-              <div class="mt-2 text-sm">Approvals, exceptions, constraints, and controlled change.</div>
+              <div class="mt-2 text-sm">Ownership, approvals, traceability, testing, and controlled change over time.</div>
             </div>
           </div>
           <div class="mt-8 flex flex-wrap gap-2">
             <a
               href="/use-cases"
-              class="rounded-sm bg-strandGreen px-3 py-1 text-xs font-semibold uppercase text-ink hover:bg-strandGreen/90 transition-colors"
+              class="rounded-md bg-[#ef27f4] px-4 py-2 text-xs font-semibold uppercase text-paper shadow-outline hover:bg-[#d823dd] transition-colors"
             >
               Use cases
             </a>
             <a
               href="/resources"
-              class="rounded-sm bg-strandGreen px-3 py-1 text-xs font-semibold uppercase text-ink hover:bg-strandGreen/90 transition-colors"
+              class="rounded-md border border-[#ff8c69] bg-transparent px-4 py-2 text-xs font-semibold uppercase text-[#ff8c69] hover:bg-[#ff8c69] hover:text-ink transition-colors"
             >
               Resources
             </a>
             <a
               href="/blog"
-              class="rounded-sm bg-strandGreen px-3 py-1 text-xs font-semibold uppercase text-ink hover:bg-strandGreen/90 transition-colors"
+              class="rounded-md bg-[#ef27f4] px-4 py-2 text-xs font-semibold uppercase text-paper shadow-outline hover:bg-[#d823dd] transition-colors"
             >
               Opinions
             </a>
@@ -123,29 +126,24 @@ const page = {
         </div>
       </div>
     </div>
-
-    <div class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[55%] overflow-hidden" aria-hidden="true">
-      <div class="container-wide h-full">
-        <Strands class="hero-strands h-full w-full opacity-85 object-cover object-left-bottom" />
-      </div>
-    </div>
   </section>
 
   <section class="container-wide py-20">
     <div class="grid gap-6 lg:grid-cols-3">
-      <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
-        <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">Operating model</div>
-        <div class="mt-4 text-2xl font-semibold tracking-tight text-ink">IBOM<sup>®</sup></div>
-        <p class="mt-4 text-base leading-relaxed text-steel">
-          A structured, governed lifecycle for turning brand intent into machine-readable intelligence and
-          running it safely in production.
-        </p>
-      </div>
+        <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
+          <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">Operating model</div>
+          <div class="mt-4 text-2xl font-semibold tracking-tight text-ink">IBOM<sup>®</sup></div>
+          <p class="mt-4 text-base leading-relaxed text-steel">
+            A structured lifecycle for turning organisational intent into clear
+            specifications, governed systems, and live operational delivery.
+          </p>
+        </div>
       <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
         <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">Foundation</div>
         <div class="mt-4 text-2xl font-semibold tracking-tight text-ink">Brando Schema</div>
         <p class="mt-4 text-base leading-relaxed text-steel">
-          An open foundation for expressing brand identity, governance, and policy as data.
+          An open semantic foundation for expressing knowledge, policy,
+          relationships, and governance in structured form.
         </p>
         <a
           class="mt-6 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-ink hover:text-accent transition-colors"
@@ -158,10 +156,10 @@ const page = {
       </div>
       <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
         <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">Execution</div>
-        <div class="mt-4 text-2xl font-semibold tracking-tight text-ink">Policy-aware workflows</div>
+        <div class="mt-4 text-2xl font-semibold tracking-tight text-ink">Governed delivery</div>
         <p class="mt-4 text-base leading-relaxed text-steel">
-          Controlled access, deterministic checks, and audit trails so brand rules are enforced and provable
-          across AI tooling and delivery pipelines.
+          Controlled access, supervised build processes, and auditability so AI
+          systems can operate against trusted knowledge and defined rules.
         </p>
       </div>
     </div>
@@ -176,19 +174,21 @@ const page = {
             Practical governance you can ship
           </h2>
           <p class="mt-6 max-w-[80ch] text-lg leading-relaxed text-steel md:text-xl">
-            Most teams have brand documentation. The gap is execution: tooling, controls, and proof that the
-            rules are being followed. We focus on making governance operational across AI-assisted workflows.
+            IBOM starts with what the organisation already has: knowledge,
+            rules, processes, and expert judgement. The work is turning that
+            material into clear specifications, structured assets, and governed
+            delivery systems that AI can use reliably in live operation.
           </p>
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2">
           {[
-            { title: 'Brand model', body: 'A structured representation of identity, language, tone, and constraints.' },
-            { title: 'Policy pack', body: 'Executable rules for approvals, exceptions, and usage guardrails.' },
-            { title: 'System boundaries', body: 'Clear scope for what can and cannot be automated safely.' },
-            { title: 'Runtime controls', body: 'Checks that run in pipelines and AI tooling, not just in review docs.' },
-            { title: 'Assurance signals', body: 'Operational measures for drift, violations, and controlled remediation.' },
-            { title: 'Change control', body: 'Versioned updates, owners, and audit trails so governance evolves safely.' }
+            { title: 'Knowledge capture', body: 'Structured capture of business rules, workflows, documents, and specialist judgement.' },
+            { title: 'Technical specification', body: 'Clear definitions that experts can validate and AI systems can act on.' },
+            { title: 'System boundaries', body: 'Defined scope for what can and cannot be automated safely.' },
+            { title: 'Connection layer', body: 'Governed APIs, MCP services, and retrieval patterns that expose trusted knowledge.' },
+            { title: 'Operational controls', body: 'Checks, approval logic, and audit trails that run in live delivery.' },
+            { title: 'Change control', body: 'Versioned updates, owners, and traceability so systems evolve safely over time.' }
           ].map((item) => (
             <div class="rounded-2xl border border-fog bg-surface p-6 shadow-outline">
               <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">{item.title}</div>
@@ -203,22 +203,23 @@ const page = {
   <section class="container-wide py-20">
     <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
       <div>
-        <div class="eyebrow">Where it fits</div>
-        <h2 class="mt-4 text-[clamp(2rem,4.2vw,3.25rem)] font-semibold tracking-tight text-ink">
-          Integrated, not isolated
-        </h2>
-        <p class="mt-6 max-w-[80ch] text-lg leading-relaxed text-steel md:text-xl">
-          Brand governance is only useful when it meets the work. We design for the surfaces where decisions
-          happen: creation, review, deployment, and automation.
-        </p>
-      </div>
+          <div class="eyebrow">Where it fits</div>
+          <h2 class="mt-4 text-[clamp(2rem,4.2vw,3.25rem)] font-semibold tracking-tight text-ink">
+            Integrated, not isolated
+          </h2>
+          <p class="mt-6 max-w-[80ch] text-lg leading-relaxed text-steel md:text-xl">
+            This work is only useful when it meets the operational surfaces where
+            real decisions happen: research, delivery, review, deployment, and
+            ongoing management.
+          </p>
+        </div>
 
-      <div class="grid gap-6">
-        {[
-          { title: 'Design systems & components', body: 'Tokens, patterns, and usage constraints that remain consistent across products.' },
-          { title: 'Content operations', body: 'Briefing, drafting, translation, and localisation with controlled approvals.' },
-          { title: 'AI-assisted creation', body: 'Prompting and generation with policy-aware guardrails and traceability.' },
-          { title: 'Delivery pipelines', body: 'Deterministic checks in CI/CD so issues surface before release.' }
+        <div class="grid gap-6">
+          {[
+          { title: 'Internal knowledge systems', body: 'Governed knowledge bases that teams and AI assistants can query reliably.' },
+          { title: 'AI-assisted operations', body: 'Workflows where drafting, decision support, and execution need clear controls.' },
+          { title: 'Enterprise tooling', body: 'Internal products, assistants, and connected services that rely on trusted organisational logic.' },
+          { title: 'Delivery pipelines', body: 'Build, test, deployment, and review processes where policy needs to be operational.' }
         ].map((item) => (
           <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
             <div class="text-sm font-semibold text-ink">{item.title}</div>
@@ -238,19 +239,20 @@ const page = {
             From intent to operation
           </h2>
           <p class="mt-6 text-lg leading-relaxed text-steel md:text-xl">
-            We treat brand like a governed system: defined clearly, codified as data, deployed with control,
-            and assured continuously.
+            We treat organisational knowledge as an operational asset: defined
+            clearly, structured properly, connected to systems, and governed in
+            use.
           </p>
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2">
           {[
-            { title: 'Assessment', body: 'Clarify exposure, risk, and priority AI use cases.' },
-            { title: 'Definition', body: 'Turn implicit intent into explicit rules and constraints.' },
-            { title: 'Codification', body: 'Encode intent as structured, machine-actionable intelligence.' },
-            { title: 'Deployment', body: 'Introduce governed artefacts into pipelines and systems.' },
-            { title: 'Operation', body: 'Run policy at runtime with controlled overrides and monitoring.' },
-            { title: 'Assurance', body: 'Measure drift, prove compliance, and update safely.' }
+            { title: 'Assessment', body: 'Clarify objectives, risks, operating realities, and the use cases worth solving.' },
+            { title: 'Definition', body: 'Turn tacit business logic into explicit requirements, rules, and instructions.' },
+            { title: 'Codification', body: 'Express that logic in structured, machine-readable forms.' },
+            { title: 'Deployment', body: 'Connect governed knowledge to products, services, and delivery environments.' },
+            { title: 'Operation', body: 'Run systems with oversight, monitoring, and accountable decision pathways.' },
+            { title: 'Assurance', body: 'Test outcomes, track performance, and update safely as needs change.' }
           ].map((step) => (
             <div class="rounded-2xl border border-fog bg-surface p-6 shadow-outline">
               <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">{step.title}</div>
@@ -265,22 +267,23 @@ const page = {
   <section class="container-wide py-20">
     <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
       <div>
-        <div class="eyebrow">Principles</div>
-        <h2 class="mt-4 text-[clamp(2rem,4.2vw,3.25rem)] font-semibold tracking-tight text-ink">
-          Governance you can operate
-        </h2>
-        <p class="mt-6 max-w-[80ch] text-lg leading-relaxed text-steel md:text-xl">
-          The value of governance is not documentation. It is controlled behavior at scale, with clear ownership
-          and the ability to evolve safely.
-        </p>
-      </div>
+          <div class="eyebrow">Principles</div>
+          <h2 class="mt-4 text-[clamp(2rem,4.2vw,3.25rem)] font-semibold tracking-tight text-ink">
+            Governance you can operate
+          </h2>
+          <p class="mt-6 max-w-[80ch] text-lg leading-relaxed text-steel md:text-xl">
+            The value of governance is not more documentation. It is reliable
+            behaviour, clear ownership, and systems that can scale without
+            becoming opaque or fragile.
+          </p>
+        </div>
 
       <div class="grid gap-6">
         {[
-          { title: 'Policy-first', body: 'Rules should be executable, not advisory.' },
-          { title: 'Versioned change', body: 'Every update is traceable and reversible.' },
-          { title: 'Auditable decisions', body: 'Approvals and exceptions must be provable.' },
-          { title: 'Measured assurance', body: 'Alignment, drift, and violations become operational signals.' }
+          { title: 'Knowledge-first', body: 'Start with what the organisation actually knows, not with generic tooling.' },
+          { title: 'Executable definition', body: 'Specifications should be usable by both experts and systems.' },
+          { title: 'Auditable decisions', body: 'Approvals, exceptions, and outputs must be traceable.' },
+          { title: 'Measured assurance', body: 'Quality, drift, and policy adherence should become operational signals.' }
         ].map((item) => (
           <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
             <div class="text-sm font-semibold text-ink">{item.title}</div>

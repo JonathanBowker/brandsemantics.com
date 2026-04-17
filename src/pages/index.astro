@@ -1,90 +1,95 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE_URL } from "../lib/seo/site";
-import Strands from "../components/Strands.astro";
-import usesAssessmentImg from "../components/uses/assessment.svg?url";
-import usesDefinitionImg from "../components/uses/definition.svg?url";
-import usesCodificationImg from "../components/uses/codification.svg?url";
-import usesEvaluationImg from "../components/uses/evaluation.svg?url";
-import usesOperationImg from "../components/uses/operation.svg?url";
-import usesOptimisationImg from "../components/uses/optimisation.svg?url";
+import usesPurposeUnderstandingImg from "../components/uses/assessment.svg?url";
+import usesSystemFramingImg from "../components/uses/frame.svg?url";
+import usesSpecificationDesignImg from "../components/uses/codification.svg?url";
+import usesValidationEvaluationImg from "../components/uses/evaluation.svg?url";
+import usesExecutionGenerationImg from "../components/uses/operation.svg?url";
+import usesDeploymentOperationalUseImg from "../components/uses/optimisation.svg?url";
+import usesRevisionGovernanceImg from "../components/uses/definition.svg?url";
 
 const title = "Intelligent Business Operating Model (IBOM<sup>®</sup>)";
 const description =
   "Turn business logic into governed, executable infrastructure for AI systems — starting with brand governance.";
-const mastheadWords = ["governed", "auditable", "executable"] as const;
-const mastheadHighlight = "executable" as const;
-const mastheadStartIndex = Math.max(
-  0,
-  mastheadWords.indexOf(mastheadHighlight),
-);
 const usesTabs = [
   {
-    key: "business_alignment",
-    label: "1. Business Alignment",
-    lead: "Phase 1",
-    heading: "BUSINESS ALIGNMENT",
-    subheading: "Establish strategic objectives and success criteria.",
-    body: "Establish the strategic objectives and success criteria for AI systems. We ensure all subsequent work anchors to real business outcomes rather than technical enthusiasm. By the end of this phase, stakeholders share a documented understanding of what the system must deliver, how success will be measured, what constraints apply, and what the roadmap looks like.",
-    href: "#get-in-touch",
-    cta: "Get in touch",
-    image: usesAssessmentImg,
-  },
-  {
-    key: "source_validation",
-    label: "2. Source Validation",
-    lead: "Phase 2",
-    heading: "SOURCE VALIDATION",
-    subheading: "Identify and verify data authority and tool access.",
-    body: "Identify, describe, and validate the data sources and tools that will power AI systems. We systematically discover all candidate data sources, assess their coverage, validate their quality and authority, and establish their provenance. This phase maps available APIs, databases, and integration points while ensuring AI systems work with trustworthy, reliable foundations.",
-    href: "#get-in-touch",
-    cta: "Get in touch",
-    image: usesDefinitionImg,
-  },
-  {
-    key: "logic_codification",
-    label: "3. Logic Codification",
-    lead: "Phase 3",
-    heading: "LOGIC CODIFICATION",
-    subheading: "Translate policy into executable infrastructure.",
-    body: "Translate business rules, brand standards, and operational policies into machine-executable infrastructure. Using Brando<sup>®</sup>, we codify your governance logic into structured semantic schemas that AI systems can query, validate, and enforce. Your business intent becomes operational protocol that guides every AI decision and action.",
-    href: "#get-in-touch",
-    cta: "Get in touch",
-    image: usesCodificationImg,
-  },
-  {
-    key: "solution_engineering",
-    label: "4. Solution Engineering",
-    lead: "Phase 4",
-    heading: "SOLUTION ENGINEERING",
-    subheading: "Design and build governed AI systems.",
-    body: "Design, build, and refine AI systems within a governed framework. We develop workflows, decision architectures, and guardrails that operationalise your codified logic. Whether deploying assistants, autonomous agents, or integrated tools, solutions are tested in controlled environments to validate that policies are correctly understood before reaching production.",
-    href: "#get-in-touch",
-    cta: "Get in touch",
-    image: usesOperationImg,
-  },
-  {
-    key: "assurance_compliance",
-    label: "5. Assurance & Compliance",
-    lead: "Phase 5",
-    heading: "ASSURANCE & COMPLIANCE",
-    subheading: "Validate safety, accuracy, and regulatory adherence.",
-    body: "Validate that AI systems meet accuracy, safety, and regulatory standards. We conduct comprehensive testing including adversarial scenarios, edge case analysis, bias detection, and policy adherence verification. This phase provides documented evidence of operational, legal, and ethical compliance before production deployment.",
-    href: "#get-in-touch",
-    cta: "Get in touch",
-    image: usesEvaluationImg,
-  },
-  {
-    key: "controlled_deployment",
-    label: "6. Controlled Deployment",
-    lead: "Phase 6",
-    heading: "CONTROLLED DEPLOYMENT",
-    subheading: "Deploy with monitoring and continuous governance.",
-    body: "Launch AI systems into production with continuous governance and monitoring. Using Model Context Protocol (MCP), we embed your policies as auditable, enforceable functions within AI infrastructure. We establish real-time monitoring to track policy adherence, detect semantic drift, and maintain operational integrity at scale.",
-    href: "#get-in-touch",
-    cta: "Get in touch",
-    image: usesOptimisationImg,
-  },
+  key: "purpose_understanding",
+  label: "1. Purpose",
+  lead: "Phase 1",
+  heading: "PURPOSE UNDERSTANDING",
+  subheading: "Define business purpose, outcomes, and constraints.",
+  body: "Establish the business purpose, strategic objectives, success criteria, and operating constraints for the AI system. This phase ensures all subsequent work is anchored to real business outcomes rather than technical enthusiasm alone. By the end of this phase, stakeholders share a documented understanding of what the system must achieve, how success will be measured, and what boundaries must be respected.",
+  href: "#get-in-touch",
+  cta: "Get in touch",
+  image: usesPurposeUnderstandingImg,
+},
+{
+  key: "system_framing",
+  label: "2. Frame",
+  lead: "Phase 2",
+  heading: "SYSTEM FRAMING",
+  subheading: "Define the knowledge, sources, actors, and operating context.",
+  body: "Identify and validate the business knowledge, source materials, rules, subject matter expertise, tools, and integrations that will shape the system. This phase establishes the authoritative context, operating boundaries, and technical landscape within which the AI system will function. By the end of this phase, the foundations for specification and implementation are clear, credible, and ready to be used.",
+  href: "#get-in-touch",
+  cta: "Get in touch",
+  image: usesSystemFramingImg,
+},
+{
+  key: "specification_design",
+  label: "3. Specify",
+  lead: "Phase 3",
+  heading: "SPECIFICATION DESIGN",
+  subheading: "Turn business logic into machine-operable specifications.",
+  body: "Translate business rules, expert judgment, processes, and policies into structured technical specifications that AI systems can interpret, reason over, and act upon. This is the shift at the heart of IBOM: specification becomes the primary operating mechanism for governed AI development. By the end of this phase, business intent has been transformed into a precise and usable foundation for system design and execution.",
+  href: "#get-in-touch",
+  cta: "Get in touch",
+  image: usesSpecificationDesignImg,
+},
+{
+  key: "execution_generation",
+  label: "4. Build",
+  lead: "Phase 4",
+  heading: "EXECUTION / GENERATION",
+  subheading: "Design and build governed AI systems.",
+  body: "Use the approved specifications to supervise the AI-assisted design, build, and implementation of practical systems. This phase turns structured business logic into applications, agents, workflows, and tools that can operate within clear governance boundaries. By the end of this phase, working systems are in place and ready to move through structured validation and operational review.",
+  href: "#get-in-touch",
+  cta: "Get in touch",
+  image: usesExecutionGenerationImg,
+},
+{
+  key: "validation_evaluation",
+  label: "5. Validate",
+  lead: "Phase 5",
+  heading: "VALIDATE / EVALUATE",
+  subheading: "Test safety, accuracy, performance, and policy adherence.",
+  body: "Validate that the system performs as intended against business objectives, operational rules, and governance requirements. This includes testing for quality, safety, edge cases, compliance, and specification fidelity before live deployment. By the end of this phase, you have clear evidence that the system is ready for production use within defined operational and governance thresholds.",
+  href: "#get-in-touch",
+  cta: "Get in touch",
+  image: usesValidationEvaluationImg,
+},
+{
+  key: "deployment_operational_use",
+  label: "6. Deploy",
+  lead: "Phase 6",
+  heading: "DEPLOY / OPERATE",
+  subheading: "Deploy with control, monitoring, and live governance.",
+  body: "Deploy the system into production with clear controls, monitoring, and operational oversight. This phase ensures the system can be used confidently in live environments while maintaining transparency, traceability, and performance at scale. By the end of this phase, the system is operating in the real world with the visibility and discipline needed for trustworthy ongoing use.",
+  href: "#get-in-touch",
+  cta: "Get in touch",
+  image: usesDeploymentOperationalUseImg,
+},
+{
+  key: "revision_governance",
+  label: "7. Govern",
+  lead: "Phase 7",
+  heading: "REVISION / GOVERNANCE",
+  subheading: "Continuously refine the system as needs evolve.",
+  body: "Maintain the system through structured review, revision, and governance. As business needs, risks, models, and environments change, specifications and implementations are updated in a controlled way so the operating model remains aligned, effective, and trustworthy. By the end of this phase, improvement becomes continuous and governance becomes part of how the system evolves over time.",
+  href: "#get-in-touch",
+  cta: "Get in touch",
+  image: usesRevisionGovernanceImg,
+},
 ] as const;
 const defaultUsesKey = usesTabs[0].key;
 const page = {
@@ -109,39 +114,20 @@ const page = {
             Knowledge-first. Expert-led. AI-assisted.
           </div>
           <h1
-            class="font-masthead text-[clamp(2.95rem,5.6vw,5.15rem)] font-semibold tracking-tight text-paper leading-[1] max-w-[52rem] md:max-w-[56rem] lg:max-w-none lg:whitespace-nowrap"
-            aria-label="Intelligent Brand Operating Model - IBOM"
+            class="font-masthead text-[clamp(2.95rem,5.6vw,5.15rem)] font-semibold tracking-tight text-paper leading-[1] max-w-[52rem] md:max-w-[56rem]"
           >
-            <span
-              class="inline-flex flex-wrap lg:flex-nowrap items-baseline gap-x-3"
-            >
-              <span>Making knowledge</span>
-              <span
-                id="brand-rotate"
-                class="relative inline-flex h-[1.35em] min-w-[13ch] align-baseline items-baseline text-strandOrange overflow-hidden leading-[1] text-left"
-                aria-hidden="true"
-                data-words={JSON.stringify(mastheadWords)}
-                data-highlight={mastheadHighlight}
-                data-index={String(mastheadStartIndex)}
-              >
-                <span
-                  data-rotate-current
-                  class="inline-block h-full w-full transform-gpu will-change-transform"
-                >
-                  {mastheadHighlight}
-                </span>
-                <span
-                  data-rotate-next
-                  class="absolute left-0 top-0 inline-block h-full w-full transform-gpu will-change-transform"
-                ></span>
-              </span>
-            </span>
+            Intelligent business operations
           </h1>
+          <h2
+            class="mt-3 font-masthead text-[clamp(2rem,4.2vw,3.35rem)] font-semibold tracking-tight text-paper leading-[1] max-w-[52rem] md:max-w-[56rem]"
+          >
+            Turn your business knowledge into governed AI systems that work
+          </h2>
 
           <div class="mt-8 flex flex-wrap gap-4">
             <a
               href="#get-in-touch"
-              class="inline-flex items-center justify-center gap-2 rounded-md bg-strandGreen px-6 py-3 text-xs font-semibold leading-none tracking-[0.14em] uppercase text-ink shadow-outline transition-colors hover:bg-strandGreen/90"
+              class="inline-flex items-center justify-center gap-2 rounded-md bg-[#ef27f4] px-6 py-3 text-xs font-semibold leading-none tracking-[0.14em] uppercase text-paper shadow-outline transition-colors hover:bg-[#d823dd]"
             >
               Get in touch
               <svg
@@ -160,7 +146,7 @@ const page = {
             </a>
             <a
               href="#why"
-              class="inline-flex items-center justify-center gap-3 rounded-md border border-strandOrange/80 px-6 py-3 text-xs font-semibold tracking-[0.14em] uppercase text-strandOrange transition-colors hover:bg-strandOrange hover:text-slate"
+              class="inline-flex items-center justify-center gap-3 rounded-md border border-[#ff8c69] px-6 py-3 text-xs font-semibold tracking-[0.14em] uppercase text-[#ff8c69] transition-colors hover:bg-[#ff8c69] hover:text-paper"
             >
               <span>Keep Exploring</span>
               <svg
@@ -178,180 +164,7 @@ const page = {
         </div>
       </div>
     </div>
-
-    <!-- Decorative "strands" -->
-    <div
-      class="pointer-events-none absolute inset-x-0 bottom-[-2.5rem] z-0 h-[55%] overflow-hidden lg:bottom-[-3rem]"
-    >
-      <div class="container-wide h-full">
-        <Strands
-          class="hero-strands h-full w-full opacity-90 object-cover object-left-bottom"
-        />
-      </div>
-    </div>
   </section>
-
-  <script is:inline>
-    (() => {
-      const el = document.getElementById("brand-rotate");
-      if (!el) return;
-
-      let words;
-      try {
-        words = JSON.parse(el.getAttribute("data-words") || "[]");
-      } catch {
-        words = [];
-      }
-      if (!Array.isArray(words) || words.length === 0) return;
-
-      const reducedMotion = !!window.matchMedia?.(
-        "(prefers-reduced-motion: reduce)",
-      )?.matches;
-      const defaultHoldMs = 1800;
-      const highlightHoldMs = 3600;
-
-      const highlight =
-        (el.getAttribute("data-highlight") || "").trim() || words[0];
-      const delayFor = (word) =>
-        word === highlight ? highlightHoldMs : defaultHoldMs;
-
-      const currentEl = el.querySelector("[data-rotate-current]");
-      const nextEl = el.querySelector("[data-rotate-next]");
-      if (!(currentEl instanceof HTMLElement)) return;
-      if (!(nextEl instanceof HTMLElement)) return;
-
-      const rollMs = 900;
-      const rollEase = "cubic-bezier(0.33, 1, 0.68, 1)";
-      const resetTransforms = () => {
-        currentEl.style.transform = "translate3d(0, 0, 0)";
-        nextEl.style.transform = "translate3d(0, 100%, 0)";
-      };
-
-      let currentAnim = null;
-      let nextAnim = null;
-      if (!reducedMotion) {
-        currentEl.style.backfaceVisibility = "hidden";
-        nextEl.style.backfaceVisibility = "hidden";
-        currentEl.style.transformStyle = "preserve-3d";
-        nextEl.style.transformStyle = "preserve-3d";
-        resetTransforms();
-      }
-
-      const swapTo = (next) => {
-        if (next === highlight) {
-          el.classList.remove("text-strandGreen");
-          el.classList.add("text-strandOrange");
-        } else {
-          el.classList.remove("text-strandOrange");
-          el.classList.add("text-strandGreen");
-        }
-
-        if (reducedMotion) {
-          currentEl.textContent = next;
-          nextEl.textContent = "";
-          return;
-        }
-
-        nextEl.textContent = next;
-
-        currentAnim?.cancel?.();
-        nextAnim?.cancel?.();
-        currentAnim = null;
-        nextAnim = null;
-
-        resetTransforms();
-
-        if (
-          typeof currentEl.animate === "function" &&
-          typeof nextEl.animate === "function"
-        ) {
-          const thisCurrentAnim = currentEl.animate(
-            [
-              { transform: "translate3d(0, 0, 0)" },
-              { transform: "translate3d(0, -100%, 0)" },
-            ],
-            { duration: rollMs, easing: rollEase, fill: "forwards" },
-          );
-          const thisNextAnim = nextEl.animate(
-            [
-              { transform: "translate3d(0, 100%, 0)" },
-              { transform: "translate3d(0, 0, 0)" },
-            ],
-            { duration: rollMs, easing: rollEase, fill: "forwards" },
-          );
-          currentAnim = thisCurrentAnim;
-          nextAnim = thisNextAnim;
-
-          Promise.all([thisCurrentAnim.finished, thisNextAnim.finished])
-            .then(() => {
-              if (
-                currentAnim !== thisCurrentAnim ||
-                nextAnim !== thisNextAnim
-              ) {
-                return;
-              }
-              currentEl.textContent = next;
-              thisCurrentAnim.cancel();
-              thisNextAnim.cancel();
-              resetTransforms();
-              nextEl.textContent = "";
-              currentAnim = null;
-              nextAnim = null;
-            })
-            .catch(() => {});
-          return;
-        }
-
-        // Fallback (no WAAPI)
-        currentEl.style.transition = `transform ${rollMs}ms ${rollEase}`;
-        nextEl.style.transition = `transform ${rollMs}ms ${rollEase}`;
-        void currentEl.offsetHeight;
-        currentEl.style.transform = "translate3d(0, -100%, 0)";
-        nextEl.style.transform = "translate3d(0, 0, 0)";
-        window.setTimeout(() => {
-          currentEl.style.transition = "none";
-          nextEl.style.transition = "none";
-          currentEl.textContent = next;
-          resetTransforms();
-          nextEl.textContent = "";
-          void currentEl.offsetHeight;
-          currentEl.style.transition = `transform ${rollMs}ms ${rollEase}`;
-          nextEl.style.transition = `transform ${rollMs}ms ${rollEase}`;
-        }, rollMs);
-      };
-
-      let index = Math.max(
-        0,
-        Number.parseInt(el.getAttribute("data-index") || "", 10) || 0,
-      );
-      if (!Number.isFinite(index) || index < 0 || index >= words.length) {
-        index = Math.max(
-          0,
-          words.indexOf((currentEl.textContent || "").trim()),
-        );
-      }
-      let timer = null;
-
-      const step = () => {
-        index = (index + 1) % words.length;
-        const next = words[index];
-        swapTo(next);
-        timer = window.setTimeout(step, delayFor(next));
-      };
-
-      timer = window.setTimeout(step, delayFor(words[index]));
-
-      window.addEventListener(
-        "pagehide",
-        () => {
-          if (timer) window.clearTimeout(timer);
-          currentAnim?.cancel?.();
-          nextAnim?.cancel?.();
-        },
-        { once: true },
-      );
-    })();
-  </script>
 
   <!-- 2. WHY IBOM -->
   <section id="why" class="bg-paper">
@@ -361,34 +174,35 @@ const page = {
           <h2
             class="text-[clamp(2.5rem,5vw,4.75rem)] font-semibold tracking-tight text-ink"
           >
-            We transform your business into AI-ready infrastructure
+            We transform knowledge into AI-ready infrastructure
           </h2>
         </div>
 
         <div class="max-w-prose text-lg leading-relaxed text-steel md:text-xl">
           <p>
-            Many organisations invest in operations and AI tools, but struggle
-            to make them interoperate. Business logic, brand standards,
-            compliance policies, and operational procedures live in documents
-            and tribal knowledge, making them inaccessible to AI systems.
+            Many organisations invest in AI tools to improve operations, but
+            struggle to make them interoperate. Business logic, knowledge bases,
+            brand guidelines, compliance policies, and operational procedures
+            live in documents and tacit knowledge, making them inaccessible to
+            systems.
           </p>
           <p class="mt-6">
-            <b>The Intelligent Business Operating Model (IBOM<sup>®</sup>)</b> transforms business
-            logic into executable infrastructure. Starting with brand governance and
-            expanding into compliance, operations, and beyond, we codify policies
-            to make governance enforceable across AI workflows.
+            <b>The Intelligent Business Operating Model (IBOM<sup>®</sup>)</b> helps
+            businesses transform logic into executable infrastructure. Starting with
+            brand governance and expanding into compliance, operations, and beyond,
+            we codify policies to make governance enforceable across AI workflows.
           </p>
         </div>
       </div>
       <div class="mt-12 flex items-center justify-center">
         <a
           href="#concerns"
-          class="inline-flex items-center justify-center gap-3 rounded-md bg-strandOrange px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-ink shadow-outline hover:bg-strandOrange/90 transition-colors"
+          class="inline-flex items-center justify-center gap-3 rounded-md bg-[#ff8c69] px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-paper shadow-outline hover:bg-[#e97d5d] transition-colors"
           aria-label="Explore the next section"
         >
           <span>Keep Exploring</span>
           <svg
-            class="h-6 w-6 text-ink"
+            class="h-6 w-6 text-paper"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
@@ -407,85 +221,188 @@ const page = {
       <h2
         class="text-center text-[clamp(2.5rem,5vw,4.75rem)] font-semibold tracking-tight text-paper"
       >
-        Definition vs. Execution
+        How We Work
       </h2>
       <p
         class="mx-auto mt-10 max-w-[90ch] text-lg leading-relaxed text-paper/80 md:text-xl"
       >
-        For logic to be executable by AI systems, it must be separated into two
-        distinct layers: <b>schema</b> and <b>operations</b>. Our managed
-        services provide structured definitions that AI can read, and runtime
-        policies that AI must follow.
+        Regardless of project domain or theme, our approach is always the same:
+        we begin with your business knowledge, apply expert judgment, and use AI
+        to accelerate delivery under clear human supervision.
+      </p>
+      <p
+        class="mx-auto mt-6 max-w-[90ch] text-lg leading-relaxed text-paper/80 md:text-xl"
+      >
+        We bring the AI expertise needed to transform your business knowledge,
+        rules, and expert specifications into the technical foundation required
+        to design, build, and govern AI with precision.
       </p>
 
+        <div class="mt-14 grid gap-4 lg:grid-cols-3">
+          <div
+            class="rounded-2xl border border-paper/15 bg-ink/30 p-6 shadow-outline backdrop-blur"
+          >
+          
+            <h4 class="text-lg font-semibold tracking-tight text-paper">
+              Knowledge-first discovery
+            </h4>
+            <p class="mt-3 text-base leading-relaxed text-paper/75 md:text-lg">
+              We work with your teams to capture business workflow processes,
+              documents, data, and bottlenecks so the system is shaped around
+              the actual workings of your organisation.
+            </p>
+          </div>
+          <div
+            class="rounded-2xl border border-paper/15 bg-ink/30 p-6 shadow-outline backdrop-blur"
+          >
+          
+            <h4 class="text-lg font-semibold tracking-tight text-paper">
+              Expert-led specifications
+            </h4>
+            <p class="mt-3 text-base leading-relaxed text-paper/75 md:text-lg">
+              We bring the right expertise together in an AI-assisted workspace
+              to define system requirements and instructions in a format experts
+              can validate and AI agents can act on.
+            </p>
+          </div>
+          <div
+            class="rounded-2xl border border-paper/15 bg-ink/30 p-6 shadow-outline backdrop-blur"
+          >
+          
+            <h4 class="text-lg font-semibold tracking-tight text-paper">
+              AI-assisted delivery
+            </h4>
+            <p class="mt-3 text-base leading-relaxed text-paper/75 md:text-lg">
+              We move these specifications into an integrated development
+              environment, supervising AI-assisted building, testing,
+              deployment, and management at the speed of thought.
+            </p>
+          </div>
+      </div>
+
+      <div class="mt-16 border-t border-paper/10 pt-16">
+        <h3
+          class="text-center text-3xl font-semibold tracking-tight text-paper md:text-4xl"
+        >
+          Two connected phases
+        </h3>
+        <p
+          class="mx-auto mt-6 max-w-[90ch] text-center text-lg leading-relaxed text-paper/80 md:text-xl"
+        >
+          The first phase captures and structures your business knowledge into
+          governed datasets your organisation owns. The second connects that
+          knowledge to the AI systems you use so it can be found, trusted, and
+          acted on.
+        </p>
+      </div>
+
       <div class="mt-12 grid gap-10 lg:grid-cols-2">
-        <!-- BRANDO CARD -->
         <div
           class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
         >
           <div
-            class="text-lg font-semibold tracking-[0.2em] uppercase text-strandOrange"
+            class="text-lg font-semibold tracking-[0.2em] uppercase text-[#ef27f4]"
           >
-            Schema Definition
+            Phase 1
           </div>
           <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
-            <a
-              href="https://brandoschema.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="hover:text-accent transition-colors"
-            >
-              Brando<sup><sup>®</sup></sup>
-            </a>
+            Knowledge Base Build
           </div>
           <div
             class="mt-4 text-base font-medium leading-relaxed text-paper/80 md:text-lg"
           >
             <p>
-              Brando<sup><sup>®</sup></sup> is an open-source semantic schema language that codifies
-              business logic – brand standards, operational policies, compliance rules
-              into machine-readable format. It provides standardised vocabulary, taxonomies,
-              and data structures that AI systems query to understand organisational
-              requirements.
-              <br /><br />
-              Brando acts as your definitive source of truth, enabling AI systems,
-              internal teams, and external tools to reference consistent definitions
-              that can be queried, validated, and version-controlled.
+              We work with your subject matter experts to capture what your
+              organisation knows: its rules, processes, decisions, and
+              expertise, then turn that knowledge into structured,
+              machine-readable datasets your business owns outright rather than
+              locking it into a platform.
             </p>
+            <ul class="mt-6 space-y-4 text-paper/75">
+              <li class="flex gap-3">
+                <span
+                  class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#ef27f4]"
+                ></span>
+                <span>
+                  Capture specialist knowledge, business rules, and operational
+                  reality through workshops, interviews, and expert input.
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <span
+                  class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#ef27f4]"
+                ></span>
+                <span>
+                  Structure that knowledge into governed datasets, documents,
+                  and interlinked records that AI systems can read, search, and
+                  reason over.
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <span
+                  class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#ef27f4]"
+                ></span>
+                <span>
+                  Create a portable knowledge base that can feed directly into
+                  your API and MCP delivery layer.
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- IBOM CARD -->
         <div
           class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
         >
           <div
-            class="text-lg font-semibold tracking-[0.2em] uppercase text-strandOrange"
+            class="text-lg font-semibold tracking-[0.2em] uppercase text-[#ef27f4]"
           >
-            Operations Execution
+            Phase 2
           </div>
           <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
-            <a
-              href="/services/ibom"
-              class="hover:text-accent transition-colors"
-            >
-              IBOM<sup>™</sup>
-            </a>
+            API &amp; MCP Delivery
           </div>
           <div
             class="mt-4 text-base font-medium leading-relaxed text-paper/80 md:text-lg"
           >
             <p>
-              IBOM<sup>®</sup> is a policy-driven execution framework built on Model
-              Context Protocol (MCP) architecture. It operationalises Brando
-              schemas by embedding structured governance policies directly into
-              AI workflows and data pipelines.
-              <br /><br />
-              IBOM provides runtime governance enforcing rules, triggering validations,
-              and ensuring compliance as messages flow through distributed AI systems.
-              Every action is auditable, traceable, and automatically aligned with
-              your defined policies.
+              We build the retrieval and connection layer that makes your
+              knowledge accessible to any AI system, whether that is ChatGPT,
+              Microsoft Copilot, internal agents, or your own operational
+              tooling. Your knowledge becomes a live, queryable service AI can
+              call on demand.
             </p>
+            <ul class="mt-6 space-y-4 text-paper/75">
+              <li class="flex gap-3">
+                <span
+                  class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#ef27f4]"
+                ></span>
+                <span>
+                  Design and build the retrieval architecture that finds the
+                  right knowledge at the right moment, accurately and at scale.
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <span
+                  class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#ef27f4]"
+                ></span>
+                <span>
+                  Wrap your knowledge base in a governed API and MCP server
+                  network so any AI tool can connect through a secure,
+                  standardised interface.
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <span
+                  class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#ef27f4]"
+                ></span>
+                <span>
+                  Deliver working AI services, internal tools, and live
+                  workflows powered by your knowledge with governance and
+                  oversight built in.
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -493,19 +410,20 @@ const page = {
       <p
         class="mx-auto mt-12 max-w-[90ch] text-lg leading-relaxed text-center text-paper/80 md:text-xl"
       >
-        Brando defines the schema. IBOM executes the policy. Together, they make
-        your logic autonomous.
+        Definition captures what your organisation knows. Execution makes that
+        knowledge available to governed AI systems. Together, they turn
+        expertise into operational infrastructure.
       </p>
 
       <div class="mt-12 flex items-center justify-center">
         <a
           href="#uses"
-          class="inline-flex items-center justify-center gap-3 rounded-md bg-strandOrange px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-ink shadow-outline hover:bg-strandOrange/90 transition-colors"
+          class="inline-flex items-center justify-center gap-3 rounded-md bg-[#ff8c69] px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-paper shadow-outline hover:bg-[#e97d5d] transition-colors"
           aria-label="Explore the next section"
         >
           <span>Keep Exploring</span>
           <svg
-            class="h-6 w-6 text-ink"
+            class="h-6 w-6 text-paper"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
@@ -544,7 +462,7 @@ const page = {
                 aria-controls={`uses-panel-${t.key}`}
                 id={`uses-tab-${t.key}`}
                 data-tab={t.key}
-                class="flex-1 rounded-md px-5 py-3 text-base font-medium text-ink/80 transition-colors hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-strandPurple/70 aria-selected:bg-strandPurple aria-selected:text-paper aria-selected:shadow-sm"
+                class="flex-1 rounded-md px-5 py-3 text-base font-medium text-ink/80 transition-colors hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ef27f4]/70 aria-selected:bg-[#ef27f4] aria-selected:text-paper aria-selected:shadow-sm"
               >
                 {t.label}
               </button>
@@ -590,7 +508,7 @@ const page = {
                 <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">
                   {t.lead}
                 </div>
-                <div class="mt-4 text-2xl md:text-3xl font-semibold tracking-[0.08em] uppercase text-strandOrange">
+                <div class="mt-4 text-2xl md:text-3xl font-semibold tracking-[0.08em] uppercase text-[#ef27f4]">
                   {t.heading}
                 </div>
                 <div class="mt-6 text-lg md:text-xl font-medium leading-snug text-ink">
@@ -630,12 +548,12 @@ const page = {
       <div class="mt-12 flex items-center justify-center">
         <a
           href="#for"
-          class="inline-flex items-center justify-center gap-3 rounded-md bg-strandOrange px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-ink shadow-outline hover:bg-strandOrange/90 transition-colors"
+          class="inline-flex items-center justify-center gap-3 rounded-md bg-[#ff8c69] px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-paper shadow-outline hover:bg-[#e97d5d] transition-colors"
           aria-label="Explore the next section"
         >
           <span>Keep Exploring</span>
           <svg
-            class="h-6 w-6 text-ink"
+            class="h-6 w-6 text-paper"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
@@ -729,8 +647,9 @@ const page = {
       <p
         class="mx-auto mt-10 max-w-[80ch] text-center text-lg leading-relaxed text-paper/80 md:text-xl"
       >
-        Strategic outcomes for organisations that need consistent, auditable,
-        and controllable AI operations at enterprise scale.
+        What IBOM gives your organisation once business knowledge has been
+        framed, specified, deployed, and governed as a working operating model
+        for AI.
       </p>
 
       <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -738,17 +657,17 @@ const page = {
           class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
         >
           <div
-            class="text-xs font-semibold tracking-[0.2em] uppercase text-strandOrange"
+            class="text-xs font-semibold tracking-[0.2em] uppercase text-[#ef27f4]"
           >
-            Risk & Compliance
+            Clarity
           </div>
           <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
-            Automated Guardrails
+            Purpose Before Tooling
           </div>
           <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
-            Protect your organisation. IBOM acts as a real-time safety net,
-            catching policy violations or non-compliant AI outputs before they
-            reach production systems or customers.
+            IBOM starts with business purpose, outcomes, and constraints so AI
+            systems are shaped by what the organisation actually needs, not by
+            whatever a tool happens to make possible.
           </p>
         </div>
 
@@ -756,17 +675,17 @@ const page = {
           class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
         >
           <div
-            class="text-xs font-semibold tracking-[0.2em] uppercase text-strandOrange"
+            class="text-xs font-semibold tracking-[0.2em] uppercase text-[#ef27f4]"
           >
-            Operational Integrity
+            Structure
           </div>
           <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
-            Zero Policy Drift
+            Knowledge That AI Can Use
           </div>
           <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
-            Maintain consistent business logic across every AI interaction.
-            Whether internal systems or external partners, everyone operates
-            from the same enforceable policies.
+            Rules, processes, source materials, and expert judgment are turned
+            into structured specifications that AI systems can interpret,
+            reason over, and act on consistently.
           </p>
         </div>
 
@@ -774,17 +693,17 @@ const page = {
           class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
         >
           <div
-            class="text-xs font-semibold tracking-[0.2em] uppercase text-strandOrange"
+            class="text-xs font-semibold tracking-[0.2em] uppercase text-[#ef27f4]"
           >
             Governance
           </div>
           <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
-            Single Source of Truth
+            One Operating Logic
           </div>
           <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
-            Unite Operations, Legal, and Engineering. Transform abstract
-            business rules into structured, versioned policies that your entire
-            organisation can query and enforce.
+            IBOM gives operations, legal, product, and engineering a shared
+            model for how AI should behave, reducing contradiction, drift, and
+            fragmented policy decisions.
           </p>
         </div>
 
@@ -792,17 +711,17 @@ const page = {
           class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
         >
           <div
-            class="text-xs font-semibold tracking-[0.2em] uppercase text-strandOrange"
+            class="text-xs font-semibold tracking-[0.2em] uppercase text-[#ef27f4]"
           >
-            Operational Velocity
+            Delivery
           </div>
           <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
-            Deploy Fast, Stay Compliant
+            Faster Build Cycles
           </div>
           <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
-            Launch new AI capabilities with confidence. Automated validation
-            ensures that scaling your operations doesn't compromise governance
-            or regulatory compliance.
+            Once the specification is clear, teams can supervise AI-assisted
+            design and implementation far more quickly without losing control
+            over what is being built.
           </p>
         </div>
 
@@ -810,17 +729,17 @@ const page = {
           class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
         >
           <div
-            class="text-xs font-semibold tracking-[0.2em] uppercase text-strandOrange"
+            class="text-xs font-semibold tracking-[0.2em] uppercase text-[#ef27f4]"
           >
-            Auditability
+            Assurance
           </div>
           <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
-            Traceable Decisions
+            Testable And Traceable
           </div>
           <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
-            Every AI action is logged and auditable. Maintain a clear,
-            evidence-based record of how policies were applied, when they were
-            triggered, and why decisions were made.
+            IBOM makes it easier to test performance, policy adherence, and
+            edge cases, while keeping a clear record of what the system was
+            supposed to do and how it behaved in practice.
           </p>
         </div>
 
@@ -828,17 +747,17 @@ const page = {
           class="rounded-2xl border border-paper/15 bg-ink/30 p-10 shadow-outline backdrop-blur"
         >
           <div
-            class="text-xs font-semibold tracking-[0.2em] uppercase text-strandOrange"
+            class="text-xs font-semibold tracking-[0.2em] uppercase text-[#ef27f4]"
           >
-            Infrastructure
+            Continuity
           </div>
           <div class="mt-4 text-2xl font-semibold tracking-tight text-paper">
-            Logic-Native Systems
+            Systems That Can Evolve
           </div>
           <p class="mt-4 text-base font-medium leading-relaxed text-paper/80">
-            Stop reconfiguring policies for every AI tool. Your business logic
-            is embedded in infrastructure via MCP, making it instantly
-            executable by any compliant AI system.
+            As business needs, risks, and models change, the framework gives
+            you a controlled way to revise specifications and implementations
+            without losing alignment or operational trust.
           </p>
         </div>
       </div>
@@ -846,12 +765,12 @@ const page = {
       <div class="mt-12 flex items-center justify-center">
         <a
           href="#leaders"
-          class="inline-flex items-center justify-center gap-3 rounded-md bg-strandOrange px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-ink shadow-outline hover:bg-strandOrange/90 transition-colors"
+          class="inline-flex items-center justify-center gap-3 rounded-md bg-[#ff8c69] px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-paper shadow-outline hover:bg-[#e97d5d] transition-colors"
           aria-label="Explore the next section"
         >
           <span>Keep Exploring</span>
           <svg
-            class="h-6 w-6 text-ink"
+            class="h-6 w-6 text-paper"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
@@ -900,12 +819,12 @@ const page = {
       <div class="mt-12 flex items-center justify-center">
         <a
           href="#leaders"
-          class="inline-flex items-center justify-center gap-3 text-lg font-semibold text-ink/80 hover:text-ink transition-colors"
+          class="inline-flex items-center justify-center gap-3 text-lg font-semibold text-[#ff8c69] hover:text-[#e97d5d] transition-colors"
           aria-label="Explore the next section"
         >
           <span>Keep Exploring</span>
           <svg
-            class="h-7 w-7 text-strandOrange"
+            class="h-7 w-7 text-[#ff8c69]"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
@@ -973,12 +892,12 @@ const page = {
       <div class="mt-12 flex items-center justify-center">
         <a
           href="#get-in-touch"
-          class="inline-flex items-center justify-center gap-3 rounded-md bg-strandOrange px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-ink shadow-outline hover:bg-strandOrange/90 transition-colors"
+          class="inline-flex items-center justify-center gap-3 rounded-md bg-[#ff8c69] px-8 py-3 text-sm font-semibold tracking-[0.14em] uppercase text-paper shadow-outline hover:bg-[#e97d5d] transition-colors"
           aria-label="Explore the next section"
         >
           <span>Keep Exploring</span>
           <svg
-            class="h-6 w-6 text-ink"
+            class="h-6 w-6 text-paper"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"

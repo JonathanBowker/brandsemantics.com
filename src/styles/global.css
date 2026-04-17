@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap");
+@import "./jonnybowker.css";
 @config "../../tailwind.config.js";
 @import "tailwindcss";
 
@@ -167,8 +168,20 @@
     padding-left: 1.5rem;
   }
 
+  .prose ul {
+    list-style: disc;
+  }
+
+  .prose ol {
+    list-style: decimal;
+  }
+
   .prose li {
     margin: 0.5rem 0;
+  }
+
+  .prose li::marker {
+    color: currentColor;
   }
 
   .prose code {

@@ -11,6 +11,7 @@ const { title, description, page } = Astro.props as {
   description: string;
   page: PageMeta;
   bodyClass?: string;
+  hideFooterContactCta?: boolean;
 };
 
 const fullTitle = `${title} | Advanced Analytica`;
@@ -23,6 +24,8 @@ const fullTitle = `${title} | Advanced Analytica`;
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={page.url} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.svg" sizes="any" />
     <slot name="head" />
     <ThemeVars />
     <JsonLd page={page} />
@@ -32,7 +35,7 @@ const fullTitle = `${title} | Advanced Analytica`;
     <main class="pt-20">
       <slot />
     </main>
-    <SiteFooter />
+    <SiteFooter hideContactCta={Astro.props.hideFooterContactCta ?? false} />
     <script is:inline>
       (() => {
         const prefersReducedMotion =

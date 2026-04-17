@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_URL } from '../../lib/seo/site';
 
 const title = 'Security';
-const description = 'Operational posture for governance and compliance workflows.';
+const description = 'Advanced Analytica takes a governance-led, organisation-wide approach to security, controlled delivery, and auditability.';
 
 const page = {
   title,
@@ -20,24 +20,140 @@ const page = {
   <section class="container-wide py-16">
     <div class="eyebrow">Company</div>
     <h1 class="mt-4 text-4xl font-semibold text-ink">Security posture</h1>
-    <p class="mt-4 text-base text-steel">
-      Advanced Analytica focuses on governance, auditability, and controlled change management.
-      We design systems that keep brand standards verifiable at every stage.
+    <p class="mt-4 max-w-[80ch] text-lg leading-relaxed text-steel md:text-xl">
+      Security at Advanced Analytica is not treated as a separate technical
+      layer. It is part of how we govern systems, control change, manage risk,
+      and deliver accountable AI-enabled operations.
+    </p>
+    <p class="mt-4 max-w-[80ch] text-base leading-relaxed text-steel md:text-lg">
+      We apply this as an organisation-wide discipline across our internal
+      operations, delivery practices, and the systems we design for clients.
     </p>
   </section>
-  <section class="container-wide pb-20">
+
+  <section class="container-wide pb-8">
+    <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+      <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
+        <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">
+          Certification
+        </div>
+        <h2 class="mt-4 text-2xl font-semibold tracking-tight text-ink">
+          Cyber Essentials Plus certified
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-steel">
+          Advanced Analytica is Cyber Essentials Plus certified across the whole
+          organisation. That reflects a practical baseline of independently
+          assessed security controls across our operating environment, not a
+          narrow project-level claim.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
+        <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">
+          Approach
+        </div>
+        <h2 class="mt-4 text-2xl font-semibold tracking-tight text-ink">
+          Governance-led security
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-steel">
+          Our focus is on secure operations, controlled delivery, and systems
+          that remain traceable and reviewable as they evolve.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-wide py-12">
     <div class="grid gap-6 lg:grid-cols-3">
-      <div class="rounded-xl border border-fog bg-surface p-6">
+      <div class="rounded-xl border border-fog bg-surface p-6 shadow-outline">
         <div class="text-sm font-semibold text-ink">Access governance</div>
-        <p class="mt-3 text-sm text-steel">Policy-driven permissions for brand systems.</p>
+        <p class="mt-3 text-sm leading-relaxed text-steel">
+          Access should be deliberate, role-aware, and appropriate to the work
+          being carried out. We favour controlled permissions over informal or
+          unmanaged access.
+        </p>
       </div>
-      <div class="rounded-xl border border-fog bg-surface p-6">
-        <div class="text-sm font-semibold text-ink">Audit trails</div>
-        <p class="mt-3 text-sm text-steel">Every change is attributable and reviewable.</p>
+      <div class="rounded-xl border border-fog bg-surface p-6 shadow-outline">
+        <div class="text-sm font-semibold text-ink">Auditability</div>
+        <p class="mt-3 text-sm leading-relaxed text-steel">
+          Changes, approvals, and operational decisions should be attributable
+          and reviewable. Traceability is central to how we think about
+          trustworthy delivery.
+        </p>
       </div>
-      <div class="rounded-xl border border-fog bg-surface p-6">
-        <div class="text-sm font-semibold text-ink">Controlled releases</div>
-        <p class="mt-3 text-sm text-steel">Build-time validation enforces compliance.</p>
+      <div class="rounded-xl border border-fog bg-surface p-6 shadow-outline">
+        <div class="text-sm font-semibold text-ink">Controlled change</div>
+        <p class="mt-3 text-sm leading-relaxed text-steel">
+          Secure systems depend on disciplined change management. We structure
+          delivery so updates can be tested, reviewed, and introduced with clear
+          oversight.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper">
+    <div class="container-wide py-20">
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div>
+          <div class="eyebrow">What this means in practice</div>
+          <h2 class="mt-4 text-[clamp(2rem,4.2vw,3.25rem)] font-semibold tracking-tight text-ink">
+            Security built into delivery
+          </h2>
+          <p class="mt-6 max-w-[80ch] text-lg leading-relaxed text-steel md:text-xl">
+            We design for environments where governance, risk, and operational
+            discipline matter. That includes AI systems, internal tools,
+            connected services, and workflows that need controlled access,
+            reviewable decisions, and clear accountability.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          {[
+            { title: 'Defined boundaries', body: 'Clear scope around what a system can access, do, and change.' },
+            { title: 'Supervised execution', body: 'AI-assisted delivery remains under human oversight and review.' },
+            { title: 'Release discipline', body: 'Changes are introduced through structured delivery rather than ad hoc updates.' },
+            { title: 'Operational evidence', body: 'Logs, approvals, and controls support review, assurance, and investigation.' },
+            { title: 'Policy alignment', body: 'Security and governance controls are treated as operational requirements, not separate paperwork.' },
+            { title: 'Whole-organisation posture', body: 'Security is applied across the business, not isolated to one team or one project.' }
+          ].map((item) => (
+            <div class="rounded-2xl border border-fog bg-surface p-6 shadow-outline">
+              <div class="text-xs font-semibold tracking-[0.2em] uppercase text-steel">{item.title}</div>
+              <p class="mt-3 text-sm leading-relaxed text-steel">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-wide py-20">
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+      <div>
+        <div class="eyebrow">Why it matters</div>
+        <h2 class="mt-4 text-[clamp(2rem,4.2vw,3.25rem)] font-semibold tracking-tight text-ink">
+          Security supports trust in operation
+        </h2>
+        <p class="mt-6 max-w-[80ch] text-lg leading-relaxed text-steel md:text-xl">
+          For us, security is closely tied to governance. If systems cannot be
+          controlled, traced, and updated safely, they cannot be trusted in
+          live use. That is especially true where AI systems interact with
+          business-critical knowledge, rules, and decisions.
+        </p>
+      </div>
+
+      <div class="grid gap-6">
+        {[
+          { title: 'Operational confidence', body: 'Teams need confidence that systems behave within defined boundaries.' },
+          { title: 'Risk management', body: 'Controlled access and traceability help reduce operational and compliance risk.' },
+          { title: 'Enterprise readiness', body: 'Security maturity is part of what makes a system fit for serious organisational use.' },
+          { title: 'Sustainable delivery', body: 'The objective is not a one-off control set, but a security posture that can be maintained as systems evolve.' }
+        ].map((item) => (
+          <div class="rounded-2xl border border-fog bg-surface p-8 shadow-outline">
+            <div class="text-sm font-semibold text-ink">{item.title}</div>
+            <p class="mt-3 text-sm leading-relaxed text-steel">{item.body}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

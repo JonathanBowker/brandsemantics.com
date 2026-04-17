@@ -41,16 +41,16 @@ export const theme = {
   },
 
   typography: {
-    // Google Fonts only: Inter for body, Inter Tight for display.
+    // Matches the live jonnybowker.com typography stack.
     fontSans:
-      'Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"',
+      'Archivo, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"',
     fontDisplay:
-      '"Inter Tight", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"',
+      'Archivo, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"',
     fontMono:
       'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-    // Home mastheads only (explicit request).
+    // Keep mastheads aligned with the rest of the imported Jonny Bowker style.
     fontMasthead:
-      '"Inter Tight", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"',
+      'Archivo, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"',
 
     // Used for MDX/prose readability
     contentWidth: "72ch",
